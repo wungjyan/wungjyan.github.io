@@ -1,0 +1,2577 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="wj'blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="wj&#39;blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="wj&#39;blog">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wj&#39;blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>wj'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">wj'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/move-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/17/move-hexo/" itemprop="url">hexo博客迁移到另一台电脑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T23:53:16+08:00">
+                2018-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>感觉好久没更新博客了，如今换了一台新的mac，开心的同时就是要把一些数据做迁移了，其中最惦记的就是hexo博客怎么迁移，参考了网上的一些文章后，终于成功迁移，现在就把过程记录下，很简单的。</p>
+<h2 id="复制原电脑上的数据"><a href="#复制原电脑上的数据" class="headerlink" title="复制原电脑上的数据"></a>复制原电脑上的数据</h2><p>复制旧电脑上的hexo数据，注意不用全部复制，只需复制以下几个：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure></p>
+<p>把这些文件复制到新电脑上的新建文件夹里，如：hexo文件夹</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li>新电脑上需先安装有node环境</li>
+<li><p>全局安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// mac环境</span><br><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入hexo目录，依次执行以下安装命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>此时可访问浏览器：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 就可以看到博客了。整个过程还是很简单的，不确定是否所有情况都可以成功，但可一试。</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/react08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/12/react08/" itemprop="url">了解react中的虚拟DOM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T18:15:49+08:00">
+                2018-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在我学习vue框架的时候，就时常听到虚拟DOM的概念，后来了解到vue2.0新增了虚拟DOM，那时我并不知道这会有什么意义，因为我只想关心怎么使用框架。时至今日，我在学习react，在网上浏览react相关文章的时候，虚拟DOM这一词汇也是被时常提及，可能是因为react框架是使用虚拟DOM的先行者吧。于是我就花了一些时间，简单地了解了一下，如果不去追究代码的实现，我也可以简单说说我的理解。</p>
+<h2 id="为什么需要虚拟DOM？"><a href="#为什么需要虚拟DOM？" class="headerlink" title="为什么需要虚拟DOM？"></a>为什么需要虚拟DOM？</h2><p>可能本来我应该先说说什么是虚拟DOM，但这其实没啥可说的，我们就可以把它定义为js对象，但真要说起来可能也有很多东西可以说，关于这个网上已有一大堆好文，我就不去照搬了。我就想说说为啥需要虚拟DOM？其实很多像我这样的人可能不了解虚拟DOM，但是我们却知道它可以提高性能，那么它到底是怎么提高性能呢？</p>
+<h3 id="设计一个框架"><a href="#设计一个框架" class="headerlink" title="设计一个框架"></a>设计一个框架</h3><p>在这里，我不写代码，我们来假设一下，如果我们自己来实现一个react框架，那么我们会怎么来实现？好吧，我们先借鉴一下react框架，来理个思路：</p>
+<ol>
+<li>state（数据层），本着不直接操作DOM而是操作数据的原则，我们会有一个数据存放的地方；</li>
+<li>jsx（模板），模板最终会生成DOM结构用于展示，其实jsx语法实现的内容就相当于模板；</li>
+<li>数据 + 模板 结合，生成DOM结构，用于显示；</li>
+<li>state数据发生变化；</li>
+<li>数据 + 模板 结合，生成新的DOM结构，并替换掉原先的DOM结构。</li>
+</ol>
+<p>按照上面这五个步骤去设计我们的框架，这完全是没有大问题的。功能是可以实现了，但缺点也是很明显的，很多时候页面只会变化一小部分，如果每次变化都要重新渲染整个DOM结构，这显然大大消耗了性能。要知道我们在使用js时都是尽量避免直接操作DOM的，所以我们需要尝试改进。</p>
+<h3 id="改进框架"><a href="#改进框架" class="headerlink" title="改进框架"></a>改进框架</h3><p>我们知道上面步骤中需要改进的地方就是最后一步，我们不应该在数据变化时替换掉整个DOM结构，而是替换需要更改的地方，于是我们可以按如下步骤实现：</p>
+<ol>
+<li>state（数据层），本着不直接操作DOM而是操作数据的原则，我们会有一个数据存放的地方；</li>
+<li>jsx（模板），模板最终会生成DOM结构用于展示，其实jsx语法实现的内容就相当于模板；</li>
+<li>数据 + 模板 结合，生成DOM结构，用于显示；</li>
+<li>state数据发生变化；</li>
+<li>数据 + 模板 结合，生成新的DOM结构，不直接替换原先的DOM结构；</li>
+<li>新的DOM和原始DOM作对比，找出差异部分；</li>
+<li>找到差异的部分后，只替换需要变化的DOM结构；</li>
+</ol>
+<p>上面的步骤，前四步还和以前一样，到了第五步时，我们先不直接替换整个DOM，而是在接下来比较新旧DOM，找到需要变更的地方，然后实现部分更新替换。现在，我们解决了这个整体替换DOM结构的大隐患，实现了局部更新，这听起来似乎性能嗖嗖的上去了。然鹅~聪明的你一定发现了，这里面有一个步骤似乎并不讨喜，那就是第六步，新旧DOM做对比。对比啥？是在对比DOM结构啊！这也是相当消耗性能的。搞了半天，其实性能并没有提升多少，说不定还下降了。所以，我们还需要改进！</p>
+<h3 id="虚拟DOM的引入"><a href="#虚拟DOM的引入" class="headerlink" title="虚拟DOM的引入"></a>虚拟DOM的引入</h3><p>吁~终于扯到虚拟DOM上了，没错，接下来我们就加入虚拟DOM的概念来改进我们的框架。还记得我上面开始说的嘛，虚拟DOM你可以理解为就是一个js对象，不过这个对象里保存了DOM信息，我们一步一步看。</p>
+<p>首先，前两步我们总是需要的：</p>
+<ol>
+<li>state（数据层）；</li>
+<li>jsx（模板）；</li>
+</ol>
+<p>接下来，我们要结合数据和模板，但是这次我们先不直接生成DOM结构，而是生成虚拟DOM：</p>
+<ol start="3">
+<li><p>数据 + 模板 生成虚拟DOM （虚拟DOM是js对象，用来描述真实DOM信息），如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&apos;div&apos;,&#123;id:&apos;root&apos;&#125;,[&apos;span&apos;,&#123;&#125;,&apos;hello world&apos;]]</span><br><span class="line"></span><br><span class="line">//上面对象所描述的信息就是：&lt;div id=&quot;root&quot;&gt; &lt;span&gt;hello world&lt;/span&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用虚拟DOM结构生成真实的DOM结构，来显示，即</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;root&quot;&gt; &lt;span&gt;hello world&lt;/span&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>state发生变化；</p>
+</li>
+<li><p>数据 + 模板 生成新的虚拟DOM，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&apos;div&apos;,&#123;id:&apos;root&apos;&#125;,[&apos;span&apos;,&#123;&#125;,&apos;hi&apos;]]</span><br><span class="line"></span><br><span class="line">//hello world 变成 hi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比较原始虚拟DOM和新的虚拟DOM，区别就是span中内容的变更；</p>
+</li>
+<li>直接改变DOM中span中的内容。</li>
+</ol>
+<p>看到这，我想你对虚拟DOM有了大概的了解了。查看上面步骤，你可能也会疑问，生成虚拟DOM这里不会消耗性能吗？其实肯定会消耗一些性能的，但相比较直接生成真实DOM结构，肯定是大大降低消耗的，而且后面的对比差异就是直接对比js对象，不涉及DOM操作，这里也是大大提升了效率的。</p>
+<p>以上就是我对虚拟DOM的简单理解，一些地方可能说的不太对，但我的意思应该是明显的吧，嘿嘿~</p>
+<p>最近在忙找新工作的事，其实也不忙。虽然收到几个offer，但不是自己喜欢的，哎，大家还是对应届生的能力有所怀疑啊，我表示无力，只能说我能力还是不足啊。多学学，继续加油。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/18/react07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/18/react07/" itemprop="url">redux体验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-18T16:01:45+08:00">
+                2018-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在网上看过不少资料文档后，确认redux基础概念并不是想象中的难，为啥这么说呢，因为在我还没接触react时就到处听人说redux很难，所以我一直以为它很难上手。但在实际接触后，发现基本的概念并不难，甚至比当初刚接触vuex时更简单。当然了，难的我也还没接触到，现在只说最基础的。</p>
+<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><p>关于redux的概念其实我也讲不好的，为了好理解，我尽量用自己的话描述下，到底对不对，说不好~</p>
+<ul>
+<li><p>store：可以看成是一个容器，保存数据的地方，要注意的是，整个应用只能有一个 Store</p>
+</li>
+<li><p>state：包含具体的数据，通过store.getState()可以拿到当前的数据，并且一个 State 对应一个 View</p>
+</li>
+<li><p>action：state的变化会导致view的更新，页面中我们是不能直接接触state的，应该是触发view才能导致state变化，可以理解为action就是view发出的通知，表示state要变化了</p>
+</li>
+<li><p>reducer：在发出action通知后，要更新state了，这个更新state的过程就是reducer，它是一个函数，接收action和state作为参数，对应更新state</p>
+</li>
+</ul>
+<p>我知道，刚来就看这么多概念是没用的，可以结合下面说的例子慢慢看。</p>
+<h2 id="感受一下redux"><a href="#感受一下redux" class="headerlink" title="感受一下redux"></a>感受一下redux</h2><p>通常人们都把redux和react在一起说，但事实上这两个是解耦的，redux不一定要用在react应用上。为了演示方便，我们还是使用<code>create-react-app</code>脚手架，不过开始时，我们不结合react，而是单独看看它的使用。</p>
+<p>将脚手架<code>src</code>目录下的所有文件全删除，新建一个index.js文件，写入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// 引入createStore，用以创建store</span><br><span class="line">import &#123;createStore&#125; from &apos;redux&apos;</span><br><span class="line"></span><br><span class="line">// 创建reducer</span><br><span class="line">function reducer(state=0, action)&#123;</span><br><span class="line">   switch(action.type)&#123;</span><br><span class="line">       case &apos;ADD&apos;:</span><br><span class="line">         return state+1</span><br><span class="line">       case &apos;REMOVE&apos;:</span><br><span class="line">         return state-1</span><br><span class="line">       default:</span><br><span class="line">         return 10</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 新建store</span><br><span class="line">const store = createStore(reducer)</span><br><span class="line"></span><br><span class="line">//查看当前state</span><br><span class="line">console.log(store.getState())</span><br></pre></td></tr></table></figure></p>
+<p>当你敲完这些代码，运行后，可以在控制台看到输出了10。我们来一行行看。</p>
+<p>首先，引入了createStore，只看名字我们也知道了，是用来创建store的，它是一个函数，传入reducer作为参数即可创建出store。</p>
+<p>再来看reducer函数，它并不是一定要以reducer作为函数名的，你可以自定义。它有两个参数，一个是state，它就是包含具体数据的，可以初始化为0，它可以是字符串，对象等多种类型。第二个参数action是view层传过来的，它包含通知信息，保存在type属性中，它的type属性值也是我们自己定义的，根据传来的信息进行不同的state更新。上面代码还没涉及到action的分发，后面再说。</p>
+<p>接下来，就是把新建的reducer作为参数传入到createStore中，从而创建store了，store中的getState方法可以拿到当前state。输出的结果是10，因为我们并没有发送action来提示更新state，所以默认返回了10，这些看代码也很好理解。那么接下来，我们尝试发送一次更新需求：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 发送ADD需求</span><br><span class="line">store.dispatch(&#123;type:&apos;ADD&apos;&#125;)</span><br><span class="line"></span><br><span class="line">// 再查看当前state</span><br><span class="line">console.log(store.getState())</span><br></pre></td></tr></table></figure></p>
+<p>结合reducer的代码，也可以明白现在打印的就是11了，action就是通过dispatch发送的，它本质上就是一个对象，一般type属性必写，之后也可以自定义其他属性。好了，现在redux的基本概念已经走了一遍，当然实际中不可能这么简单，这里只做演示。接下来，我们结合react再来写一个实际的小例子。</p>
+<h2 id="简单计数器"><a href="#简单计数器" class="headerlink" title="简单计数器"></a>简单计数器</h2><p>结合react来做一个简单的计数器吧，把index.js文件改成如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import ReactDOM from &apos;react-dom&apos;</span><br><span class="line">import &#123;createStore&#125; from &apos;redux&apos;</span><br><span class="line">import reducer from &apos;./reducer.js&apos;</span><br><span class="line"></span><br><span class="line">const store = createStore(reducer)</span><br><span class="line"></span><br><span class="line">class App extends React.Component&#123;</span><br><span class="line">    remove()&#123;</span><br><span class="line">        store.dispatch(&#123;</span><br><span class="line">            type:&apos;REMOVE&apos;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    add()&#123;</span><br><span class="line">        store.dispatch(&#123;</span><br><span class="line">            type:&apos;ADD&apos;,</span><br><span class="line">            text:2</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">              &lt;input type=&quot;button&quot; value=&quot;-&quot; onClick=&#123;this.remove.bind(this)&#125;/&gt;</span><br><span class="line">              &lt;span&gt;&#123;store.getState()&#125;&lt;/span&gt;</span><br><span class="line">              &lt;input type=&quot;button&quot; value=&quot;+&quot; onClick=&#123;this.add.bind(this)&#125;/&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App/&gt;,document.getElementById(&apos;root&apos;))</span><br></pre></td></tr></table></figure></p>
+<p>上面代码也没有啥可说的，都看得懂，注意的是我在add函数中的action里多加了一个text属性，这个属性也是能被传到reducer里的，可以用于state的计算。</p>
+<p>再来新建一个reducer.js文件，用来写reducer文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export default function reducer(state=0,action)&#123;</span><br><span class="line">    switch(action.type)&#123;</span><br><span class="line">      case &apos;ADD&apos;:</span><br><span class="line">        return state + action.text</span><br><span class="line">      case &apos;REMOVE&apos;:</span><br><span class="line">        return state - 1</span><br><span class="line">      default:</span><br><span class="line">        return state</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在运行浏览器，可以看到页面效果了，但点击按钮时，你会发现数字并没有增加，打开控制台，也没有报错。这是什么原因呢？</p>
+<p>原因是在于没有监听state的变化，view是不会自动更新state的，我们需要手动监听state的变化，这时我们需要<code>store.subscribe</code>这个方法，Store 允许使用store.subscribe方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。那么想一想，我们监听谁呢？</p>
+<p>其实监听的方式不止一种，在这里有一种比较好理解的。每当state变化时，监听函数就会自动执行，那我们让组件重新渲染不就行了，重新渲染的组件一定是最新的state，所以我们可以将index.js文件的最后改造一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function render()&#123;</span><br><span class="line">    ReactDOM.render(&lt;App/&gt;,document.getElementById(&apos;root&apos;))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render()</span><br><span class="line"></span><br><span class="line">store.subscribe(render)</span><br></pre></td></tr></table></figure>
+<p>这时，我们就可以在页面中执行数字的加减了。注意到，当点击加时，会加2个数，是因为执行加的时候，是加上了<code>action.text</code>，参考代码。</p>
+<p>好了，redux的基本使用就这些了，一些更高级的用法以后再说。（其实看我懒不懒了~）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/react06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/14/react06/" itemprop="url">react路由</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T22:27:52+08:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>react与vue一样，做SPA就要用到路由功能。我们做WEB端路由，需要用到的是<code>react-router-dom</code>这个库，它帮助我们实现react路由功能。另外，为了方便起见，代码演示使用react脚手架<code>create-react-app</code>。关于脚手架的使用可自己搜索。废话不多说，直接撸~</p>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>首先我修改下脚手架，将<code>/src/index.js</code>入口文件清空，用来写我们的演示代码，将<code>/public/index.html</code>模板文件删掉不必要的干扰代码，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;theme-color&quot; content=&quot;#000000&quot;&gt;</span><br><span class="line">    &lt;title&gt;React App&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>切换到index.js文件，首先引入我们需要的模块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import ReactDOM from &apos;react-dom&apos;;</span><br><span class="line">import &#123;BrowserRouter as Router, Route, Link&#125; from &apos;react-router-dom&apos;</span><br></pre></td></tr></table></figure></p>
+<p>前两个不必多说了，而第三个就是我们要用到的路由库，在引入前别忘记下载了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save react-router-dom</span><br></pre></td></tr></table></figure></p>
+<p>我们在<code>react-router-dom</code>中引入了三个东西，其中，Router是容器，它里面就包含了我们的路由内容，Route是定义真正路由组件的，而Link就是定义切换链接的，类似vue中的<code>router-link</code>，简单使用如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 首页组件</span><br><span class="line">const Home = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是首页&lt;/h1&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 用户页组件</span><br><span class="line">const User = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是用户页&lt;/h1&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Router&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line"></span><br><span class="line">          &lt;ul&gt;</span><br><span class="line">              &lt;li&gt;&lt;Link to=&quot;/home&quot;&gt;首页&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li&gt;&lt;Link to=&quot;/user&quot;&gt;用户页&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">          &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">          &lt;Route path=&quot;/home&quot; component=&#123;Home&#125;&gt;&lt;/Route&gt;</span><br><span class="line">          &lt;Route path=&quot;/user&quot; component=&#123;User&#125;&gt;&lt;/Route&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/Router&gt;, document.getElementById(&apos;root&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>代码中也可以看到，<code>Router</code>起到容器作用，其本身也是一个组件，需要注意的是，Router下只能有一个根元素，这里即<code>div</code>。先看<code>Link</code>，它有一<code>to</code>属性，很明显代表的是要链接的地址，再看<code>Route</code>，它的<code>path</code>属性表明路由的路径，与<code>Link</code>的<code>to</code>属性值要对应起来，而component属性指出当前路径所对应的界面（其本质就是对应到一个组件，当链接到当前路径后，展示组件内容）。</p>
+<p>怎么样，react路由是不是很简单？其实刚接触时，我有点不习惯这种写法，毕竟受vue影响大了，哈哈~不过当我再写一遍时，我觉得react的路由上手更简单点，至少很直观 ，也许当初我先学react的话，会对vue的路由更不习惯。</p>
+<h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><p>如果说当初刚学vue路由时，我可能不知道怎么定义嵌套路由，但是现在初学react路由时，我自己按着想法，却也把嵌套路由搞出来了，一切也是因为它很直观。因为react路由也是组件形式，那么我在父路由组件里，再写一个子路由不就行了嘛，形式都是一样的，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">// xiaoming</span><br><span class="line">const Xiaoming = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        我是小明</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// xiaohong</span><br><span class="line">const Xiaohong = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        我是小红</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 用户页组件</span><br><span class="line">const User = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是用户页&lt;/h1&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;Router&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                  &lt;li&gt;&lt;Link to=&quot;/user/xiaoming&quot;&gt;小明&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li&gt;&lt;Link to=&quot;/user/xiaohong&quot;&gt;小红&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">                &lt;Route path=&quot;/user/xiaoming&quot; component=&#123;Xiaoming&#125;&gt;&lt;/Route&gt;</span><br><span class="line">                &lt;Route path=&quot;/user/xiaohong&quot; component=&#123;Xiaohong&#125;&gt;&lt;/Route&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/Router&gt; </span><br><span class="line">          </span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>如上，我在<code>/user</code>路由组件里，再写了两个子路由，形式和父路由完全一样，这样就完成了嵌套路由的实现，同理也可继续嵌套下去。而嵌套路由在vue里的实现是配置children，很明显刚学时，我肯定是不知道是要配置children的。不过用这么久vue了，我还是很喜欢vue这个框架的，也习惯了它的设计思想，而react让我看到了不同的设计思想。我相信存在即合理，这两种模式我都喜欢，哈哈又扯多了。</p>
+<h2 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h2><p>react的动态路由匹配与vue的基本类似，也是以冒号开头加参数。我们将上述例子中的<code>user</code>子路由修改下，我们不明确指向是<code>xiaoming</code>还是<code>xiaohong</code>，而是使用动态路由来自动识别，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const Person = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        // ....</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&lt;Route path=&quot;/user/:name&quot; component=&#123;Person&#125; &gt;&lt;/Route&gt;</span><br></pre></td></tr></table></figure></p>
+<p>现在，我要求输入不同的name时，浏览器会显示不同的内容。其实关键就是<code>Person</code>组件该怎么写了，再进一步就是怎么拿到name的值了，这时候我们也会想到react应该会替我们做好这些的。其实，name参数值会被传入到Person组件里，存在props里，而函数定义的组件中，props是以参数形式传进去的。我们可以打印props就会知道name值存在<code>props.match.params</code>中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const Person = (props) =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &#123;props.match.params.name&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>知道了怎么获得动态参数，我们就把这个例子完善好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">const Person = (props) =&gt; &#123;</span><br><span class="line">    if(props.match.params.name === &apos;xiaoming&apos;)&#123;</span><br><span class="line">        var a = &apos;我是小明&apos;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        var a = &apos;我是小红&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;&#123;a&#125;&lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">// 用户页组件</span><br><span class="line">const User = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是用户页&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Router&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                  &lt;li&gt;&lt;Link to=&quot;/user/xiaoming&quot;&gt;小明&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li&gt;&lt;Link to=&quot;/user/xiaohong&quot;&gt;小红&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">                &lt;Route path=&quot;/user/:name&quot; component=&#123;Person&#125; &gt;&lt;/Route&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/Router&gt; </span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>上述代码的功能与之前写的一样，只是用动态路由来实现的。当然我这种写法是很 low的，实际开发中应该不会这么写，我只是把过程讲出来，方便理解。</p>
+<p>react路由就先讲这么多了，我也实在讲不出花来~</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/react05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/03/react05/" itemprop="url">react组件设置样式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T19:42:21+08:00">
+                2018-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本篇主要介绍给组件设置样式时，准确说是给JSX里的标签设置样式时要注意的地方。</p>
+<h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><p>当要给组件添加class时，不能直接写成class，应该写成className:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return &lt;div className=&apos;div1&apos;&gt;&lt;/div&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这主要因为class是JavaScript的保留字。而且JSX 的特性更接近 JavaScript 而不是 HTML , 所以 React DOM 使用 camelCase 小驼峰命名来定义属性的名称，而不是使用 HTML 的属性名称。</p>
+<h2 id="style"><a href="#style" class="headerlink" title="style"></a>style</h2><p>除了通过添加class来设置样式外，我们也可以使用style内联样式。只不过这跟以往写的有些不同，你需要将样式内容用双花括号包起来，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return &lt;div style=&#123;&#123;color:&apos;white&apos;,fontSize:&apos;16px&apos;&#125;&#125;&gt;&lt;/div&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这跟vue里的mustache语法很像，也是双大括号，但是这里应该理解为一层花括号里包含一个对象，react将这个对象渲染为内联样式。另外你需要注意的是，遇到<code>font-size</code>这种的要写成小驼峰命名形式，不然会出错。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/react04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/01/react04/" itemprop="url">react组件通信</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T18:22:38+08:00">
+                2018-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>说到组件，那就不能不说组件通信。个人觉得相对于vue，react的通信比较容易理解。</p>
+<h2 id="父组件向子组件通信"><a href="#父组件向子组件通信" class="headerlink" title="父组件向子组件通信"></a>父组件向子组件通信</h2><p>react是单向数据流，数据主要从父节点传递到子节点（通过props）。这种传递方式也是比较简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 子组件</span><br><span class="line">class Son extends React.Component&#123;</span><br><span class="line">          render()&#123;</span><br><span class="line">              return &lt;div&gt;&#123;this.props.title&#125;&lt;/div&gt;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">// 父组件</span><br><span class="line">class Parent extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">      return &lt;Son title=&quot;我是父组件传给子组件的值&quot;/&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Parent/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<h2 id="子组件向父组件通信"><a href="#子组件向父组件通信" class="headerlink" title="子组件向父组件通信"></a>子组件向父组件通信</h2><p>因为react是单向数据流，数据只能有父组件传递到子组件，所以要想从子组件更新父组件，需要一个取巧的方法，那就是利用回调函数，简单概述就是：<strong>父组件通过props传递一个回调函数到子组件中，这个回调函数可以更新父组件，子组件就是通过触发这个回调函数，从而使父组件得到更新</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 子组件</span><br><span class="line">    class Son extends React.Component&#123;</span><br><span class="line">        render()&#123;</span><br><span class="line">            return &lt;button onClick=&#123;this.props.handleChange&#125;&gt;点我可以改变父组件的状态值&lt;/button&gt;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   // 父组件</span><br><span class="line">    class Parent extends React.Component&#123;</span><br><span class="line">        constructor()&#123;</span><br><span class="line">            super()</span><br><span class="line">            this.state=&#123;</span><br><span class="line">                val:0</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        change()&#123;</span><br><span class="line">          let newVal = this.state.val + 1</span><br><span class="line">          this.setState(&#123;</span><br><span class="line">              val:newVal</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        render()&#123;</span><br><span class="line">            return &lt;div&gt;</span><br><span class="line">                     &lt;Son handleChange=&#123;this.change.bind(this)&#125;/&gt;</span><br><span class="line">                     &lt;p&gt;&#123;this.state.val&#125;&lt;/p&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>这次，父组件通过props传一个回调函数给子组件，子组件通过触发这个回调函数来更新父组件的状态。</p>
+<p>除了这两种最普遍的通信外，还有其他情况的通信，比如兄弟组件等，这里先不说了，准备等我遇到了再说。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/30/react03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/30/react03/" itemprop="url">react事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T22:25:35+08:00">
+                2018-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p>React 元素的事件处理和 DOM元素很相似，主要有两点不同：</p>
+<ul>
+<li>React事件绑定属性的命名采用驼峰式写法，而不是小写</li>
+<li>如果采用 JSX 的语法你需要传入一个函数作为事件处理函数，而不是一个字符串(DOM元素的写法)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//DOM元素</span><br><span class="line">&lt;button onclick=&quot;test()&quot;&gt;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//react</span><br><span class="line">&lt;button onClick=&#123;test&#125;&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>写个小例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line"></span><br><span class="line">         show()&#123;</span><br><span class="line">             alert(&apos;hello&apos;)</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">          render()&#123;</span><br><span class="line">              return &lt;button onClick=&#123;this.show&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>上例中，当点击按钮时，调用 show函数，注意要用this调用，this指向组件本身。关于this，来单独说下。</p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>我们来改变一下上面的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">       constructor()&#123;</span><br><span class="line">           super()</span><br><span class="line">           this.state = &#123;</span><br><span class="line">               val:0</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">        show()&#123;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                val:this.state.val+1</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">         render()&#123;</span><br><span class="line">             return &lt;div&gt;</span><br><span class="line">                      &lt;button onClick=&#123;this.show&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">                      &lt;p&gt;&#123;this.state.val&#125;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">         &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>此例中，我们为组件添加状态，并显示在页面中，当点击按钮时，状态的数值加1。不过运行的结果可能不会如意，报一个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...Cannot read property &apos;setState&apos; of undefined</span><br></pre></td></tr></table></figure></p>
+<p>提示setState未定义，为了验证，我们在show函数里打印一下this，结果显示时 undefined。到这里，其实我开始也是比较迷惑的，函数里的this指向undefined还是第一次见。</p>
+<p>在查看文档后才知道，原来在react里，类的方法默认是不会绑定 this 的，也就是说我们必须手动绑定this。绑定到哪？我们的一切操作都是基于这个组件的，所以应该绑定到当前类上。怎么绑定？直接在JSX 回调函数上绑定，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;this.show.bind(this)&#125;&gt;点击&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里的this还是指向当前类的，只是类的方法不会默认绑定this而已。</p>
+<h2 id="默认行为和事件冒泡"><a href="#默认行为和事件冒泡" class="headerlink" title="默认行为和事件冒泡"></a>默认行为和事件冒泡</h2><p>说到事件，就不得不说默认行为和事件冒泡，因这两点在react里也有些不同。</p>
+<h3 id="取消默认行为"><a href="#取消默认行为" class="headerlink" title="取消默认行为"></a>取消默认行为</h3><p>在react里，必须明确的使用 preventDefault来取消默认行为，像<code>return false</code>是没用的。</p>
+<p>写个例子，阻止a标签的跳转：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleClick(e)&#123;</span><br><span class="line">        e.preventDefault()</span><br><span class="line">        console.log(&apos;hello&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">  return &lt;a href=&quot;https://www.baidu.com&quot; onClick=&#123;this.handleClick&#125;&gt;点击&lt;/a&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>在react里，使用e.stopPropagation()阻止事件冒泡可能会没效，因为这里的冒泡分为三种情况，情况不同方法也不同，在这里我找到一篇文章，说的很详细，我就不多啰嗦了，其实是偷懒，哈哈~<br><a href="https://zhuanlan.zhihu.com/p/26742034" target="_blank" rel="noopener">传送门</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/react02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/29/react02/" itemprop="url">react组件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T13:02:58+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>学习react应该就是学习它的组件化开发了，看看它和vue的组件相比有何不同？</p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>react组件有两种，分别是函数定义和类定义。</p>
+<h3 id="函数定义组件"><a href="#函数定义组件" class="headerlink" title="函数定义组件"></a>函数定义组件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Demo()&#123;</span><br><span class="line">    return &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码就创建了一个有效的组件，它是用函数返回了一个React元素，这种类型的组件为函数定义组件，我们可以正常使用它：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">   &lt;Demo/&gt;,</span><br><span class="line">   app</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>记住ReactDOM.render()的第一个参数是要渲染的内容，组件不就是要展示的内容吗？只是组件的使用应写成标签形式，这点应该很熟悉，跟vue的一样。</p>
+<p>这里有一个特别需要注意的地方，那就是<strong>组件名称必须以大写字母开头</strong>，不然无法渲染。</p>
+<p>看到上面的代码，不知道你会不会有一种想法，一种下意识的想法，看代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function Demo()&#123;</span><br><span class="line">    return &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(Demo(),app)</span><br></pre></td></tr></table></figure></p>
+<p>看到了吗？我不把Demo写成标签形式，而是直接调用了，结果依然正确渲染了。细想下，这本该如此啊，因为函数返回的是JSX啊，这与直接写JSX并没有本事区别。此时，你要是把函数名写成小写也不会有影响了，因为它已经不是一个组件了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function demo()&#123;</span><br><span class="line">    return &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(demo(),app)</span><br></pre></td></tr></table></figure></p>
+<h3 id="类定义组件"><a href="#类定义组件" class="headerlink" title="类定义组件"></a>类定义组件</h3><p>相对于函数定义组件，类定义组件才是最常用的，因为它允许我们更多的扩展。</p>
+<p>类定义组件，其实就是es6中定义类的方法，只是react加入了一些东西：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>上面就是类定义组件，熟悉es6的话，应该比较熟悉这种形式，在定义一个组件时，我们必须让它继承React.Component这个类，这样才能使用react的一些功能。</p>
+<p>关于类定义组件，要讲得东西其实还是有几个的，在这之前，我们要了解两个和组件息息相关的概念：属性和状态。</p>
+<h2 id="组件的属性和状态"><a href="#组件的属性和状态" class="headerlink" title="组件的属性和状态"></a>组件的属性和状态</h2><p>组件有属性和状态，分别表示为props和state，它们的区别：</p>
+<ul>
+<li>属性是由父组件传递给子组件的</li>
+<li>状态是子组件内部维护的数据，当状态发生变化的同时，组件也会进行更新。当状态发生转换时会触发不同的钩子函数，从而让开发者有机会做出相应</li>
+</ul>
+<h3 id="属性（props）"><a href="#属性（props）" class="headerlink" title="属性（props）"></a>属性（props）</h3><p>属性是写在父组件上的，可以传递给子组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function Demo(props)&#123;</span><br><span class="line">    return &lt;h1&gt;&#123;props.msg&#125;&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo msg=&apos;hello world&apos;/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>上面是函数定义组件的属性传递写法，Demo函数接收一个单一的“props”对象，这里包含了所有的父组件的属性，我们多写几个属性，打印props看看：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Demo(props)&#123;</span><br><span class="line">   console.log(props)</span><br><span class="line">    return &lt;h1&gt;&#123;props.msg&#125;&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo msg=&apos;hello world&apos; name=&apos;wj&apos; age=&apos;18&apos;/&gt;,app)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//props打印结果</span><br><span class="line">&#123;</span><br><span class="line">age:&quot;18&quot;,</span><br><span class="line">msg:&quot;hello world&quot;,</span><br><span class="line">name:&quot;wj&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，在react里要输出数据到模板里，用一个花括号即可，在vue里是两个花括号。</p>
+<p>属性不仅仅可以是字符串，还可以是js的表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const num = 5</span><br><span class="line">ReactDOM.render(&lt;Demo msg=&#123;num&gt;3?&apos;大于3&apos;:&apos;小于3&apos;&#125; name=&apos;wj&apos; age=&apos;18&apos;/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>这里就不多说了，react相对于vue，做了更少的限制，大胆去尝试吧，很多你觉得可以的，在react确实可以做到。</p>
+<p>再来看看在类定义组件里使用props：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">      render()&#123;</span><br><span class="line">          return &lt;h1&gt;&#123;this.props.msg&#125;&lt;/h1&gt;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Demo msg=&apos;hello world&apos; /&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>这里使用props的唯一区别就是要使用this来调用，其他跟函数定义组件一样。</p>
+<p>props有一个限制，那就是它的只读性，无论是使用函数或是类来声明一个组件，它决不能修改它自己的props。如果需要改变props值来更新视图显然是不行的。这就需要state状态。</p>
+<h3 id="状态（state）"><a href="#状态（state）" class="headerlink" title="状态（state）"></a>状态（state）</h3><p>状态适用于类定义的组件，状态是私有的，完全受控于当前组件。我们需要使用状态，则需要定义类组件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">      constructor()&#123;</span><br><span class="line">        super()</span><br><span class="line">        this.state=&#123;</span><br><span class="line">            msg:&apos;hello world&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;       // 注意这里不要写逗号，详见es6之class</span><br><span class="line">      render()&#123;</span><br><span class="line">          return &lt;div&gt;&#123;this.state.msg&#125;&lt;/div&gt;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>上面代码添加了状态，在这里你可能需要知道一些es6的class知识，推荐阮一峰老师的es6教程。我们知道Demo类式继承React.Component这个类的，算子类，它必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类自己的this对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用super方法，子类就得不到this对象。</p>
+<p>在this对象上添加状态state，这个状态是属于Demo私有的，使用this.state.xxx的方式调用。</p>
+<p>状态受控于当前组件，是可以改变的，这里我们来改变下状态，注意这里会使用到事件，以后会详细介绍react事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">change()&#123;</span><br><span class="line">  this.state.msg = &apos;改变了&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">  return &lt;div&gt;</span><br><span class="line">           &lt;input type=&apos;button&apos; value=&apos;改变&apos; onClick=&#123;this.change.bind(this)&#125; /&gt;&lt;br/&gt;</span><br><span class="line">           &lt;p&gt;&#123;this.state.msg&#125;&lt;/p&gt;</span><br><span class="line">         &lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，当我们点击按钮时，state数据会改变，同时视图也会更新。但是当你运行后，会发现视图并不会更新。原因在哪里？</p>
+<p>其实问题就出在了this.state上，我们不能直接使用this.state来变更状态，这样不会重新渲染组件，我们需要使用setState()方法来更新状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">change()&#123;</span><br><span class="line">   //this.state.msg = &apos;改变了&apos;</span><br><span class="line">   </span><br><span class="line">   this.setState(&#123;</span><br><span class="line">       msg:&apos;改变了&apos;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样，当状态更新后，组件才会重新渲染。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我也不知道怎么总结了，很多细节我也没说到，这算是自己的一个回顾吧。与vue相比，react似乎限制地更少，这也意味着我们可以更灵活地组织我们的代码。学习过程中应该大胆尝试，你想到的，react作者们可能也想到了。另外在vue里，组件不是必须的，更多的关注点是在数据层上，但在react里，组件是不可缺少的，一切开发都是基于组件的（至少现在我是这么觉得），这也反映了两大框架的不同思想吧，不管如何，多学学总不会差。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/react01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/28/react01/" itemprop="url">react初体验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T20:34:52+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我的日常开发中，我用的只有vue，对于大名鼎鼎的react和angular，我一点都不了解。想当初开始学框架时，纠结许久，无非是react更具挑战性，学会了再学vue更容易，而vue简单易上手且功能也不输react。当然这些都是从度娘听说的。</p>
+<p>使用vue许久，感觉还是很爽的，虽然开始时有点困难，毕竟那时es6也不熟悉。我不止一次庆幸我学的是vue，不仅是因为它易学易用，关键是它的生态也越来越好，国内很多新东西出来，都是先基于vue的，比如现在很火的mpvue小程序框架，就是基于vue的，这使得我学会一个vue就可以容易地做很多事。</p>
+<p>之所以有庆幸学的是vue的心态，可能也是因为不了解其他两大框架，先入为主地觉得vue才是王道。我不知道其他两个框架是否很难入手，是否更加强大，但是vue已经能够解决我的日常开发了，我本来也不想去接触react和angular的，可能觉得舍易求难是浪费时间。不过另一方面，我又很好奇，它们真的那么难吗？和vue比到底有什么区别？思来想去，我觉得还是直接试水比较好，不就是一个框架吗？想学就学咯！于是，我选择了react，因为angula似乎真的难点！</p>
+<h2 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h2><p>当初学vue时，我只要引入一个文件vue.js就好了，学react，我竟然要引入三个文件，天啊，我第一想法就是这个好复杂啊。</p>
+<ul>
+<li>react.js：实现React核心逻辑，且于具体的渲染引擎无关，从而可以跨平台公用。</li>
+<li>react-dom.js：包含了具体的DOM渲染更新逻辑，以及服务端渲染的逻辑，与浏览器相关。</li>
+<li>browser.js：支持JSX语法必须。</li>
+</ul>
+<p>在这里，我用的react是15.6.2版本，听说稳定点，browser.js是5.8.38版本，莫名不敢用新的，哈哈~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script src=&quot;./common/react.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=&quot;./common/react-dom.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=&quot;./common/browser.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">          ReactDOM.render(</span><br><span class="line">              &lt;h1&gt;hello world&lt;/h1&gt;,</span><br><span class="line">              document.getElementById(&apos;app&apos;)</span><br><span class="line">          )</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：script标签的type属性应写成text/babel，不然识别不了react语法</p>
+</blockquote>
+<p>上面代码是截取body部分，此时已经可以在浏览器里输出hello world了。虽然这段代码看起来很简单，但是我开始写时，我是恐慌的，因为ReactDOM.render()看起来很复杂的样子，为啥不是vue那样，直接两个花括号写到html里呢，那样多简单。</p>
+<p>确实很容易受vue影响，对于这种方法有点接受不了，但这其实并不复杂。ReactDOM.render()的第一参数很明显就是我们要输出到浏览器的内容，那么第二个参数其实是要输出到的位置。</p>
+<p>当我们明白两个参数的意义时，可能觉得懂了，其实不然。这里面可是有一个核心的东西，那就是JSX。在我还没接触JSX，总是听别人说JSX时，我觉得它可能是一个很复杂的语法。但当我接触后才知道，这货很“纯”，是一个奇怪的变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ele = &lt;h1&gt;hello world&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这种看起来可能有些奇怪的标签语法既不是字符串也不是 HTML，它就是JSX。那么不禁想问，它到底是什么数据类型？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof ele)</span><br><span class="line"></span><br><span class="line">//object</span><br></pre></td></tr></table></figure></p>
+<p>显然，它是一个对象，这么看的话，JavaScript是在内部给它处理了。事实也确实如此：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">    React.createElement(&apos;h1&apos;,null,&apos;hello world&apos;),</span><br><span class="line">    document.getElementById(&apos;app&apos;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;h1&gt;hello world&lt;/h1&gt;,</span><br><span class="line">    document.getElementById(&apos;app&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>上面两种方法结果完全相同。React.createElement()的第一个参数是标签，第二个参数是标签属性，第三个参数是标签内容。很显然这样写比较繁琐，且不直观。所以我们应该直接使用JSX语法，这也是官方建议的。</p>
+<p>其实我们直接写JSX语法，Babel 转译器也会把 JSX 转换成为 React.createElement() 方法的调用，而这个方法会返回一个对象，类似这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: &apos;h1&apos;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    children: &apos;Hello, world&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样的对象被称为 “React 元素”。它代表所有你在屏幕上看到的东西。React 通过读取这些对象来构建 DOM 并保持数据内容一致。</p>
+<p>关于JSX还有两点需要注意：    </p>
+<ol>
+<li><p>当有多个标签时，在最外层需加上一个包裹标签，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const ele = &lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JSX允许自由分段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const ele = &lt;div&gt;</span><br><span class="line">              &lt;span&gt;&lt;/span&gt;</span><br><span class="line">              &lt;p&gt;&lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在react里使用ReactDOM.render()来向页面渲染内容，它有两个参数，第一个参数是渲染内容，第二个参数是渲染位置。</p>
+<p>JSX是JavaScript的一种扩展语法，让一个变量直接赋值为标签。它与React.createElement()方法调用的结果是一样的，返回一个对象，叫做“React元素”。react推荐使用JSX语法。</p>
+<p>啰嗦一大堆，其实是表达自己的心情，初见react让我觉得复杂不好用，但是越接触越发现它是有它独特的魅力的。不管哪一个框架，我们都没资格去评定好不好，只有适不适合自己。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/koa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/koa/" itemprop="url">koa初体验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-23T16:08:58+08:00">
+                2018-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>出于对koa的好奇，于是想要了解下。</p>
+<blockquote>
+<p>koa 是由 Express 原班人马打造的，致力于成为一个更小、更富有表现力、更健壮的 Web 框架。 </p>
+</blockquote>
+<p>如果说koa是下一代web开发框架，那么上一代毫无疑问就是express了，其实用哪个都无所谓啦，只要自己用的顺手就好。反正我哪个都用不到，至少目前是的，哈哈。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>新建一个文件夹koaDemo，其内执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br><span class="line"></span><br><span class="line">npm install koa</span><br></pre></td></tr></table></figure></p>
+<p>我们讨论的是koa2。而koa默认安装的就是2的版本，所以无需指定为koa2。</p>
+<p>用koa来输出“hello world”，新建一个文件server.js，输入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const Koa = require(&apos;koa&apos;)</span><br><span class="line">const app = new Koa()</span><br><span class="line"></span><br><span class="line">app.use(async ctx =&gt; &#123;</span><br><span class="line">    ctx.body = &apos;hello world&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(3000)</span><br></pre></td></tr></table></figure></p>
+<p><code>node server.js</code>执行文件，此时打开浏览器，访问：<a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a>，熟悉的hello world就显示出来啦。</p>
+<p>可以看到，koa真的很精简，短短几行就能启动一个服务，虽然这些express都能办到，但是koa肯定也是有它的独到之处的。其中之一就是使用 async+await 处理异步，上面代码中已用到了async，接下来就介绍下async和await。</p>
+<h2 id="async与await"><a href="#async与await" class="headerlink" title="async与await"></a>async与await</h2><p>koa的一大优点就是No Callback，很多人使用koa也是因为这个。没有回调得力于async和await的使用，关于它们的概念我也讲不好，网上有很多文档可以参考，你只需要知道它可以解决回调地狱的问题，使异步操作更优雅。具体怎么个优雅法，我们来慢慢看。</p>
+<h3 id="回调函数处理异步"><a href="#回调函数处理异步" class="headerlink" title="回调函数处理异步"></a>回调函数处理异步</h3><p>在最初的时候，我们使用回调函数来处理异步，来看个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(&apos;执行了&apos;)</span><br><span class="line">    &#125;, 2000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br><span class="line">console.log(&apos;结束&apos;)</span><br><span class="line"></span><br><span class="line">// 执行结果</span><br><span class="line">结束</span><br><span class="line">执行了</span><br></pre></td></tr></table></figure></p>
+<p>上面代码的执行结果显然不符合预期的，所以我们需要借助回调函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function test(fn) &#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(&apos;执行了&apos;)</span><br><span class="line">        fn()</span><br><span class="line">    &#125;, 2000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(()=&gt;&#123;</span><br><span class="line">    console.log(&apos;结束&apos;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 执行结果</span><br><span class="line">执行了</span><br><span class="line">结束</span><br></pre></td></tr></table></figure></p>
+<p>显然，这才是我们想要的结果，回调虽然看起来很简单，但是当业务逻辑多起来时，容易形成回调地狱，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ajax(()=&gt;&#123;</span><br><span class="line">    ajax(()=&gt;&#123;</span><br><span class="line">        ajax(()=&gt;&#123;</span><br><span class="line">            // ...</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>三层，不能再多了！三层都快受不了了，更别说更复杂的了，当维护这样的代码时，是真的难受。所以后来es6给了一个好的解决方法，那就是promise。</p>
+<h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><p>关于promise诞生的前前后后我就不介绍了，因为我也不太熟悉啊，不过它的使用方法我们还是要掌握的，推荐阮一峰老师的es6教程，传送门：<a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">promise</a></p>
+<p>来写一个promise的例子，假设三个异步操作，依次执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function delay(val)&#123;</span><br><span class="line">    return new Promise((resolve, reject)=&gt;&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            resolve(val)</span><br><span class="line">        &#125;,2000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">delay(&apos;第一步执行&apos;)</span><br><span class="line"> .then((val)=&gt;&#123;</span><br><span class="line">     console.log(val)</span><br><span class="line">     return delay(&apos;第二步执行&apos;)</span><br><span class="line"> &#125;)</span><br><span class="line"> .then((val)=&gt;&#123;</span><br><span class="line">     console.log(val)</span><br><span class="line">     return delay(&apos;第三步执行&apos;)</span><br><span class="line"> &#125;)</span><br><span class="line"> .then((val)=&gt;&#123;</span><br><span class="line">     console.log(val)</span><br><span class="line"> &#125;)</span><br><span class="line"> </span><br><span class="line"> // 结果</span><br><span class="line">第一步执行</span><br><span class="line">第二步执行</span><br><span class="line">第三步执行</span><br></pre></td></tr></table></figure></p>
+<p>promise的使用，解决了一层层回调嵌套的窘境，这很大程度上解决了回调地狱的问题，清晰的代码结构也容易维护。</p>
+<p>promise很好用，但是代码量还是有点的，如果可以，何不试试async+await呢？</p>
+<h3 id="async-await"><a href="#async-await" class="headerlink" title="async+await"></a>async+await</h3><p>虽然我也想把这两个概念讲的很明白，但是我不能啊，网上有大佬讲的很清楚，在这我就简单说下。</p>
+<p>你需要知道的是，async用来定义一个异步函数，它总会返回异步对象，即promise，而await必须在async内部使用，用来处理异步结果。</p>
+<p>说不如做，就拿上面的例子来试下async的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function delay(val)&#123;</span><br><span class="line">    return new Promise((resolve, reject)=&gt;&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            resolve(val)</span><br><span class="line">        &#125;,2000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function start()&#123; </span><br><span class="line">  let result1 = await delay(&apos;第一次执行&apos;)</span><br><span class="line">  console.log(result1)</span><br><span class="line"></span><br><span class="line">  let result2 = await delay(&apos;第二次执行&apos;)</span><br><span class="line">  console.log(result2)</span><br><span class="line"></span><br><span class="line">  let result3 = await delay(&apos;第三次执行&apos;)</span><br><span class="line">  console.log(result3)</span><br><span class="line">&#125;</span><br><span class="line">start()</span><br><span class="line"></span><br><span class="line"> // 结果</span><br><span class="line">第一步执行</span><br><span class="line">第二步执行</span><br><span class="line">第三步执行</span><br></pre></td></tr></table></figure></p>
+<p>如上代码，同步的方式写异步，再也看不到回调了，是不是很爽。在koa中，重点使用async+await的方式，所以不懂得童鞋还得加把劲啊。即使不用koa，但这么炫酷的方法你确定不试试？</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>写完后才发现，我不是介绍koa的，反而介绍了async，虽然没讲得明白。麻雀虽小五脏俱全，koa的更多使用，下次再说咯。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="wungjyan" />
+          <p class="site-author-name" itemprop="name">wungjyan</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://wungjyan.github.io/demo/" target="_blank" title="练习册">
+                  
+                    <i class="fa fa-fw fa-book"></i>
+                  
+                    
+                      练习册
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wungjyan</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

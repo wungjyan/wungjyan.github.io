@@ -1,0 +1,2577 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="wj'blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="wj&#39;blog">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="wj&#39;blog">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wj&#39;blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/4/"/>
+
+
+
+
+
+  <title>wj'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">wj'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/binarytree2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/30/binarytree2/" itemprop="url">二叉树节点查找与删除</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T21:15:34+08:00">
+                2017-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在上一篇关于<a href="https://wungjyan.github.io/2017/09/28/binarytree/" target="_blank" rel="noopener">二叉树的js实现</a>的基础上，增加二叉树节点查找与删除操作。</p>
+<p>代码如下：</p>
+<p>注意：接口写在<code>BinaryTree()</code>中，部分代码已省略</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">function BinaryTree()&#123;</span><br><span class="line">    //...</span><br><span class="line">    </span><br><span class="line">    //最小值查找</span><br><span class="line">	this.min = function()&#123;</span><br><span class="line">		return minNode(root);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function minNode(node)&#123;</span><br><span class="line">		if (node) &#123;</span><br><span class="line">			while(node &amp;&amp; node.left !== null)&#123;</span><br><span class="line">				node = node.left;</span><br><span class="line">			&#125;</span><br><span class="line">			return node.text;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	//最大值查找</span><br><span class="line">	this.max = function()&#123;</span><br><span class="line">		return maxNode(root);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function maxNode(node)&#123;</span><br><span class="line">		if (node) &#123;</span><br><span class="line">			while(node &amp;&amp; node.right !== null)&#123;</span><br><span class="line">				node = node.right;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			return node.text;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	//判断某值是否存在</span><br><span class="line">	this.search = function(text)&#123;</span><br><span class="line">		return searchNode(root,text);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function searchNode(node,text)&#123;</span><br><span class="line">		if (!node) &#123;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;else if(text&gt;node.text)&#123;</span><br><span class="line">			return searchNode(node.right,text);</span><br><span class="line">		&#125;else if(text&lt;node.text)&#123;</span><br><span class="line">			return searchNode(node.left,text)</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	//删除节点</span><br><span class="line">	this.remove = function(text)&#123;</span><br><span class="line">		root = removeNode(root,text);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function removeNode(node,text)&#123;</span><br><span class="line">		if (node === null) &#123;</span><br><span class="line">			return null;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		if (text&lt;node.text) &#123;</span><br><span class="line">			node.left = removeNode(node.left,text);</span><br><span class="line">			return node;</span><br><span class="line">		&#125;else if (text&gt;node.text) &#123;</span><br><span class="line">			node.right = removeNode(node.right,text);</span><br><span class="line">			return node;</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			if (node.left === null &amp;&amp; node.right === null) &#123;</span><br><span class="line">				node = null;</span><br><span class="line">				return node;</span><br><span class="line">			&#125;</span><br><span class="line">			if (node.left === null) &#123;</span><br><span class="line">				node = node.right;</span><br><span class="line">				return node;</span><br><span class="line">			&#125;else if (node.right === null) &#123;</span><br><span class="line">				node = node.left;</span><br><span class="line">				return node;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			var aux =findMinNode(node.right);</span><br><span class="line">			node.text = aux.text;</span><br><span class="line">			node.right = removeNode(node.right,aux.text);</span><br><span class="line">			return node;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function findMinNode(node)&#123;</span><br><span class="line">		if (node) &#123;</span><br><span class="line">			while(node &amp;&amp; node.left !== null)&#123;</span><br><span class="line">				node = node.left;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			return node;</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    //...</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">//查找最小值</span><br><span class="line">//console.log(binaryTree.min());</span><br><span class="line"></span><br><span class="line">//查找最大值</span><br><span class="line">//console.log(binaryTree.max());</span><br><span class="line"></span><br><span class="line">//判断值是否存在</span><br><span class="line">//console.log(binaryTree.search(7) ? &apos;7 is found&apos; : &apos;7 is no found&apos;);</span><br><span class="line">//console.log(binaryTree.search(9) ? &apos;9 is found&apos; : &apos;9 is no found&apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//删除节点</span><br><span class="line">//binaryTree.remove(10);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/binarytree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/28/binarytree/" itemprop="url">js实现二叉树及遍历</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-28T19:30:24+08:00">
+                2017-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是二叉树"><a href="#什么是二叉树" class="headerlink" title="什么是二叉树"></a>什么是二叉树</h2><p>今天在做百度前端技术学院的任务时，遇到一题涉及二叉树算法的，然而我是一脸懵逼，因为没接触过二叉树算法，所以无存下手。后来上网找资料，渐渐明白了是个什么东西。     </p>
+<p><a href="https://segmentfault.com/a/1190000000740261#articleHeader0" target="_blank" rel="noopener">这是一篇关于二叉树的详细介绍文章</a></p>
+<p>搞清楚了二叉树是啥，然后怎么实现呢，显然，我需要用js实现，于是又各种找资料，实话说，资料还挺多的，不过也很杂，现在做个总结。  </p>
+<h2 id="js实现二叉树"><a href="#js实现二叉树" class="headerlink" title="js实现二叉树"></a>js实现二叉树</h2><p>说明：将一个数组的值按照二叉树规则遍历，形成二叉树结构。        </p>
+<p>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function BinaryTree()&#123;</span><br><span class="line"></span><br><span class="line">	//定义新节点的构造函数</span><br><span class="line">	function Node(text)&#123;</span><br><span class="line">		this.text = text;</span><br><span class="line">		this.left = null;</span><br><span class="line">		this.right = null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//定义根节点</span><br><span class="line">	var root = null;  </span><br><span class="line"></span><br><span class="line">	//判断根节点</span><br><span class="line">	this.insert = function(text)&#123;</span><br><span class="line">		var newNode = new Node(text);</span><br><span class="line">		if (root === null) &#123;</span><br><span class="line">			root = newNode;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			insertNode(root,newNode);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	//中间节点的处理函数</span><br><span class="line">	function insertNode(node,newNode)&#123;</span><br><span class="line"></span><br><span class="line">		if (newNode.text &lt; node.text) &#123;</span><br><span class="line">			if (node.left === null) &#123;</span><br><span class="line">				node.left = newNode;</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				insertNode(node.left,newNode);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			if (node.right === null) &#123;</span><br><span class="line">				node.right = newNode;</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				insertNode(node.right,newNode);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//定义数组用来存储各节点的数值</span><br><span class="line">var nodes = [8,3,10,1,6,14,4,7,13];</span><br><span class="line"></span><br><span class="line">//创建二叉树实例</span><br><span class="line">var binaryTree = new BinaryTree();</span><br><span class="line"></span><br><span class="line">//遍历数组，将数组值按照二叉树规则插入</span><br><span class="line">for(var i=0;i&lt;nodes.length;i++)&#123;</span><br><span class="line">	binaryTree.insert(nodes[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码最终形成的二叉树结构如下图：<br><img src="http://oweyznv3o.bkt.clouddn.com/binarytree.png" alt="二叉树结构">       </p>
+<p>规则说明：       </p>
+<ul>
+<li><p>根据取到的数组值，先判断二叉树中根节点是否存在，如果不存在，就将第一个值作为根节点，即上述的8是根节点值。</p>
+</li>
+<li><p>有了根节点后，再判断后面的值与根节点值大小关系。如果小于根节点值，且左边无值，就放在左边，如果左边已经有值，就回调遍历。如果大于根节点值，且右边无值，就放在右边，如果右边已经有值，就回调遍历。参考上面代码中<code>insertNode</code>函数</p>
+</li>
+</ul>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>二叉树的遍历(traversing binary tree)是指从根结点出发，按照某种次序依次访问二叉树中所有结点，使得每个结点被访问一次且仅被访问一次。     </p>
+<p>二叉树的遍历有三种方式，如下： </p>
+<ol>
+<li><p>前序遍历（DLR），首先访问根结点，然后遍历左子树，最后遍历右子树。简记根-左-右。</p>
+</li>
+<li><p>中序遍历（LDR），首先遍历左子树，然后访问根结点，最后遍历右子树。简记左-根-右。</p>
+</li>
+<li><p>后序遍历（LRD），首先遍历左子树，然后遍历右子树，最后访问根结点。简记左-右-根。 </p>
+</li>
+</ol>
+<p>在上述代码中的<code>BinaryTree()</code>中添加遍历接口（ <em>… 表示省略的代码</em> ）:   </p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function BinaryTree()&#123;</span><br><span class="line">    </span><br><span class="line">  //...</span><br><span class="line">    </span><br><span class="line">    //中序遍历</span><br><span class="line">	this.inOrderTraverse = function(callback)&#123;</span><br><span class="line">		inOrderTraverseNode(root,callback);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function inOrderTraverseNode(node,callback)&#123;</span><br><span class="line">		if(node !== null)&#123;</span><br><span class="line">			inOrderTraverseNode(node.left,callback);</span><br><span class="line">			callback(node.text);</span><br><span class="line">			inOrderTraverseNode(node.right,callback);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">  //...</span><br><span class="line">  </span><br><span class="line">  //定义回调函数，打印节点数值</span><br><span class="line">	var callback = function(text)&#123;</span><br><span class="line">		console.log(text);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line">binaryTree.inOrderTraverse(callback);</span><br><span class="line"></span><br><span class="line">//打印结果</span><br><span class="line">1 3 4 6 7 8 10 13 14</span><br></pre></td></tr></table></figure>
+<h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function BinaryTree()&#123;</span><br><span class="line">    </span><br><span class="line">  //...</span><br><span class="line">    </span><br><span class="line">    //前序遍历</span><br><span class="line">	this.preOrderTraverse = function(callback)&#123;</span><br><span class="line">		preOrderTraverseNode(root,callback);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function preOrderTraverseNode(node,callback)&#123;</span><br><span class="line">		if (node !== null) &#123;</span><br><span class="line">			callback(node.text);</span><br><span class="line">			preOrderTraverseNode(node.left,callback);</span><br><span class="line">			preOrderTraverseNode(node.right,callback);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">  //...</span><br><span class="line">  </span><br><span class="line">  //定义回调函数，打印节点数值</span><br><span class="line">	var callback = function(text)&#123;</span><br><span class="line">		console.log(text);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line">binaryTree.preOrderTraverse(callback);</span><br><span class="line"></span><br><span class="line">//打印结果</span><br><span class="line">8 3 1 6 4 7 10 14 13</span><br></pre></td></tr></table></figure>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function BinaryTree()&#123;</span><br><span class="line">    </span><br><span class="line">  //...</span><br><span class="line">    </span><br><span class="line">    //后序遍历</span><br><span class="line">	this.postOrderTraverse = function(callback)&#123;</span><br><span class="line">		postOrderTraverseNode(root,callback);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function postOrderTraverseNode(node,callback)&#123;</span><br><span class="line">		if (node !== null) &#123;</span><br><span class="line">			postOrderTraverseNode(node.left,callback);</span><br><span class="line">			postOrderTraverseNode(node.right,callback);</span><br><span class="line">			callback(node.text);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">  //...</span><br><span class="line">  </span><br><span class="line">  //定义回调函数，打印节点数值</span><br><span class="line">	var callback = function(text)&#123;</span><br><span class="line">		console.log(text);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line">binaryTree.postOrderTraverse(callback);</span><br><span class="line"></span><br><span class="line">//打印结果</span><br><span class="line">1 4 7 6 3 13 14 10 8</span><br></pre></td></tr></table></figure>
+<p>注意：遍历代码是写在<code>BinaryTree()</code>中的，部分代码已省略</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/jsonp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/23/jsonp/" itemprop="url">关于JSONP跨域</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T20:05:27+08:00">
+                2017-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JSONP是干嘛的"><a href="#JSONP是干嘛的" class="headerlink" title="JSONP是干嘛的"></a>JSONP是干嘛的</h2><p>提到JSONP，首先想到的就是AJAX，因为人们时常将它们放在一起说。那么，它们到底是什么关系呢？  </p>
+<p>其实它们本身并没有实质的关系，只是JSONP可以解决AJAX一件办不到的事情。哪件事情是AJAX办不到的？就是跨域！   </p>
+<p>简单来说，JSONP就是一种跨域的手段。</p>
+<p>跨域：意思是说，在当前网址去获取另一个域下的数据。浏览器有一个“同源策略”——两个页面的域名必须在同域的情况下，才能允许通信。  </p>
+<blockquote>
+<p>所谓同源是指，域名，协议，端口相同。   </p>
+</blockquote>
+<p>浏览器的“同源策略”有效地阻止了很多危险行为，因为在没有“同源策略”的情况下，网站的信息可以被所有人任意获取，那么用户的隐私就受不到保护了，这是很可怕的。但事情有利有弊，“同源策略”也带来了麻烦，这时如果我们想从信任的网站获取数据，显然也做不到了。      </p>
+<h2 id="JSONP怎么用"><a href="#JSONP怎么用" class="headerlink" title="JSONP怎么用"></a>JSONP怎么用</h2><p>可能JSONP听起来很高大上，但其实其原理很简单，是我们每天都接触的。”同源策略”虽然很厉害，阻止了一个页面到另一个页面的通信，可是src指向的路径它放过了。提到src，我们再熟悉不过了，<code>&lt;img&gt;</code>、<code>&lt;script&gt;</code>和<code>&lt;iframe&gt;</code>都有src属性。JSONP就是利用<code>&lt;script&gt;</code>标签来实现跨域通信的。  </p>
+<p>讲一个简单的小例子：     </p>
+<p>现在假设有两个域，需要互相通信，分别是：<code>www.aaa.com</code>和<code>www.bbb.com</code>     </p>
+<p><code>www.aaa.com</code>中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&apos;http://www.bbb.com/abc.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    function abc(data)&#123;</span><br><span class="line">        alert(data[&apos;name&apos;]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>www.bbb.com/abc.js</code>中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abc(&#123;&apos;name&apos;:&apos;wungjyan&apos;,&apos;age&apos;:23&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>结果页面弹出了<code>wungjyan</code>。   </p>
+<p>JSONP工作过程：通过<code>&lt;script&gt;</code>标签，获取到<code>www.bbb.com/abc.js</code>，里面有一个函数<code>abc</code>，函数会被加载到<code>www.aaa.com</code>。加载完成后，就执行<code>abc</code>函数，而在<code>www.aaa.com</code>中已经定义好了一个<code>abc</code>函数，函数里写了一些处理数据的语句。这样就简单地实现了跨域访问数据了，这也就是JSONP的原理了。  </p>
+<h2 id="JSONP实例"><a href="#JSONP实例" class="headerlink" title="JSONP实例"></a>JSONP实例</h2><p>运用JSONP做一个类似百度搜索下拉框。  </p>
+<p>在这之前，先取到百度的接口。 </p>
+<p>打开百度首页，在输入框随便输入点什么，比如，输入a，<br><img src="http://ov49mg242.bkt.clouddn.com/jsonp_img1.png" alt="">   </p>
+<p>打开Network,点击all，找到地址<br><img src="http://ov49mg242.bkt.clouddn.com/jsonp_img2.png" alt="">    </p>
+<p>这个地址是：<code>https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;json=1&amp;p=3&amp;sid=23534_1436_21084&amp;req=2&amp;csor=1&amp;cb=jQuery110206731850454839907_1506167060552&amp;_=1506167060555</code>          </p>
+<p>只取本次实例需要的参数，精简为：<code>https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&amp;cb=jQuery110206731850454839907_1506167060552&amp;_=1506167060555</code>          </p>
+<p>其中wd是关键字，即输入的内容，cb是回调函数，百度内定的，cb后面的是函数名，可以修改，相当于上面小例子中的<code>abc</code>函数。       </p>
+<p>现在就修改为abc，并输入到浏览器地址栏中，看看得到什么内容：<br><img src="http://ov49mg242.bkt.clouddn.com/jsonp_img3.png" alt="">  </p>
+<p><img src="http://ov49mg242.bkt.clouddn.com/jsonp_img4.png" alt="">   </p>
+<p>可以看到，这个abc函数里的参数是一个json数据，其中s就是我们需要的数据。     </p>
+<p>完整代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;百度下拉菜单&lt;/title&gt;</span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">		#text&#123;</span><br><span class="line">			width: 300px;</span><br><span class="line">			height: 30px;</span><br><span class="line">			border:1px solid #6495ED;</span><br><span class="line">			line-height: 30px;</span><br><span class="line">			font-size: 16px;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		#ul1&#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			padding:0;</span><br><span class="line">			border:1px solid #6495ED;</span><br><span class="line">			border-top: none;</span><br><span class="line">			width: 300px;</span><br><span class="line">			display: none;</span><br><span class="line">		&#125;</span><br><span class="line">		#ul1 li&#123;</span><br><span class="line">			list-style: none;</span><br><span class="line">			margin-top: 5px;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		#ul1 li a&#123;</span><br><span class="line">			font-size: 16px;</span><br><span class="line">			color: #696969;</span><br><span class="line">			text-decoration: none;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; id=&quot;text&quot;&gt;</span><br><span class="line">&lt;ul id=&quot;ul1&quot;&gt;</span><br><span class="line">		</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	 //定义abc函数，添加数据处理程序</span><br><span class="line">	function abc(data)&#123;</span><br><span class="line">		var oUl=document.getElementById(&apos;ul1&apos;);</span><br><span class="line">		var html=&apos;&apos;;</span><br><span class="line">		if (data.s.length) &#123;</span><br><span class="line">			oUl.style.display=&apos;block&apos;;</span><br><span class="line">			for(var i=0;i&lt;data.s.length;i++)&#123;</span><br><span class="line">				html+=&quot;&lt;li&gt;&lt;a target=&apos;_blank&apos; href=&apos;https://www.baidu.com/s?wd=&quot;+data.s[i]+&quot;&apos;&gt;&quot;+data.s[i]+&quot;&lt;/a&gt;&lt;/li&gt;&quot;;</span><br><span class="line">			&#125;</span><br><span class="line">			oUl.innerHTML=html;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			oUl.style.display=&apos;none&apos;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	var oT=document.getElementById(&apos;text&apos;);</span><br><span class="line">	var oBtn=document.getElementById(&apos;btn&apos;);</span><br><span class="line">	var oUl=document.getElementById(&apos;ul1&apos;);</span><br><span class="line"></span><br><span class="line">	oT.onkeyup=function()&#123;</span><br><span class="line">		if (oT.value!=&apos;&apos;) &#123;</span><br><span class="line">			var aScript=document.createElement(&apos;script&apos;);</span><br><span class="line">			aScript.src=&apos;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=&apos;+oT.value+&apos;&amp;cb=abc&apos;;</span><br><span class="line">			document.body.appendChild(aScript);</span><br><span class="line">				</span><br><span class="line">			if(aScript)&#123;   //避免过多script标签</span><br><span class="line">				document.body.removeChild(aScript);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			oUl.style.display=&apos;none&apos;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>代码中，动态添加<code>&lt;script&gt;</code>标签，加载完成后就执行<code>abc</code>函数，使获取到的数据展示在页面中。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/19/css-layout2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/19/css-layout2/" itemprop="url">CSS特殊布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T21:00:37+08:00">
+                2017-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="三列布局"><a href="#三列布局" class="headerlink" title="三列布局"></a>三列布局</h2><p>三列布局的特征是两侧两列固定宽度，中间列自适应宽度。</p>
+<h3 id="1-margin-float"><a href="#1-margin-float" class="headerlink" title="1.margin + float"></a>1.margin + float</h3><p>原理说明：设置两个侧栏分别向左向右浮动，中间列的宽度根据浏览器窗口自适应。对中间面板设置左右外边距，margin-left的值为左侧栏的宽度，margin-right的值为右侧栏的宽度。</p>
+<p>DOM文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;center&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>CSS样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#left&#123;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	float: left;</span><br><span class="line">	background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">#right&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	float: right;</span><br><span class="line">	background-color: yellow;</span><br><span class="line">&#125;</span><br><span class="line">#center&#123;</span><br><span class="line">	margin-left: 210px;</span><br><span class="line">	margin-right:110px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	background-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>==注意==：DOM文档的书写顺序，先写两侧栏，再写中间主面板，更换后则侧栏会被挤到下一列   </p>
+<h3 id="2-position-margin"><a href="#2-position-margin" class="headerlink" title="2.position + margin"></a>2.position + margin</h3><p>原理说明：通过绝对定位将两个侧栏固定，中间列自适应。对中间面板设置左右外边距，margin-left的值为左侧栏的宽度，margin-right的值为右侧栏的宽度</p>
+<p>CSS样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">	margin:0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">#left&#123;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: 0;</span><br><span class="line">	left: 0;</span><br><span class="line">	background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">#right&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: 0;</span><br><span class="line">	right: 0;</span><br><span class="line">	background-color: yellow;</span><br><span class="line">&#125;</span><br><span class="line">#center&#123;</span><br><span class="line">	height: 100px;</span><br><span class="line">	margin:0 110px 0 210px;</span><br><span class="line">	background-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="两列布局"><a href="#两列布局" class="headerlink" title="两列布局"></a>两列布局</h2><p>原理和上面三列布局一样，去掉一个侧栏   </p>
+<h3 id="1-margin-float-1"><a href="#1-margin-float-1" class="headerlink" title="1.margin + float"></a>1.margin + float</h3><p>DOM文档   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;main&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>CSS样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#left&#123;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	float: left;</span><br><span class="line">	background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">		</span><br><span class="line">#main&#123;</span><br><span class="line">	height: 100px;</span><br><span class="line">	margin-left: 210px;</span><br><span class="line">	background-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-position-margin-1"><a href="#2-position-margin-1" class="headerlink" title="2.position + margin"></a>2.position + margin</h3><p>CSS样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">	margin:0;</span><br><span class="line">	padding:0;</span><br><span class="line">&#125;</span><br><span class="line">#left&#123;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: 0;</span><br><span class="line">	left: 0; </span><br><span class="line">	background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">		</span><br><span class="line">#main&#123;</span><br><span class="line">	height: 100px;</span><br><span class="line">	margin-left: 210px;</span><br><span class="line">	background-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h2><p>左右两栏固定宽度，中间部分自适应   </p>
+<p>步骤：</p>
+<ol>
+<li>三者都设置向左浮动</li>
+<li>设置中间主面板宽度为100%，设置两侧栏的宽度。</li>
+<li>设置 负边距，左侧的设置负左边距为100%，右侧的设置负左边距为负的自身宽度。</li>
+<li>设置父级的padding值给左右两栏留出空间。</li>
+<li>设置两个左右两侧为相对定位，左侧的left值为负的左侧的宽度，右侧的right值为负的右侧宽度。 </li>
+</ol>
+<p>DOM文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;content&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;main&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>CSS样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">.main&#123;</span><br><span class="line">    width:100%;</span><br><span class="line">    height:100px;</span><br><span class="line">    float:left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    height:100px;</span><br><span class="line">    float:left;</span><br><span class="line">    margin-left:-100%;</span><br><span class="line">    position:relative;</span><br><span class="line">    left:-200px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right&#123;</span><br><span class="line">    width:100px;</span><br><span class="line">    height:100px;</span><br><span class="line">    float:left;</span><br><span class="line">    margin-left:-100px;</span><br><span class="line">    position:relative;</span><br><span class="line">    right:-100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#content&#123;</span><br><span class="line">    padding:0 100px 0 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>==注意==：DOM元素的书写顺序不得更改  </p>
+<h2 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h2><p>原理说明：双飞翼布局和圣杯布局的思想有些相似，都利用了浮动和负边距，但双飞翼布局在圣杯布局上做了改进，在main元素上加了一层div, 并设置margin,由于两侧栏的负边距都是相对于main-wrap而言，main的margin值变化便不会影响两个侧栏，因此省掉了对两侧栏设置相对布局的步骤。    </p>
+<p>步骤：</p>
+<ol>
+<li>三者都设置向左浮动。</li>
+<li>设置main-wrap宽度为100%，设置两个侧栏的宽度。</li>
+<li>设置 负边距，left设置负左边距为100%，right设置负左边距为负的自身宽度。</li>
+<li>设置main的margin值给左右两个子面板留出空间。</li>
+</ol>
+<p>DOM文档<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;main-wrap&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;main&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>CSS样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#main-wrap&#123;</span><br><span class="line">	width: 100%;</span><br><span class="line">	height: 100px;</span><br><span class="line">	float: left;</span><br><span class="line">	background-color: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left&#123;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	float: left;</span><br><span class="line">	margin-left: -100%;</span><br><span class="line">	background-color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	float: left;</span><br><span class="line">	margin-left: -100px;</span><br><span class="line">	background-color: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.main&#123;</span><br><span class="line">	margin:0 100px 0 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>待续</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/vue-Slots/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/10/vue-Slots/" itemprop="url">Vue组件之Slots分发内容</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T15:08:11+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在使用组件时，父组件中的内容会被丢弃，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component&gt;</span><br><span class="line">    &lt;p&gt;这是一些内容&lt;/p&gt;</span><br><span class="line">&lt;/my-component&gt;</span><br></pre></td></tr></table></figure></p>
+<p>组件<code>my-component</code>中的<code>p</code>标签是不会被渲染的，但实际开发中，我们可能希望运用到父组件中的内容，因为在使用组件时，常常需要这样组合它们：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;app&gt;</span><br><span class="line">  &lt;app-header&gt;&lt;/app-header&gt;</span><br><span class="line">  &lt;app-footer&gt;&lt;/app-footer&gt;</span><br><span class="line">&lt;/app&gt;</span><br></pre></td></tr></table></figure></p>
+<p>为了让组件可以组合，我们需要一种方式来混合父组件的内容与子组件自己的模板。这个过程被称为 内容分发，vue提供了一个API，使用特殊的<code>&lt;slot&gt;</code>元素作为原始内容的插槽。</p>
+<h2 id="单个Slot"><a href="#单个Slot" class="headerlink" title="单个Slot"></a>单个Slot</h2><p>要想使用父组件的内容，需要在子组件中加入<code>&lt;slot&gt;</code>插口。 </p>
+<p>假设 <code>my-component</code> 组件有下面模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;h3&gt;我是子组件的标题&lt;/h3&gt;</span><br><span class="line">    &lt;p&gt;我是子组件的内容&lt;/p&gt;</span><br><span class="line">    &lt;slot&gt;</span><br><span class="line">        只有在没有要分发的内容时才会显示。</span><br><span class="line">    &lt;/slot&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>父组件模板：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;我是父组件的标题&lt;/h2&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;my-component&gt;</span><br><span class="line">    &lt;p&gt;我是父组件的内容&lt;/p&gt;</span><br><span class="line">&lt;/my-component&gt;</span><br></pre></td></tr></table></figure></p>
+<p>渲染结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;我是父组件的标题&lt;/h2&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;h3&gt;我是子组件的标题&lt;/h3&gt;</span><br><span class="line">    &lt;p&gt;我是子组件的内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我是父组件的内容&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>可知，父组件中的内容被渲染到子组件的slot插口所在的DOM位置，并替换掉slot标签本身。     </p>
+<p>说明：</p>
+<blockquote>
+<p>当子组件模板只有一个没有属性的 slot 时，父组件整个内容片段将插入到 slot 所在的 DOM 位置，并替换掉 slot 标签本身    </p>
+</blockquote>
+<p>最初在<code>&lt;slot&gt;</code>标签中的任何内容都被视为备用内容，在父组件中无内容时显示。   </p>
+<h2 id="具名Slot"><a href="#具名Slot" class="headerlink" title="具名Slot"></a>具名Slot</h2><blockquote>
+<p><slot> 元素可以用一个特殊的属性 name 来配置如何分发内容。多个 slot 可以有不同的名字。具名 slot 将匹配内容片段中有对应 slot 特性的元素。 </slot></p>
+</blockquote>
+<p>例子：    </p>
+<p>父组件模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component&gt;</span><br><span class="line"></span><br><span class="line">            &lt;p slot=&quot;one&quot;&gt;这是替换第一个内容&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">            &lt;template slot=&quot;two&quot;&gt;</span><br><span class="line">                &lt;p&gt;替换第二个内容&lt;/p&gt;</span><br><span class="line">                &lt;span&gt;一个span标签，替换第二个内容&lt;/span&gt;</span><br><span class="line">            &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">            &lt;p slot=&quot;three&quot;&gt;这是替换第三个内容&lt;/p&gt;</span><br><span class="line">            </span><br><span class="line">&lt;/my-component&gt;</span><br></pre></td></tr></table></figure>
+<p>子组件模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;slot name=&quot;one&quot;&gt;&lt;p&gt;这是子组件第1个内容&lt;/p&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;slot name=&quot;two&quot;&gt;&lt;p&gt;这是子组件第2个内容&lt;/p&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;slot name=&quot;three&quot;&gt;&lt;p&gt;这是子组件第3个内容&lt;/p&gt;&lt;/slot&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>渲染结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是替换第一个内容&lt;/p&gt;</span><br><span class="line">&lt;p&gt;替换第二个内容&lt;/p&gt;</span><br><span class="line">&lt;span&gt;一个span标签，替换第二个内容&lt;/span&gt;</span><br><span class="line">&lt;p&gt;这是替换第三个内容&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/vue-dataflow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/08/vue-dataflow/" itemprop="url">Vue组件之单向数据流</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T23:45:35+08:00">
+                2017-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是单向数据流？"><a href="#什么是单向数据流？" class="headerlink" title="什么是单向数据流？"></a>什么是单向数据流？</h2><blockquote>
+<p>prop 是单向绑定的：当父组件的属性变化时，将传导给子组件，但是不会反过来。这是为了防止子组件无意修改了父组件的状态——这会让应用的数据流难以理解。</p>
+</blockquote>
+<blockquote>
+<p>另外，每次父组件更新时，子组件的所有 prop 都会更新为最新值。这意味着你不应该在子组件内部改变 prop。如果你这么做了，Vue 会在控制台给出警告。 </p>
+</blockquote>
+<p>这是官网给的说明，说白了就是父组件通过props传递给子组件的数据不能在子组件里修改，否则浏览器会报错。  </p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="先来看看如果不听话的结果："><a href="#先来看看如果不听话的结果：" class="headerlink" title="先来看看如果不听话的结果："></a>先来看看如果不听话的结果：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">       &lt;my-input :val=&quot;1&quot;&gt;&lt;/my-input&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    Vue.component(&apos;my-input&apos;,&#123;</span><br><span class="line">        props:[&apos;val&apos;],</span><br><span class="line">        template:&apos;&lt;input type=&quot;button&quot; :value=&quot;val&quot; @click=&quot;changeVal&quot;&gt;&apos;,</span><br><span class="line"></span><br><span class="line">        methods:&#123;</span><br><span class="line">            changeVal:function()&#123;</span><br><span class="line">                this.val++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:&apos;#app&apos;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，父组件传递给子组件一个val数值，绑定在value上，并给按钮添加一个点击事件，点击时val做加一运算。在浏览器中运行，发现效果可以实现，即val值增加了，咋一眼会觉得单向数据流扯淡( • ̀ω•́ )✧。  当然，这是天真的想法。打开控制台，你会发现一行大大的红字：</p>
+<blockquote>
+<p>[Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop’s value. Prop being mutated: “val”  </p>
+</blockquote>
+<p>显然，不听话是会吃亏的。浏览器报错了，并友情地提示了怎么解决，你看到了吗？    </p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
+<li><p>如果你想把它当作局部数据来用，那么就定义一个局部变量，并用 prop 的值初始化它；</p>
+</li>
+<li><p>如果你想将它处理成其它数据输出，那么就定义一个计算属性，处理 prop 的值并返回。</p>
+</li>
+</ol>
+<p>首先看第一种方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-input&apos;,&#123;</span><br><span class="line">           props:[&apos;val&apos;],</span><br><span class="line">           </span><br><span class="line">           template:&apos;&lt;input type=&quot;button&quot; :value=&quot;counter&quot; @click=&quot;changeVal&quot;&gt;&apos;,</span><br><span class="line">           </span><br><span class="line">           data:function()&#123;</span><br><span class="line">               return &#123;counter:this.val&#125;</span><br><span class="line">           &#125;,</span><br><span class="line">           </span><br><span class="line">           methods:&#123;</span><br><span class="line">               changeVal:function()&#123;</span><br><span class="line">                   this.counter++;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
+<p>上面代码中，将传入的<code>val</code>赋给<code>counter</code>，然后直接操作<code>this.counter</code>,这时浏览器就不会报错了，注意data的书写格式，必须是函数。    </p>
+<p>第二种方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-input&apos;,&#123;</span><br><span class="line">            props:[&apos;val&apos;],</span><br><span class="line">            template:&apos;&lt;input type=&quot;button&quot; :value=&quot;changeVal&quot;&gt;&apos;,</span><br><span class="line">            computed:&#123;</span><br><span class="line">                changeVal:function()&#123;</span><br><span class="line">                    return this.val+100;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>这时，我们希望将传过来的值加100，得到新的数值，通过计算属性轻松实现。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/vue-communication/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/08/vue-communication/" itemprop="url">Vue组件之父子通信</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T17:38:28+08:00">
+                2017-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>vue组件的通信部分是很重要的，组件是协同工作的，这意味着它们要互相通信。看官网文档时，我是比较吃力的，谁让我是菜鸟呢 o(￣▽￣)ｄ      </p>
+<p>引用官网一段话：    </p>
+<blockquote>
+<p>在 Vue 中，父子组件的关系可以总结为 props down, events up。父组件通过 props 向下传递数据给子组件，子组件通过 events 给父组件发送消息    </p>
+</blockquote>
+<p>并配图：<br><img src="https://cn.vuejs.org/images/props-events.png" alt=""></p>
+<p>刚开始看的时候，我是懵逼的，后来敲了几遍，初步了解了怎么回事，为啥是初步呢，因为没踩过坑啊，也不知道坑在哪啊。哎，我废话真多。  </p>
+<h2 id="父组件向子组件通信"><a href="#父组件向子组件通信" class="headerlink" title="父组件向子组件通信"></a>父组件向子组件通信</h2><h3 id="使用props传递数据"><a href="#使用props传递数据" class="headerlink" title="使用props传递数据"></a>使用props传递数据</h3><blockquote>
+<p>组件实例的作用域是孤立的。这意味着不能 (也不应该) 在子组件的模板内直接引用父组件的数据。要让子组件使用父组件的数据，我们需要通过子组件的 props 选项</p>
+</blockquote>
+<p>先前写了一篇<a href="https://wungjyan.github.io/2017/08/24/vue-learn2/" target="_blank" rel="noopener">Vue组件之props传递数据</a>，这其实就是一个父向子传递数据的过程。在这，我再举一个例子。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">       &lt;my-button val=&quot;toggle&quot;&gt;&lt;/my-button&gt;</span><br><span class="line">       &lt;my-button val=&quot;search&quot;&gt;&lt;/my-button&gt;</span><br><span class="line">       &lt;my-button val=&quot;click&quot;&gt;&lt;/my-button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">   &lt;script&gt;</span><br><span class="line"></span><br><span class="line">       Vue.component(&apos;my-button&apos;,&#123;</span><br><span class="line">           props:[&apos;val&apos;],</span><br><span class="line">           template:&apos;&lt;input type=&quot;button&quot; :value=&quot;val&quot;&gt;&apos;</span><br><span class="line">       &#125;);</span><br><span class="line"></span><br><span class="line">       var vm=new Vue(&#123;</span><br><span class="line">           el:&apos;#app&apos;,</span><br><span class="line">       &#125;);</span><br><span class="line">   &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，<code>div</code>部分是父级，<code>Vue.component(...)</code>部分是子级，子组件要显式地用<code>props</code>选项声明它期待获得的数据。 </p>
+<p>在这里，子级想要获取的就是<code>val</code>，这是父级传递过来的，是手动添加的自定义属性，属性值是希望展现的内容。我希望每个按钮实现不同功能，所以传递不同的<code>val</code>值，并动态绑定在子级的<code>value</code>上，格式如上。要注意的是，必须动态绑定在<code>value</code>上，即用<code>v-bind</code>，缩写为<code>:</code>。   </p>
+<p>结果：</p>
+<p><img src="http://ov49mg242.bkt.clouddn.com/pToc.png" alt=""></p>
+<p>这其实是这样的一个过程：我定义了一个按钮组件，需要在页面中多处引用，它们的样式是一致的，但是我想它们实现不同的功能，于是通过在父组件上绑定自定义属性，并使用props传递给子组件，去修改子组件的一小部分。从上面代码可以看出，这很方便。（我希望我没说错）    </p>
+<h2 id="子组件向父组件通信"><a href="#子组件向父组件通信" class="headerlink" title="子组件向父组件通信"></a>子组件向父组件通信</h2><h3 id="使用自定义事件"><a href="#使用自定义事件" class="headerlink" title="使用自定义事件"></a>使用自定义事件</h3><ul>
+<li>使用 $on(eventName) 监听事件</li>
+<li>使用 $emit(eventName) 触发事件   </li>
+</ul>
+<p>这到底是几个意思呢，我也是懵逼的，我按着自己的理解，写了一个例子。  </p>
+<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">       &lt;p&gt;&#123;&#123;count&#125;&#125;&lt;/p&gt;</span><br><span class="line">       &lt;button-counter @add=&quot;addCount&quot;&gt;&lt;/button-counter&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">       Vue.component(&apos;button-counter&apos;,&#123;</span><br><span class="line">           template:&apos;&lt;input type=&quot;button&quot; value=&quot;change count&quot; @click=&quot;changeCount&quot;&gt;&apos;,</span><br><span class="line">           methods:&#123;</span><br><span class="line">               changeCount:function()&#123;</span><br><span class="line">                   this.$emit(&apos;add&apos;);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line"></span><br><span class="line">       var vm=new Vue(&#123;</span><br><span class="line">           el:&apos;#app&apos;,</span><br><span class="line">           data:&#123;</span><br><span class="line">               count:1</span><br><span class="line">           &#125;,</span><br><span class="line">           methods:&#123;</span><br><span class="line">               addCount:function()&#123;</span><br><span class="line">                   this.count++;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>暗示自己不要被代码吓到，我写的太简单了。子组件<code>button-counter</code>是一个按钮，我需要点击它去改变父组件的<code>count</code>值。步骤：   </p>
+<ul>
+<li>在子组件，即按钮上添加<code>changeCount</code>点击事件</li>
+<li>在<code>changeCount</code>事件函数中，添加代码<code>this.$emit(&#39;add&#39;)</code>，这个<code>add</code>是自定义事件，需要添加到父级上，<code>this.$emit()</code>就当做固定格式吧</li>
+<li>在父级添加<code>add</code>自定义事件，用<code>v-on</code>指令，缩写为<code>@</code>，如上</li>
+<li>在<code>add</code>自定义事件上添加事件函数<code>addCount</code>，<code>addCount</code>定义在实例里，这个函数里就是具体操作代码，即<code>this.count++</code>，以实现<code>count</code>的改变</li>
+</ul>
+<p>这些就是基本步骤了，好吧，好像说的比较烂，不过应该是对的，至少我运行成功￣▽￣  。 错了也没人知道，反正我自己看。开玩笑，其实是我不会用专业语言叙述，不少东西我也没提到，因为我也不熟啊，推荐看官网文档，虽然说的比较隐晦，但保证质量啊。  </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/vue-grammar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/06/vue-grammar/" itemprop="url">Vue组件之字面量语法与动态语法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T22:11:27+08:00">
+                2017-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>定义一个组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp message=&quot;1&quot;&gt;&lt;/comp&gt;  //使用的是字面量语法传递数值</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;comp&apos;,&#123;</span><br><span class="line">           props:[&apos;message&apos;],</span><br><span class="line">           template:&apos;&lt;span v-on:click=&quot;alertType&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/span&gt;&apos;,</span><br><span class="line">           methods:&#123;</span><br><span class="line">               alertType:function()&#123;</span><br><span class="line">                   alert(typeof this.message);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
+<p>给组件定义一个函数用于检测传递的数据是什么类型，此处检测到 message 是 string 类型，然而我本意是想传递数值1，即 number 类型。可能会受到双引号影响，觉得去掉双引号就是数字了，其实不然，我不知道去掉双引号是否规范，但是去掉后结果依然是 string。这是字面量语法的结果。 </p>
+<p>vue规定，如果想传递一个实际的 number，需要使用 v-bind，从而让它的值被当作 JavaScript 表达式计算，然后计算结果赋值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :message=&quot;1&quot;&gt;&lt;/comp&gt;  //用v-bind绑定</span><br></pre></td></tr></table></figure>
+<p>此时检测结果为number。</p>
+<p>两个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp message=&quot;1+2&quot;&gt;&lt;/comp&gt;  //1+2</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :message=&quot;1+2&quot;&gt;&lt;/comp&gt;  //3</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/css-layout/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/02/css-layout/" itemprop="url">CSS居中布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T10:27:08+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h2><ul>
+<li>水平居中</li>
+<li>垂直居中 </li>
+</ul>
+<h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
+<li>行内元素：对父元素设置text-align:center;</li>
+<li>定宽块状元素: 设置左右margin值为auto;</li>
+<li>不定宽块状元素: 设置子元素为display:inline,然后在父元素上设置text-align:center;</li>
+<li>通用方案: flex布局，对父元素设置display:flex;justify-content:center;   </li>
+</ul>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><h4 id="知道子元素宽高情况（以下所有父元素都设置了相对定位）"><a href="#知道子元素宽高情况（以下所有父元素都设置了相对定位）" class="headerlink" title="知道子元素宽高情况（以下所有父元素都设置了相对定位）"></a>知道子元素宽高情况（以下所有父元素都设置了相对定位）</h4><ol>
+<li><p>使用position:absolute,设置left、top、margin-left、margin-top的属性（相对父元素）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#children&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	background-color: red;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top: 50%;</span><br><span class="line">	left: 50%;</span><br><span class="line">	margin-left: -50px;</span><br><span class="line">	margin-top: -50px;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用position:fixed,同样设置left、top、margin-left、margin-top的属性（相对浏览器窗口） </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#children&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	background-color: red;</span><br><span class="line">	position: fixed;</span><br><span class="line">	top: 50%;</span><br><span class="line">	left: 50%;</span><br><span class="line">	margin-left: -50px;</span><br><span class="line">	margin-top: -50px;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用position:fixed和margin:auto，设置left、right、top和bottom（相对浏览器窗口）如果不设置宽高会覆盖浏览器窗口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#children&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	background-color: red;</span><br><span class="line">	position: fixed;</span><br><span class="line">	left:0;</span><br><span class="line">	right: 0;</span><br><span class="line">	top: 0;</span><br><span class="line">	bottom: 0;</span><br><span class="line">	margin:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用position:absolute和margin:auto，设置left、right、top和bottom（相对父元素）如果不设置宽高会覆盖父元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#children&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	background-color: red;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left:0;</span><br><span class="line">	right: 0;</span><br><span class="line">	top: 0;</span><br><span class="line">	bottom: 0;</span><br><span class="line">	margin:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="不知道子元素宽高情况"><a href="#不知道子元素宽高情况" class="headerlink" title="不知道子元素宽高情况"></a>不知道子元素宽高情况</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#children&#123;</span><br><span class="line">	background-color: red;</span><br><span class="line">	position: absolute;</span><br><span class="line">	top:50%;</span><br><span class="line">	transform:translateY(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="设置父元素，使内容居中"><a href="#设置父元素，使内容居中" class="headerlink" title="设置父元素，使内容居中"></a>设置父元素，使内容居中</h4><ol>
+<li><p>设置父元素line-height等于它的高，使内容垂直居中（常用于文字居中）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#parent&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	border:1px solid #000;</span><br><span class="line">	line-height: 100px;	</span><br><span class="line">	text-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用display:table-cell和vertical-align:middle使内容垂直居中（适用与多行文本居中）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#parent&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	border:1px solid #000;</span><br><span class="line">	text-align:center;</span><br><span class="line">	display:table-cell;</span><br><span class="line">	vertical-align:middle;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h4><p>通用，给父元素设置display:flex和align-items:center,考虑兼容 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#parent&#123;</span><br><span class="line">	width: 500px;</span><br><span class="line">	height: 500px;</span><br><span class="line">	border:1px solid #000;</span><br><span class="line">	display: flex;</span><br><span class="line">	align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/aboutload/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/29/aboutload/" itemprop="url">load和DOMContentLoaded的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T17:36:07+08:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天看到一个面试题：</p>
+<blockquote>
+<p>$(function(){console.log(1)}); 和 window.onload = function(){console.log(2)};输出结果    </p>
+</blockquote>
+<p>答案：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">先输出1，再输出2</span><br></pre></td></tr></table></figure>
+<p>这一题考察的就是原生js中的load和DOMContentLoaded的区别。那么它们的区别是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;load&apos;,function()&#123;</span><br><span class="line">    // 页面的全部资源加载完才执行，包括图片，视频等</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">document.addEventListener(&apos;DOMContentLoaded&apos;,function()&#123;</span><br><span class="line">    //DOM渲染完即可执行，此时图片，视频还可能没有加载完</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>对应的它们在jQuery中的写法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// DOMContentLoaded</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line">    // ...代码...</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//load</span><br><span class="line">$(document).load(function() &#123;</span><br><span class="line">    // ...代码...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="wungjyan" />
+          <p class="site-author-name" itemprop="name">wungjyan</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://wungjyan.github.io/demo/" target="_blank" title="练习册">
+                  
+                    <i class="fa fa-fw fa-book"></i>
+                  
+                    
+                      练习册
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wungjyan</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
