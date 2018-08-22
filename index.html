@@ -311,6 +311,236 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/mongodb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/22/mongodb/" itemprop="url">mongodb增删改查常用命令总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T14:58:27+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mongodb/" itemprop="url" rel="index">
+                    <span itemprop="name">mongodb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>去年我还折腾过mongodb，后来用不到也就没碰了，这就导致了我忘的一干二净，不得不感叹，编程这东西只要不用，就会忘没了。现在我想重拾mongodb，来总结一下常用命令，主要就是增删改查。</p>
+<p>另外，关于mongodb数据的安装配置，我就不赘述了，推荐我之前写过的两篇博客：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/wjaaron/p/7800490.html" target="_blank" rel="noopener">Windows下图文详解Mongodb安装及配置</a></li>
+<li><a href="https://www.cnblogs.com/wjaaron/p/8094036.html" target="_blank" rel="noopener">Linux环境安装mongodb</a></li>
+</ol>
+<p>这是我的博客园文章，还是有人看的，哈哈，不像这里都没人看。</p>
+<h2 id="启动数据库"><a href="#启动数据库" class="headerlink" title="启动数据库"></a>启动数据库</h2><p>如果你还不会，看完我上面推荐的就会了～<br>我自己目前的平台是mac，由于我是通过homebrew安装的，所以我的启动步骤是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew services start mongodb</span><br><span class="line"></span><br><span class="line">mongo</span><br></pre></td></tr></table></figure></p>
+<p>启动后打开<a href="http://localhost:27017/" target="_blank" rel="noopener">http://localhost:27017/</a></p>
+<p>当你在浏览器页面看到下面这句，就说明启动成功了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">It looks like you are trying to access MongoDB over HTTP on the native driver port.</span><br></pre></td></tr></table></figure></p>
+<p>更多安装教程可以自行搜索，接下来我们就来看看一些常用命令。</p>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>创建之前，我们看看当前有哪些数据库，使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dbs</span><br></pre></td></tr></table></figure></p>
+<p>接下来创建一个新的数据库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 使用这个数据库，没有则会创建</span><br><span class="line">use test</span><br><span class="line"></span><br><span class="line">// 此时还没有创建成功，只有在其中创建一个集合时，这个新数据库才会创建成功</span><br><span class="line">db.user.insert(&#123;&quot;name&quot;:&quot;wj&quot;,&quot;age&quot;:18&#125;)</span><br><span class="line"></span><br><span class="line">// 上面命令在test数据库里新建了一个user集合，并插入了数据，此时再执行show dbs ，已经有了test数据库</span><br></pre></td></tr></table></figure></p>
+<h2 id="插入（增加）数据"><a href="#插入（增加）数据" class="headerlink" title="插入（增加）数据"></a>插入（增加）数据</h2><p>前面已经提及了，格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.集合名.insert(&#123;&quot;name&quot;:&quot;wj&quot;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>注意在使用这条命令前，要切换到对应数据库，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use test</span><br></pre></td></tr></table></figure></p>
+<p>这样新增的集合就在这个数据库下，可以使用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show collections</span><br></pre></td></tr></table></figure></p>
+<p>来查看当前数据库下有哪些集合</p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><ol>
+<li><p>删除当前数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.dropDatabase()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除集合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.集合名.drop()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.集合名.remove(条件)</span><br><span class="line"></span><br><span class="line">// 比如要删除user集合下name为wj的数据，则</span><br><span class="line">db.user.remove(&#123;&quot;name&quot;:&quot;wj&quot;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>修改前要按条件查找的，例如我要把名为小明的同学的年龄修改为3岁，那么命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.user.update(&#123;&quot;name&quot;:&quot;小明&quot;&#125;, &#123;$set:&#123;&quot;age&quot;:3&#125;&#125;)</span><br><span class="line"></span><br><span class="line">// 上面命令的格式</span><br><span class="line">db.集合名.update(&#123;条件&#125;, &#123;$set:&#123;修改的值&#125;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>注意花括号不要写错，另外加上<code>$set</code>是修改，如果不加的话，就是后面的替换前面的，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 修改前</span><br><span class="line">&#123; &quot;name&quot;:&quot;小明&quot;&#125;</span><br><span class="line"></span><br><span class="line">// 修改</span><br><span class="line">db.user.update(&#123;&quot;name&quot;:&quot;小明&quot;&#125;,&#123;&quot;age&quot;:20&#125;)</span><br><span class="line"></span><br><span class="line">// 修改后</span><br><span class="line">&#123; &quot;age&quot;:20&#125;</span><br></pre></td></tr></table></figure></p>
+<p>默认情况下，只会修改满足条件的第一条数据，如果希望修改所有满足条件的数据，加上<code>{multi:true}</code>，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.update(&#123;&quot;sex&quot;:&quot;男&quot;&#125;, &#123;$set:&#123;&quot;age&quot;:30&#125;&#125;, &#123;multi:true&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>关于查询的方式就比较多啦。</p>
+<ol>
+<li><p>查询集合下所有数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find()  //user是集合名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age == 20 的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:20&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &gt; 20 的数据 （大于）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$gt:20&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &lt; 20 的数据 （小于）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$lt:20&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &gt;= 30 的数据 （大于或等于）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$gte:20&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &lt;= 30 的数据 （小于或等于）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$lte:20&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &gt;= 20 并且 age &lt;= 30 的数据 （且）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$gte:20,$lte:30&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 name 中包含 wj 的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;name&quot;:/wj/&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 name 中以 w 开头的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;name&quot;:/^w/&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询指定列的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 只查看name列</span><br><span class="line">db.user.find(&#123;&#125;,&#123;&quot;name&quot;:1&#125;)</span><br><span class="line">   </span><br><span class="line">// 只查看age列</span><br><span class="line">db.user.find(&#123;&#125;,&#123;&quot;age&quot;:1&#125;)</span><br><span class="line">   </span><br><span class="line">// 只查看name和age列</span><br><span class="line">db.user.find(&#123;&#125;,&#123;&quot;name&quot;:1,&quot;age&quot;:1&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询指定列的数据，带条件（age &gt; 20）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$gt:20&#125;&#125;,&#123;&quot;name&quot;:1,&quot;age&quot;:1&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 按照年龄来排序</span><br><span class="line"></span><br><span class="line">db.user.find().sort(&#123;&quot;age&quot;:1&#125;)  // 升序</span><br><span class="line"></span><br><span class="line">db.user.find().sort(&#123;&quot;age&quot;:-1&#125;)  // 降序</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多条件查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;name&quot;:&quot;wj&quot;,&quot;age&quot;:20&#125;)</span><br><span class="line"></span><br><span class="line">// 应该好理解，查询同时满足这两个条件的数据，前面忘记说了</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询前三条数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find().limit(3)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询五条之后的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.user.find().skip(5)</span><br><span class="line"></span><br><span class="line">// 好理解，跳过前5条，显示的就是五条之后的数据</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 5-10 之间的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find().skip(5).limit(5)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>或 查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;$or:[&#123;&quot;age&quot;:20&#125;,&#123;&quot;age&quot;:30&#125;]&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询第一条数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.user.findOne()</span><br><span class="line"></span><br><span class="line">//这样也可以哦</span><br><span class="line">db.user.find().limit(1)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我将遇到的增删改查命令都总结出来了，可能还有漏掉的，如果有人可以告诉我，那最好不过了。不过上面列出的基本够用了，如果上面的哪条命令不可实现，请注意符号是否写对，尤其是花括号的书写。如果真是我的错误，谁能告诉我一声呢？可惜，这里没人看啊。。。。。。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/move-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1774,171 +2004,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/koa/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wungjyan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wj'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/23/koa/" itemprop="url">koa初体验</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-23T16:08:58+08:00">
-                2018-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>出于对koa的好奇，于是想要了解下。</p>
-<blockquote>
-<p>koa 是由 Express 原班人马打造的，致力于成为一个更小、更富有表现力、更健壮的 Web 框架。 </p>
-</blockquote>
-<p>如果说koa是下一代web开发框架，那么上一代毫无疑问就是express了，其实用哪个都无所谓啦，只要自己用的顺手就好。反正我哪个都用不到，至少目前是的，哈哈。</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>新建一个文件夹koaDemo，其内执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br><span class="line"></span><br><span class="line">npm install koa</span><br></pre></td></tr></table></figure></p>
-<p>我们讨论的是koa2。而koa默认安装的就是2的版本，所以无需指定为koa2。</p>
-<p>用koa来输出“hello world”，新建一个文件server.js，输入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const Koa = require(&apos;koa&apos;)</span><br><span class="line">const app = new Koa()</span><br><span class="line"></span><br><span class="line">app.use(async ctx =&gt; &#123;</span><br><span class="line">    ctx.body = &apos;hello world&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(3000)</span><br></pre></td></tr></table></figure></p>
-<p><code>node server.js</code>执行文件，此时打开浏览器，访问：<a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a>，熟悉的hello world就显示出来啦。</p>
-<p>可以看到，koa真的很精简，短短几行就能启动一个服务，虽然这些express都能办到，但是koa肯定也是有它的独到之处的。其中之一就是使用 async+await 处理异步，上面代码中已用到了async，接下来就介绍下async和await。</p>
-<h2 id="async与await"><a href="#async与await" class="headerlink" title="async与await"></a>async与await</h2><p>koa的一大优点就是No Callback，很多人使用koa也是因为这个。没有回调得力于async和await的使用，关于它们的概念我也讲不好，网上有很多文档可以参考，你只需要知道它可以解决回调地狱的问题，使异步操作更优雅。具体怎么个优雅法，我们来慢慢看。</p>
-<h3 id="回调函数处理异步"><a href="#回调函数处理异步" class="headerlink" title="回调函数处理异步"></a>回调函数处理异步</h3><p>在最初的时候，我们使用回调函数来处理异步，来看个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(&apos;执行了&apos;)</span><br><span class="line">    &#125;, 2000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br><span class="line">console.log(&apos;结束&apos;)</span><br><span class="line"></span><br><span class="line">// 执行结果</span><br><span class="line">结束</span><br><span class="line">执行了</span><br></pre></td></tr></table></figure></p>
-<p>上面代码的执行结果显然不符合预期的，所以我们需要借助回调函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function test(fn) &#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">        console.log(&apos;执行了&apos;)</span><br><span class="line">        fn()</span><br><span class="line">    &#125;, 2000)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(()=&gt;&#123;</span><br><span class="line">    console.log(&apos;结束&apos;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 执行结果</span><br><span class="line">执行了</span><br><span class="line">结束</span><br></pre></td></tr></table></figure></p>
-<p>显然，这才是我们想要的结果，回调虽然看起来很简单，但是当业务逻辑多起来时，容易形成回调地狱，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ajax(()=&gt;&#123;</span><br><span class="line">    ajax(()=&gt;&#123;</span><br><span class="line">        ajax(()=&gt;&#123;</span><br><span class="line">            // ...</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>三层，不能再多了！三层都快受不了了，更别说更复杂的了，当维护这样的代码时，是真的难受。所以后来es6给了一个好的解决方法，那就是promise。</p>
-<h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><p>关于promise诞生的前前后后我就不介绍了，因为我也不太熟悉啊，不过它的使用方法我们还是要掌握的，推荐阮一峰老师的es6教程，传送门：<a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">promise</a></p>
-<p>来写一个promise的例子，假设三个异步操作，依次执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function delay(val)&#123;</span><br><span class="line">    return new Promise((resolve, reject)=&gt;&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            resolve(val)</span><br><span class="line">        &#125;,2000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">delay(&apos;第一步执行&apos;)</span><br><span class="line"> .then((val)=&gt;&#123;</span><br><span class="line">     console.log(val)</span><br><span class="line">     return delay(&apos;第二步执行&apos;)</span><br><span class="line"> &#125;)</span><br><span class="line"> .then((val)=&gt;&#123;</span><br><span class="line">     console.log(val)</span><br><span class="line">     return delay(&apos;第三步执行&apos;)</span><br><span class="line"> &#125;)</span><br><span class="line"> .then((val)=&gt;&#123;</span><br><span class="line">     console.log(val)</span><br><span class="line"> &#125;)</span><br><span class="line"> </span><br><span class="line"> // 结果</span><br><span class="line">第一步执行</span><br><span class="line">第二步执行</span><br><span class="line">第三步执行</span><br></pre></td></tr></table></figure></p>
-<p>promise的使用，解决了一层层回调嵌套的窘境，这很大程度上解决了回调地狱的问题，清晰的代码结构也容易维护。</p>
-<p>promise很好用，但是代码量还是有点的，如果可以，何不试试async+await呢？</p>
-<h3 id="async-await"><a href="#async-await" class="headerlink" title="async+await"></a>async+await</h3><p>虽然我也想把这两个概念讲的很明白，但是我不能啊，网上有大佬讲的很清楚，在这我就简单说下。</p>
-<p>你需要知道的是，async用来定义一个异步函数，它总会返回异步对象，即promise，而await必须在async内部使用，用来处理异步结果。</p>
-<p>说不如做，就拿上面的例子来试下async的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function delay(val)&#123;</span><br><span class="line">    return new Promise((resolve, reject)=&gt;&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            resolve(val)</span><br><span class="line">        &#125;,2000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function start()&#123; </span><br><span class="line">  let result1 = await delay(&apos;第一次执行&apos;)</span><br><span class="line">  console.log(result1)</span><br><span class="line"></span><br><span class="line">  let result2 = await delay(&apos;第二次执行&apos;)</span><br><span class="line">  console.log(result2)</span><br><span class="line"></span><br><span class="line">  let result3 = await delay(&apos;第三次执行&apos;)</span><br><span class="line">  console.log(result3)</span><br><span class="line">&#125;</span><br><span class="line">start()</span><br><span class="line"></span><br><span class="line"> // 结果</span><br><span class="line">第一步执行</span><br><span class="line">第二步执行</span><br><span class="line">第三步执行</span><br></pre></td></tr></table></figure></p>
-<p>如上代码，同步的方式写异步，再也看不到回调了，是不是很爽。在koa中，重点使用async+await的方式，所以不懂得童鞋还得加把劲啊。即使不用koa，但这么炫酷的方法你确定不试试？</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>写完后才发现，我不是介绍koa的，反而介绍了async，虽然没讲得明白。麻雀虽小五脏俱全，koa的更多使用，下次再说咯。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1989,7 +2054,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2000,7 +2065,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="mongodb," />
 
 
 
@@ -96,13 +96,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="wj&#39;blog">
-<meta property="og:url" content="http://yoursite.com/categories/ES6/index.html">
+<meta name="description" content="前言去年我还折腾过mongodb，后来用不到也就没碰了，这就导致了我忘的一干二净，不得不感叹，编程这东西只要不用，就会忘没了。现在我想重拾mongodb，来总结一下常用命令，主要就是增删改查。 另外，关于mongodb数据的安装配置，我就不赘述了，推荐我之前写过的两篇博客：  Windows下图文详解Mongodb安装及配置 Linux环境安装mongodb  这是我的博客园文章，还是有人看的，哈">
+<meta name="keywords" content="mongodb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb增删改查常用命令总结">
+<meta property="og:url" content="http://yoursite.com/2018/08/22/mongodb/index.html">
 <meta property="og:site_name" content="wj&#39;blog">
+<meta property="og:description" content="前言去年我还折腾过mongodb，后来用不到也就没碰了，这就导致了我忘的一干二净，不得不感叹，编程这东西只要不用，就会忘没了。现在我想重拾mongodb，来总结一下常用命令，主要就是增删改查。 另外，关于mongodb数据的安装配置，我就不赘述了，推荐我之前写过的两篇博客：  Windows下图文详解Mongodb安装及配置 Linux环境安装mongodb  这是我的博客园文章，还是有人看的，哈">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-22T07:23:44.701Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wj&#39;blog">
+<meta name="twitter:title" content="mongodb增删改查常用命令总结">
+<meta name="twitter:description" content="前言去年我还折腾过mongodb，后来用不到也就没碰了，这就导致了我忘的一干二净，不得不感叹，编程这东西只要不用，就会忘没了。现在我想重拾mongodb，来总结一下常用命令，主要就是增删改查。 另外，关于mongodb数据的安装配置，我就不赘述了，推荐我之前写过的两篇博客：  Windows下图文详解Mongodb安装及配置 Linux环境安装mongodb  这是我的博客园文章，还是有人看的，哈">
 
 
 
@@ -132,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/ES6/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/22/mongodb/"/>
 
 
 
 
 
-  <title>分类: ES6 | wj'blog</title>
+  <title>mongodb增删改查常用命令总结 | wj'blog</title>
   
 
 
@@ -157,7 +162,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -295,111 +300,257 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>ES6<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/mongodb/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/12/26/es6-3/" itemprop="url">
-              
-                <span itemprop="name">ES6函数和对象</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">mongodb增删改查常用命令总结</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-26T23:18:46+08:00"
-              content="2017-12-26" >
-          12-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T14:58:27+08:00">
+                2018-08-22
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mongodb/" itemprop="url" rel="index">
+                    <span itemprop="name">mongodb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/22/es6-2/" itemprop="url">
-              
-                <span itemprop="name">ES6数组</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-22T12:23:52+08:00"
-              content="2017-12-22" >
-          12-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/19/es6-1/" itemprop="url">
-              
-                <span itemprop="name">ES6常用知识点总结（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-19T15:51:23+08:00"
-              content="2017-12-19" >
-          12-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>去年我还折腾过mongodb，后来用不到也就没碰了，这就导致了我忘的一干二净，不得不感叹，编程这东西只要不用，就会忘没了。现在我想重拾mongodb，来总结一下常用命令，主要就是增删改查。</p>
+<p>另外，关于mongodb数据的安装配置，我就不赘述了，推荐我之前写过的两篇博客：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/wjaaron/p/7800490.html" target="_blank" rel="noopener">Windows下图文详解Mongodb安装及配置</a></li>
+<li><a href="https://www.cnblogs.com/wjaaron/p/8094036.html" target="_blank" rel="noopener">Linux环境安装mongodb</a></li>
+</ol>
+<p>这是我的博客园文章，还是有人看的，哈哈，不像这里都没人看。</p>
+<h2 id="启动数据库"><a href="#启动数据库" class="headerlink" title="启动数据库"></a>启动数据库</h2><p>如果你还不会，看完我上面推荐的就会了～<br>我自己目前的平台是mac，由于我是通过homebrew安装的，所以我的启动步骤是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew services start mongodb</span><br><span class="line"></span><br><span class="line">mongo</span><br></pre></td></tr></table></figure></p>
+<p>启动后打开<a href="http://localhost:27017/" target="_blank" rel="noopener">http://localhost:27017/</a></p>
+<p>当你在浏览器页面看到下面这句，就说明启动成功了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">It looks like you are trying to access MongoDB over HTTP on the native driver port.</span><br></pre></td></tr></table></figure></p>
+<p>更多安装教程可以自行搜索，接下来我们就来看看一些常用命令。</p>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>创建之前，我们看看当前有哪些数据库，使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show dbs</span><br></pre></td></tr></table></figure></p>
+<p>接下来创建一个新的数据库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 使用这个数据库，没有则会创建</span><br><span class="line">use test</span><br><span class="line"></span><br><span class="line">// 此时还没有创建成功，只有在其中创建一个集合时，这个新数据库才会创建成功</span><br><span class="line">db.user.insert(&#123;&quot;name&quot;:&quot;wj&quot;,&quot;age&quot;:18&#125;)</span><br><span class="line"></span><br><span class="line">// 上面命令在test数据库里新建了一个user集合，并插入了数据，此时再执行show dbs ，已经有了test数据库</span><br></pre></td></tr></table></figure></p>
+<h2 id="插入（增加）数据"><a href="#插入（增加）数据" class="headerlink" title="插入（增加）数据"></a>插入（增加）数据</h2><p>前面已经提及了，格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.集合名.insert(&#123;&quot;name&quot;:&quot;wj&quot;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>注意在使用这条命令前，要切换到对应数据库，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use test</span><br></pre></td></tr></table></figure></p>
+<p>这样新增的集合就在这个数据库下，可以使用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show collections</span><br></pre></td></tr></table></figure></p>
+<p>来查看当前数据库下有哪些集合</p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><ol>
+<li><p>删除当前数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.dropDatabase()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除集合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.集合名.drop()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.集合名.remove(条件)</span><br><span class="line"></span><br><span class="line">// 比如要删除user集合下name为wj的数据，则</span><br><span class="line">db.user.remove(&#123;&quot;name&quot;:&quot;wj&quot;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>修改前要按条件查找的，例如我要把名为小明的同学的年龄修改为3岁，那么命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.user.update(&#123;&quot;name&quot;:&quot;小明&quot;&#125;, &#123;$set:&#123;&quot;age&quot;:3&#125;&#125;)</span><br><span class="line"></span><br><span class="line">// 上面命令的格式</span><br><span class="line">db.集合名.update(&#123;条件&#125;, &#123;$set:&#123;修改的值&#125;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>注意花括号不要写错，另外加上<code>$set</code>是修改，如果不加的话，就是后面的替换前面的，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 修改前</span><br><span class="line">&#123; &quot;name&quot;:&quot;小明&quot;&#125;</span><br><span class="line"></span><br><span class="line">// 修改</span><br><span class="line">db.user.update(&#123;&quot;name&quot;:&quot;小明&quot;&#125;,&#123;&quot;age&quot;:20&#125;)</span><br><span class="line"></span><br><span class="line">// 修改后</span><br><span class="line">&#123; &quot;age&quot;:20&#125;</span><br></pre></td></tr></table></figure></p>
+<p>默认情况下，只会修改满足条件的第一条数据，如果希望修改所有满足条件的数据，加上<code>{multi:true}</code>，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.update(&#123;&quot;sex&quot;:&quot;男&quot;&#125;, &#123;$set:&#123;&quot;age&quot;:30&#125;&#125;, &#123;multi:true&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>关于查询的方式就比较多啦。</p>
+<ol>
+<li><p>查询集合下所有数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find()  //user是集合名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age == 20 的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:20&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &gt; 20 的数据 （大于）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$gt:20&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &lt; 20 的数据 （小于）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$lt:20&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &gt;= 30 的数据 （大于或等于）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$gte:20&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &lt;= 30 的数据 （小于或等于）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$lte:20&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 age &gt;= 20 并且 age &lt;= 30 的数据 （且）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$gte:20,$lte:30&#125;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 name 中包含 wj 的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;name&quot;:/wj/&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 name 中以 w 开头的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;name&quot;:/^w/&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询指定列的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 只查看name列</span><br><span class="line">db.user.find(&#123;&#125;,&#123;&quot;name&quot;:1&#125;)</span><br><span class="line">   </span><br><span class="line">// 只查看age列</span><br><span class="line">db.user.find(&#123;&#125;,&#123;&quot;age&quot;:1&#125;)</span><br><span class="line">   </span><br><span class="line">// 只查看name和age列</span><br><span class="line">db.user.find(&#123;&#125;,&#123;&quot;name&quot;:1,&quot;age&quot;:1&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询指定列的数据，带条件（age &gt; 20）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;age&quot;:&#123;$gt:20&#125;&#125;,&#123;&quot;name&quot;:1,&quot;age&quot;:1&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 按照年龄来排序</span><br><span class="line"></span><br><span class="line">db.user.find().sort(&#123;&quot;age&quot;:1&#125;)  // 升序</span><br><span class="line"></span><br><span class="line">db.user.find().sort(&#123;&quot;age&quot;:-1&#125;)  // 降序</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多条件查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;&quot;name&quot;:&quot;wj&quot;,&quot;age&quot;:20&#125;)</span><br><span class="line"></span><br><span class="line">// 应该好理解，查询同时满足这两个条件的数据，前面忘记说了</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询前三条数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find().limit(3)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询五条之后的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.user.find().skip(5)</span><br><span class="line"></span><br><span class="line">// 好理解，跳过前5条，显示的就是五条之后的数据</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询 5-10 之间的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find().skip(5).limit(5)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>或 查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.user.find(&#123;$or:[&#123;&quot;age&quot;:20&#125;,&#123;&quot;age&quot;:30&#125;]&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询第一条数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.user.findOne()</span><br><span class="line"></span><br><span class="line">//这样也可以哦</span><br><span class="line">db.user.find().limit(1)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我将遇到的增删改查命令都总结出来了，可能还有漏掉的，如果有人可以告诉我，那最好不过了。不过上面列出的基本够用了，如果上面的哪条命令不可实现，请注意符号是否写对，尤其是花括号的书写。如果真是我的错误，谁能告诉我一声呢？可惜，这里没人看啊。。。。。。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mongodb/" rel="tag"># mongodb</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/17/move-hexo/" rel="next" title="hexo博客迁移到另一台电脑">
+                <i class="fa fa-chevron-left"></i> hexo博客迁移到另一台电脑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -407,6 +558,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -427,8 +582,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -510,6 +674,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动数据库"><span class="nav-number">2.</span> <span class="nav-text">启动数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据库"><span class="nav-number">3.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入（增加）数据"><span class="nav-number">4.</span> <span class="nav-text">插入（增加）数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除"><span class="nav-number">5.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改"><span class="nav-number">6.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找"><span class="nav-number">7.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -651,10 +831,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
