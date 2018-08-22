@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo博客迁移到另一台电脑]]></title>
     <url>%2F2018%2F08%2F17%2Fmove-hexo%2F</url>
-    <content type="text"><![CDATA[前言感觉好久没更新博客了，如今换了一台新的mac，开心的同时就是要把一些数据做迁移了，其中最惦记的就是hexo博客怎么迁移，参考了网上的一些文章后，终于成功迁移，现在就把过程记录下，很简单的。 复制原电脑上的数据复制旧电脑上的hexo数据，注意不用全部复制，只需复制以下几个：12345_config.ymlpackage.jsonscaffolds/source/themes/ 把这些文件复制到新电脑上的新建文件夹里，如：hexo文件夹 安装 新电脑上需先安装有node环境 全局安装hexo 12// mac环境sudo npm install -g hexo 进入hexo目录，依次执行以下安装命令： 1234npm installnpm install hexo-deployer-git --savenpm install hexo-generator-feed --savenpm install hexo-generator-sitemap --save 检查： 12hexo ghexo s 此时可访问浏览器：http://localhost:4000/ 就可以看到博客了。整个过程还是很简单的，不确定是否所有情况都可以成功，但可一试。]]></content>
+    <content type="text"><![CDATA[前言感觉好久没更新博客了，最近换了台新电脑，开心的同时就是要把一些数据做迁移了，其中最惦记的就是hexo博客怎么迁移，参考了网上的一些文章后，终于成功迁移，现在就把过程记录下，很简单的。 复制原电脑上的数据复制旧电脑上的hexo数据，注意不用全部复制，只需复制以下几个：12345_config.ymlpackage.jsonscaffolds/source/themes/ 把这些文件复制到新电脑上的新建文件夹里，如：hexo文件夹 安装 新电脑上需先安装有node环境 全局安装hexo 12// mac环境sudo npm install -g hexo 进入hexo目录，依次执行以下安装命令： 1234npm installnpm install hexo-deployer-git --savenpm install hexo-generator-feed --savenpm install hexo-generator-sitemap --save 检查： 12hexo ghexo s 此时可访问浏览器：http://localhost:4000/ 就可以看到博客了。整个过程还是很简单的，不确定是否所有情况都可以成功，但可一试。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
