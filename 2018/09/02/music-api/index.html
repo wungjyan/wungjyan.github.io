@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="node,服务器," />
 
 
 
@@ -96,14 +96,18 @@
 
 
 
+<meta name="description" content="前言最近对 NeteaseCloudMusicApi 这个项目很感兴趣，它是一个网易云音乐api的服务端项目，通过它的封装我们可以很好的调用网易云音乐的相关api，从而实现一个音乐播放器小应用。 虽然一直想做一个自己的音乐播放器，但也一直没动手，现在准备找工作了也不想折腾了。有时间的话，倒是想在小程序上实现下。说到小程序，就想到小程序调用接口需要是https的（开发时可以使用http），如果想上线">
+<meta name="keywords" content="node,服务器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="music-api">
+<meta property="og:title" content="服务器部署NeteaseCloudMusicApi">
 <meta property="og:url" content="http://yoursite.com/2018/09/02/music-api/index.html">
 <meta property="og:site_name" content="wj&#39;blog">
+<meta property="og:description" content="前言最近对 NeteaseCloudMusicApi 这个项目很感兴趣，它是一个网易云音乐api的服务端项目，通过它的封装我们可以很好的调用网易云音乐的相关api，从而实现一个音乐播放器小应用。 虽然一直想做一个自己的音乐播放器，但也一直没动手，现在准备找工作了也不想折腾了。有时间的话，倒是想在小程序上实现下。说到小程序，就想到小程序调用接口需要是https的（开发时可以使用http），如果想上线">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-02T06:53:27.992Z">
+<meta property="og:updated_time" content="2018-09-02T09:02:46.666Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="music-api">
+<meta name="twitter:title" content="服务器部署NeteaseCloudMusicApi">
+<meta name="twitter:description" content="前言最近对 NeteaseCloudMusicApi 这个项目很感兴趣，它是一个网易云音乐api的服务端项目，通过它的封装我们可以很好的调用网易云音乐的相关api，从而实现一个音乐播放器小应用。 虽然一直想做一个自己的音乐播放器，但也一直没动手，现在准备找工作了也不想折腾了。有时间的话，倒是想在小程序上实现下。说到小程序，就想到小程序调用接口需要是https的（开发时可以使用http），如果想上线">
 
 
 
@@ -139,7 +143,7 @@
 
 
 
-  <title>music-api | wj'blog</title>
+  <title>服务器部署NeteaseCloudMusicApi | wj'blog</title>
   
 
 
@@ -327,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">music-api</h1>
+          <h1 class="post-title" itemprop="name headline">服务器部署NeteaseCloudMusicApi</h1>
         
 
         <div class="post-meta">
@@ -349,6 +353,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/服务器/" itemprop="url" rel="index">
+                    <span itemprop="name">服务器</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -377,7 +403,20 @@
       
 
       
-        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近对 <a href="https://github.com/Binaryify/NeteaseCloudMusicApi" target="_blank" rel="noopener">NeteaseCloudMusicApi</a> 这个项目很感兴趣，它是一个网易云音乐api的服务端项目，通过它的封装我们可以很好的调用网易云音乐的相关api，从而实现一个音乐播放器小应用。</p>
+<p>虽然一直想做一个自己的音乐播放器，但也一直没动手，现在准备找工作了也不想折腾了。有时间的话，倒是想在小程序上实现下。说到小程序，就想到小程序调用接口需要是https的（开发时可以使用http），如果想上线的话，就意味着买了服务器外，还要自己配置https。没接触过https的配置，就先把这个sercice在服务端跑起来吧～</p>
+<h2 id="node安装-amp-amp-文件上传"><a href="#node安装-amp-amp-文件上传" class="headerlink" title="node安装 &amp;&amp; 文件上传"></a>node安装 &amp;&amp; 文件上传</h2><p>关于服务器端的node安装，我一开始也是忘记的，好在我以前写过博客，直接查看 <a href="https://wungjyan.github.io/2017/12/23/linux-node/" target="_blank" rel="noopener">Linux环境部署Node.js</a>。由此可见，写博客不是一点用没有的，没人看也可以自己当笔记看啊。</p>
+<p>node安装好后，需要把 NeteaseCloudMusicApi 这个项目上传到服务器。首先把这个项目从github上拉到本地：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:Binaryify/NeteaseCloudMusicApi.git</span><br></pre></td></tr></table></figure></p>
+<p>拷到本地后无需执行安装操作，这些操作放到服务器上再执行。嫌弃名字长，可以重命名下，我这里命名为 music-api。接下来就是上传文件的操作了。</p>
+<p>上传文件可以使用ftp工具，操作更方便，这里就不多说了，可以搜索到很多资料。我这里是mac环境，使用 scp 命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r ~/Desktop/music-api 39.108.161.158:/root/project</span><br></pre></td></tr></table></figure></p>
+<p>格式就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r 本地文件地址 ip地址: 要上传到服务器的目录</span><br></pre></td></tr></table></figure></p>
+<p>注意：-r 参数要加上，表示递归上传，因为上传的是文件夹</p>
+<p>上传完毕后，cd 到项目目录，执行<code>npm install</code>将依赖安装上，然后执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure></p>
+<p>此时项目已经启动，可以看到是在3000端口启动的，我在浏览器中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">39.108.161.158:3000</span><br></pre></td></tr></table></figure></p>
+<p>就可以看到效果了。注意要换成你的服务器ip地址。</p>
+<h2 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h2><p>我开始用ip加端口访问服务器时被拒绝了，我以为是80端口的问题，可是经查看后，端口是正常的，之后网上各种搜还是找不到解决方法。最后才知道是防火墙没配置3000端口，要在服务器后台管理那里加上3000端口的访问权限。我是阿里云的服务器，其他的服务商平台找对应服务。</p>
+<p>后续会尝试配置https。</p>
+
       
     </div>
     
@@ -391,6 +430,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node/" rel="tag"># node</a>
+          
+            <a href="/tags/服务器/" rel="tag"># 服务器</a>
+          
+        </div>
       
 
       
@@ -461,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -499,7 +555,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -544,6 +600,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node安装-amp-amp-文件上传"><span class="nav-number">2.</span> <span class="nav-text">node安装 &amp;&amp; 文件上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的坑"><span class="nav-number">3.</span> <span class="nav-text">遇到的坑</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
