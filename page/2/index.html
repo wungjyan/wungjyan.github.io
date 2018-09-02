@@ -311,6 +311,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/react01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/28/react01/" itemprop="url">react初体验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T20:34:52+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我的日常开发中，我用的只有vue，对于大名鼎鼎的react和angular，我一点都不了解。想当初开始学框架时，纠结许久，无非是react更具挑战性，学会了再学vue更容易，而vue简单易上手且功能也不输react。当然这些都是从度娘听说的。</p>
+<p>使用vue许久，感觉还是很爽的，虽然开始时有点困难，毕竟那时es6也不熟悉。我不止一次庆幸我学的是vue，不仅是因为它易学易用，关键是它的生态也越来越好，国内很多新东西出来，都是先基于vue的，比如现在很火的mpvue小程序框架，就是基于vue的，这使得我学会一个vue就可以容易地做很多事。</p>
+<p>之所以有庆幸学的是vue的心态，可能也是因为不了解其他两大框架，先入为主地觉得vue才是王道。我不知道其他两个框架是否很难入手，是否更加强大，但是vue已经能够解决我的日常开发了，我本来也不想去接触react和angular的，可能觉得舍易求难是浪费时间。不过另一方面，我又很好奇，它们真的那么难吗？和vue比到底有什么区别？思来想去，我觉得还是直接试水比较好，不就是一个框架吗？想学就学咯！于是，我选择了react，因为angula似乎真的难点！</p>
+<h2 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h2><p>当初学vue时，我只要引入一个文件vue.js就好了，学react，我竟然要引入三个文件，天啊，我第一想法就是这个好复杂啊。</p>
+<ul>
+<li>react.js：实现React核心逻辑，且于具体的渲染引擎无关，从而可以跨平台公用。</li>
+<li>react-dom.js：包含了具体的DOM渲染更新逻辑，以及服务端渲染的逻辑，与浏览器相关。</li>
+<li>browser.js：支持JSX语法必须。</li>
+</ul>
+<p>在这里，我用的react是15.6.2版本，听说稳定点，browser.js是5.8.38版本，莫名不敢用新的，哈哈~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script src=&quot;./common/react.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=&quot;./common/react-dom.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=&quot;./common/browser.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">        &lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">          ReactDOM.render(</span><br><span class="line">              &lt;h1&gt;hello world&lt;/h1&gt;,</span><br><span class="line">              document.getElementById(&apos;app&apos;)</span><br><span class="line">          )</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：script标签的type属性应写成text/babel，不然识别不了react语法</p>
+</blockquote>
+<p>上面代码是截取body部分，此时已经可以在浏览器里输出hello world了。虽然这段代码看起来很简单，但是我开始写时，我是恐慌的，因为ReactDOM.render()看起来很复杂的样子，为啥不是vue那样，直接两个花括号写到html里呢，那样多简单。</p>
+<p>确实很容易受vue影响，对于这种方法有点接受不了，但这其实并不复杂。ReactDOM.render()的第一参数很明显就是我们要输出到浏览器的内容，那么第二个参数其实是要输出到的位置。</p>
+<p>当我们明白两个参数的意义时，可能觉得懂了，其实不然。这里面可是有一个核心的东西，那就是JSX。在我还没接触JSX，总是听别人说JSX时，我觉得它可能是一个很复杂的语法。但当我接触后才知道，这货很“纯”，是一个奇怪的变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ele = &lt;h1&gt;hello world&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这种看起来可能有些奇怪的标签语法既不是字符串也不是 HTML，它就是JSX。那么不禁想问，它到底是什么数据类型？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof ele)</span><br><span class="line"></span><br><span class="line">//object</span><br></pre></td></tr></table></figure></p>
+<p>显然，它是一个对象，这么看的话，JavaScript是在内部给它处理了。事实也确实如此：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">    React.createElement(&apos;h1&apos;,null,&apos;hello world&apos;),</span><br><span class="line">    document.getElementById(&apos;app&apos;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;h1&gt;hello world&lt;/h1&gt;,</span><br><span class="line">    document.getElementById(&apos;app&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>上面两种方法结果完全相同。React.createElement()的第一个参数是标签，第二个参数是标签属性，第三个参数是标签内容。很显然这样写比较繁琐，且不直观。所以我们应该直接使用JSX语法，这也是官方建议的。</p>
+<p>其实我们直接写JSX语法，Babel 转译器也会把 JSX 转换成为 React.createElement() 方法的调用，而这个方法会返回一个对象，类似这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  type: &apos;h1&apos;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    children: &apos;Hello, world&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样的对象被称为 “React 元素”。它代表所有你在屏幕上看到的东西。React 通过读取这些对象来构建 DOM 并保持数据内容一致。</p>
+<p>关于JSX还有两点需要注意：    </p>
+<ol>
+<li><p>当有多个标签时，在最外层需加上一个包裹标签，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const ele = &lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JSX允许自由分段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const ele = &lt;div&gt;</span><br><span class="line">              &lt;span&gt;&lt;/span&gt;</span><br><span class="line">              &lt;p&gt;&lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在react里使用ReactDOM.render()来向页面渲染内容，它有两个参数，第一个参数是渲染内容，第二个参数是渲染位置。</p>
+<p>JSX是JavaScript的一种扩展语法，让一个变量直接赋值为标签。它与React.createElement()方法调用的结果是一样的，返回一个对象，叫做“React元素”。react推荐使用JSX语法。</p>
+<p>啰嗦一大堆，其实是表达自己的心情，初见react让我觉得复杂不好用，但是越接触越发现它是有它独特的魅力的。不管哪一个框架，我们都没资格去评定好不好，只有适不适合自己。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/koa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1719,181 +1895,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/26/es6-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wungjyan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wj'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/26/es6-3/" itemprop="url">ES6函数和对象</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-26T23:18:46+08:00">
-                2017-12-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>本次介绍ES6函数和对象的一些扩展，更多详情参考：<a href="http://es6.ruanyifeng.com/#docs/function" target="_blank" rel="noopener">函数的扩展</a>，<a href="http://es6.ruanyifeng.com/#docs/object" target="_blank" rel="noopener">对象的扩展</a></p>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数参数的默认值"><a href="#函数参数的默认值" class="headerlink" title="函数参数的默认值"></a>函数参数的默认值</h3><p>直接为函数的参数指定默认值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function test(x,y=&apos;world&apos;)&#123;</span><br><span class="line">	console.log(x,y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(&apos;hello&apos;);  //hello world</span><br><span class="line">test(&apos;hello&apos;,&apos;hello&apos;);  //hello hello</span><br></pre></td></tr></table></figure></p>
-<p>参数变量是默认声明的，所以不能用let或const再次声明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function test(x,y=&apos;world&apos;)&#123;</span><br><span class="line">	let y = &apos;world&apos;;  //error</span><br><span class="line">	console.log(x,y);  //error</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>参数默认值的位置 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function f(x = 1, y) &#123;</span><br><span class="line">  return [x, y];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // [1, undefined]</span><br><span class="line">f(2) // [2, undefined])</span><br><span class="line">f(, 1) // 报错</span><br><span class="line">f(undefined, 1) // [1, 1]</span><br><span class="line"></span><br><span class="line">//带有默认值的参数应该放在末尾，这样才可以省略</span><br></pre></td></tr></table></figure>
-<p>作用域<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。</span><br><span class="line">//等到初始化结束，这个作用域就会消失。</span><br><span class="line"></span><br><span class="line">var x = 1;</span><br><span class="line"></span><br><span class="line">function f(x, y = x) &#123;</span><br><span class="line">  console.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(2) // 2</span><br><span class="line">f()  //undefined</span><br><span class="line"></span><br><span class="line">//上面代码中，参数y的默认值等于变量x，在作用域里，x指向的是第一个参数x，而不是全局变量x。x没赋值时，y就是undefined。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//另一种情况</span><br><span class="line">var x = 1;</span><br><span class="line"></span><br><span class="line">function f(y = x) &#123;</span><br><span class="line">  console.log(y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(2);  //2</span><br><span class="line">f();   //1</span><br><span class="line"></span><br><span class="line">//这个作用域里面，变量x本身没有定义，所以指向外层的全局变量x</span><br></pre></td></tr></table></figure></p>
-<h3 id="rest-参数"><a href="#rest-参数" class="headerlink" title="rest 参数"></a>rest 参数</h3><p>ES6 引入 rest 参数（形式为…变量名），用于获取函数的多余参数，这样就不需要使用arguments对象了。    </p>
-<p>当你不确定参数个数时，你可以这样做<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var sum;</span><br><span class="line">function add(...args)&#123;</span><br><span class="line">	for(var v of args)&#123;</span><br><span class="line">		sum+=v;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(1,2);  //3</span><br><span class="line">add(1,2,3);  //6</span><br><span class="line">add(1,2,3,4,5,6);   //21</span><br><span class="line"></span><br><span class="line">//add函数是一个求和函数，利用 rest 参数，可以向该函数传入任意数目的参数。</span><br><span class="line">//这就是扩展运算符的使用，rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中</span><br></pre></td></tr></table></figure></p>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>这个使用率很高的。<br>ES6 允许使用“箭头”（=&gt;）定义函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let fn = v =&gt; v*2;</span><br><span class="line">//等同于</span><br><span class="line">let fn = function(v)&#123;</span><br><span class="line">    return v*2;</span><br><span class="line">&#125;</span><br><span class="line">console.log(fn(2));  //4</span><br></pre></td></tr></table></figure></p>
-<p>如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let fn = () =&gt; 2;</span><br><span class="line">//等同于</span><br><span class="line">let fn = function()&#123;</span><br><span class="line">    return 2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let fn = (num1,num2) =&gt; num1+num2</span><br><span class="line">//等同于</span><br><span class="line">let fn = function(num1,num2)&#123;</span><br><span class="line">    return num1+num2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果加上{}，return不能省略的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//当不写&#123;&#125;，且没有其他操作时，默认返回值</span><br><span class="line">let fn = () =&gt; 2;</span><br><span class="line">console.log(fn())  //2</span><br><span class="line"></span><br><span class="line">//当加上&#123;&#125;时，return不可省略</span><br><span class="line">let fn = () =&gt; &#123;2&#125;;</span><br><span class="line">console.log(fn())   //undefined</span><br><span class="line"></span><br><span class="line">//&#123;&#125;里要写完整的代码</span><br><span class="line">let fn = () =&gt; &#123;return 2&#125;</span><br><span class="line">console.log(fn())  //2</span><br></pre></td></tr></table></figure>
-<p>如果箭头函数只有一行语句，且不需要返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let fn = () =&gt; alert(1)</span><br></pre></td></tr></table></figure></p>
-<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>尤其要注意箭头函数里的this指向，<br>函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(&apos;id:&apos;, this.id);</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var id = 21;</span><br><span class="line"></span><br><span class="line">foo.call(&#123; id: 42 &#125;); // id: 42</span><br><span class="line"></span><br><span class="line">//定时器里有个箭头函数，它的this指向的是定义时的对象，即foo。而foo的this指向了&#123;id：42&#125;这个对象，所以结果是42。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//现在换回ES5的写法</span><br><span class="line">setTimeout(function()&#123;</span><br><span class="line">    console.log(&apos;id:&apos;, this.id);</span><br><span class="line">  &#125;, 100);</span><br><span class="line">  </span><br><span class="line">//此时this指向的是window对象，所以this.id指的就是全局变量id，为21。</span><br></pre></td></tr></table></figure></p>
-<p>另外要注意的：</p>
-<ul>
-<li><p>箭头函数不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</p>
-</li>
-<li><p>不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</p>
-</li>
-<li><p>不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</p>
-</li>
-</ul>
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="属性的简洁表示法"><a href="#属性的简洁表示法" class="headerlink" title="属性的简洁表示法"></a>属性的简洁表示法</h3><p>ES6 允许直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//属性简写</span><br><span class="line">let name = &apos;xiaoming&apos;;</span><br><span class="line">let age = 20;</span><br><span class="line"></span><br><span class="line">let obj = &#123;</span><br><span class="line">    name,</span><br><span class="line">    age</span><br><span class="line">&#125;</span><br><span class="line">//等同于</span><br><span class="line">let obj = &#123;</span><br><span class="line">    name:name,</span><br><span class="line">    age:age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//只要属性名和属性值变量同名即可</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//方法简写</span><br><span class="line">let obj = &#123;</span><br><span class="line">    showName()&#123;</span><br><span class="line">        alert(&apos;xiaoming&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//等同于</span><br><span class="line">let obj = &#123;</span><br><span class="line">    showName:function()&#123;</span><br><span class="line">        alert(&apos;xiaoming&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="属性名表达式"><a href="#属性名表达式" class="headerlink" title="属性名表达式"></a>属性名表达式</h3><p>在ES5中，使用字面量方式定义对象（使用大括号），只能使用标识符定义属性名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  foo: true,</span><br><span class="line">  abc: 123</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>现在ES6允许字面量定义对象时，用表达式作为对象的属性名，即把表达式放在方括号内：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let key = &apos;num&apos;;</span><br><span class="line"></span><br><span class="line">let obj = &#123;</span><br><span class="line">  [key]:123,</span><br><span class="line">  [&apos;na&apos; + &apos;me&apos;]:&apos;jhon&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(obj);  // &#123;num: 123, name: &quot;jhon&quot;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>表达式还可以用于定义方法名:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let obj1 = &#123;</span><br><span class="line">  [&apos;h&apos; + &apos;ello&apos;]()&#123;</span><br><span class="line">    console.log(&apos;hi&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj1.hello();   //hi</span><br></pre></td></tr></table></figure></p>
-<p>注意，属性名表达式如果是一个对象，默认情况下会自动将对象转为字符串<code>[object Object]</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const keyA = &#123;a:1&#125;;</span><br><span class="line">let obj2 = &#123;</span><br><span class="line">  [keyA]:&apos;A&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(obj2);   //&#123;[object Object]: &quot;A&quot;&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h3><h4 id="合并对象"><a href="#合并对象" class="headerlink" title="合并对象"></a>合并对象</h4><p>Object.assign方法用于对象的合并，将源对象的所有可枚举属性，复制到目标对象。第一个参数是目标对象，后面的参数都是源对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let o1 = &#123;&apos;a&apos;:1&#125;;</span><br><span class="line"></span><br><span class="line">let o2 = &#123;&apos;b&apos;:2&#125;;</span><br><span class="line"></span><br><span class="line">let o3 = &#123;&apos;c&apos;:3&#125;;</span><br><span class="line"></span><br><span class="line">Object.assign(o1,o2,o3);</span><br><span class="line"></span><br><span class="line">console.log(o1);    //&#123;a: 1, b: 2, c: 3&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//将上面例子改变一下</span><br><span class="line">let o1 = &#123;&apos;a&apos;:1,&apos;b&apos;:2&#125;;</span><br><span class="line"></span><br><span class="line">let o2 = &#123;&apos;b&apos;:3,&apos;c&apos;:4&#125;;</span><br><span class="line"></span><br><span class="line">let o3 = &#123;&apos;c&apos;:5&#125;;</span><br><span class="line"></span><br><span class="line">Object.assign(o1,o2,o3);</span><br><span class="line"></span><br><span class="line">console.log(o1);    //&#123;a: 1, b: 3, c: 5&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;</span><br><span class="line">    &apos;a&apos;:1,</span><br><span class="line">    &apos;b&apos;:2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj2 = Object.assign(&#123;&#125;,obj1);</span><br><span class="line"></span><br><span class="line">console.log(obj2);   //&#123;a: 1, b: 2&#125;</span><br></pre></td></tr></table></figure>
-<p>需要注意的是，Object.assign方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;</span><br><span class="line">    &apos;a&apos;:&#123;</span><br><span class="line">    	&apos;b&apos;:1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj2 = Object.assign(&#123;&#125;,obj1);</span><br><span class="line"></span><br><span class="line">obj1.a.b = 2;</span><br><span class="line"></span><br><span class="line">console.log(obj2.a.b);  //2</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1944,7 +1945,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
