@@ -415,6 +415,7 @@
 <p>上传完毕后，cd 到项目目录，执行<code>npm install</code>将依赖安装上，然后执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure></p>
 <p>此时项目已经启动，可以看到是在3000端口启动的，我在浏览器中输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">39.108.161.158:3000</span><br></pre></td></tr></table></figure></p>
 <p>就可以看到效果了。注意要换成你的服务器ip地址。</p>
+<h2 id="使用pm2"><a href="#使用pm2" class="headerlink" title="使用pm2"></a>使用pm2</h2><p>如果使用node来启动程序，确实是可行的，但问题就是当你关掉终端时程序也关闭了，我们需要让服务器一直在执行这个服务，这样才能随时访问api，所以要使用pm2这样的工具来帮助我们管理服务。关于pm2更多的介绍可自行搜索。</p>
 <h2 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h2><p>我开始用ip加端口访问服务器时被拒绝了，我以为是80端口的问题，可是经查看后，端口是正常的，之后网上各种搜还是找不到解决方法。最后才知道是防火墙没配置3000端口，要在服务器后台管理那里加上3000端口的访问权限。我是阿里云的服务器，其他的服务商平台找对应服务。</p>
 <p>后续会尝试配置https。</p>
 
