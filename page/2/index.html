@@ -311,6 +311,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/react02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/29/react02/" itemprop="url">react组件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T13:02:58+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>学习react应该就是学习它的组件化开发了，看看它和vue的组件相比有何不同？</p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>react组件有两种，分别是函数定义和类定义。</p>
+<h3 id="函数定义组件"><a href="#函数定义组件" class="headerlink" title="函数定义组件"></a>函数定义组件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Demo()&#123;</span><br><span class="line">    return &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码就创建了一个有效的组件，它是用函数返回了一个React元素，这种类型的组件为函数定义组件，我们可以正常使用它：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">   &lt;Demo/&gt;,</span><br><span class="line">   app</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>记住ReactDOM.render()的第一个参数是要渲染的内容，组件不就是要展示的内容吗？只是组件的使用应写成标签形式，这点应该很熟悉，跟vue的一样。</p>
+<p>这里有一个特别需要注意的地方，那就是<strong>组件名称必须以大写字母开头</strong>，不然无法渲染。</p>
+<p>看到上面的代码，不知道你会不会有一种想法，一种下意识的想法，看代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function Demo()&#123;</span><br><span class="line">    return &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(Demo(),app)</span><br></pre></td></tr></table></figure></p>
+<p>看到了吗？我不把Demo写成标签形式，而是直接调用了，结果依然正确渲染了。细想下，这本该如此啊，因为函数返回的是JSX啊，这与直接写JSX并没有本事区别。此时，你要是把函数名写成小写也不会有影响了，因为它已经不是一个组件了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function demo()&#123;</span><br><span class="line">    return &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(demo(),app)</span><br></pre></td></tr></table></figure></p>
+<h3 id="类定义组件"><a href="#类定义组件" class="headerlink" title="类定义组件"></a>类定义组件</h3><p>相对于函数定义组件，类定义组件才是最常用的，因为它允许我们更多的扩展。</p>
+<p>类定义组件，其实就是es6中定义类的方法，只是react加入了一些东西：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>上面就是类定义组件，熟悉es6的话，应该比较熟悉这种形式，在定义一个组件时，我们必须让它继承React.Component这个类，这样才能使用react的一些功能。</p>
+<p>关于类定义组件，要讲得东西其实还是有几个的，在这之前，我们要了解两个和组件息息相关的概念：属性和状态。</p>
+<h2 id="组件的属性和状态"><a href="#组件的属性和状态" class="headerlink" title="组件的属性和状态"></a>组件的属性和状态</h2><p>组件有属性和状态，分别表示为props和state，它们的区别：</p>
+<ul>
+<li>属性是由父组件传递给子组件的</li>
+<li>状态是子组件内部维护的数据，当状态发生变化的同时，组件也会进行更新。当状态发生转换时会触发不同的钩子函数，从而让开发者有机会做出相应</li>
+</ul>
+<h3 id="属性（props）"><a href="#属性（props）" class="headerlink" title="属性（props）"></a>属性（props）</h3><p>属性是写在父组件上的，可以传递给子组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function Demo(props)&#123;</span><br><span class="line">    return &lt;h1&gt;&#123;props.msg&#125;&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo msg=&apos;hello world&apos;/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>上面是函数定义组件的属性传递写法，Demo函数接收一个单一的“props”对象，这里包含了所有的父组件的属性，我们多写几个属性，打印props看看：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Demo(props)&#123;</span><br><span class="line">   console.log(props)</span><br><span class="line">    return &lt;h1&gt;&#123;props.msg&#125;&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo msg=&apos;hello world&apos; name=&apos;wj&apos; age=&apos;18&apos;/&gt;,app)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//props打印结果</span><br><span class="line">&#123;</span><br><span class="line">age:&quot;18&quot;,</span><br><span class="line">msg:&quot;hello world&quot;,</span><br><span class="line">name:&quot;wj&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，在react里要输出数据到模板里，用一个花括号即可，在vue里是两个花括号。</p>
+<p>属性不仅仅可以是字符串，还可以是js的表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const num = 5</span><br><span class="line">ReactDOM.render(&lt;Demo msg=&#123;num&gt;3?&apos;大于3&apos;:&apos;小于3&apos;&#125; name=&apos;wj&apos; age=&apos;18&apos;/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>这里就不多说了，react相对于vue，做了更少的限制，大胆去尝试吧，很多你觉得可以的，在react确实可以做到。</p>
+<p>再来看看在类定义组件里使用props：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">      render()&#123;</span><br><span class="line">          return &lt;h1&gt;&#123;this.props.msg&#125;&lt;/h1&gt;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Demo msg=&apos;hello world&apos; /&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>这里使用props的唯一区别就是要使用this来调用，其他跟函数定义组件一样。</p>
+<p>props有一个限制，那就是它的只读性，无论是使用函数或是类来声明一个组件，它决不能修改它自己的props。如果需要改变props值来更新视图显然是不行的。这就需要state状态。</p>
+<h3 id="状态（state）"><a href="#状态（state）" class="headerlink" title="状态（state）"></a>状态（state）</h3><p>状态适用于类定义的组件，状态是私有的，完全受控于当前组件。我们需要使用状态，则需要定义类组件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">      constructor()&#123;</span><br><span class="line">        super()</span><br><span class="line">        this.state=&#123;</span><br><span class="line">            msg:&apos;hello world&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;       // 注意这里不要写逗号，详见es6之class</span><br><span class="line">      render()&#123;</span><br><span class="line">          return &lt;div&gt;&#123;this.state.msg&#125;&lt;/div&gt;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>上面代码添加了状态，在这里你可能需要知道一些es6的class知识，推荐阮一峰老师的es6教程。我们知道Demo类式继承React.Component这个类的，算子类，它必须在constructor方法中调用super方法，否则新建实例时会报错。这是因为子类自己的this对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用super方法，子类就得不到this对象。</p>
+<p>在this对象上添加状态state，这个状态是属于Demo私有的，使用this.state.xxx的方式调用。</p>
+<p>状态受控于当前组件，是可以改变的，这里我们来改变下状态，注意这里会使用到事件，以后会详细介绍react事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">change()&#123;</span><br><span class="line">  this.state.msg = &apos;改变了&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">  return &lt;div&gt;</span><br><span class="line">           &lt;input type=&apos;button&apos; value=&apos;改变&apos; onClick=&#123;this.change.bind(this)&#125; /&gt;&lt;br/&gt;</span><br><span class="line">           &lt;p&gt;&#123;this.state.msg&#125;&lt;/p&gt;</span><br><span class="line">         &lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，当我们点击按钮时，state数据会改变，同时视图也会更新。但是当你运行后，会发现视图并不会更新。原因在哪里？</p>
+<p>其实问题就出在了this.state上，我们不能直接使用this.state来变更状态，这样不会重新渲染组件，我们需要使用setState()方法来更新状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">change()&#123;</span><br><span class="line">   //this.state.msg = &apos;改变了&apos;</span><br><span class="line">   </span><br><span class="line">   this.setState(&#123;</span><br><span class="line">       msg:&apos;改变了&apos;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样，当状态更新后，组件才会重新渲染。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我也不知道怎么总结了，很多细节我也没说到，这算是自己的一个回顾吧。与vue相比，react似乎限制地更少，这也意味着我们可以更灵活地组织我们的代码。学习过程中应该大胆尝试，你想到的，react作者们可能也想到了。另外在vue里，组件不是必须的，更多的关注点是在数据层上，但在react里，组件是不可缺少的，一切开发都是基于组件的（至少现在我是这么觉得），这也反映了两大框架的不同思想吧，不管如何，多学学总不会差。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/react01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1716,185 +1891,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/06/constructedFn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wungjyan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wj'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/06/constructedFn/" itemprop="url">关于构造函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-06T23:36:03+08:00">
-                2018-01-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>对于构造函数的使用很多人都很熟悉，但是对其原理很多也是比较模糊的，虽然这并不影响使用，但是熟悉了原理，才会少犯错。简单叙述下，算是给自己加深个印象。</p>
-<h2 id="构造函数的使用"><a href="#构造函数的使用" class="headerlink" title="构造函数的使用"></a>构造函数的使用</h2><p>想必都很熟悉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = new Foo(&apos;xiaoming&apos;, 15)</span><br><span class="line">// &#123;name: &quot;xiaoming&quot;, age: 15&#125;</span><br></pre></td></tr></table></figure></p>
-<p>构造函数名的首字母是大写，但却并不是非得是大写，只是一种惯例，为了区别其他函数，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头。所以即使你小写也不会有问题，但是肯定不建议这么做，提出来也只是为了让你注意不要小写首字母。        </p>
-<p>构造函数也是函数，只不过它可以用来创建对象。不过必须使用<code>new</code>操作符，使用<code>new</code>创建实例会经历4个步骤：</p>
-<ol>
-<li>创建一个新对象</li>
-<li>将构造函数的作用域赋给新对象（this指向新对象）</li>
-<li>执行构造函数中的代码（this赋值）</li>
-<li>返回新对象</li>
-</ol>
-<p><strong>总结</strong>：    </p>
-<ul>
-<li>函数名首字母大写</li>
-<li>没有显示创建对象</li>
-<li>直接将属性和方法赋给了this对象</li>
-<li>没有return 语句（默认存在）</li>
-</ul>
-<h2 id="内部原理"><a href="#内部原理" class="headerlink" title="内部原理"></a>内部原理</h2><p>根据上面的4个步骤，不难知道构造函数的内部原理，每当声明一个构造函数时：</p>
-<ol>
-<li>在函数体最前面隐式的加上<code>this = {}</code></li>
-<li>执行<code>this.xxx = xxx</code></li>
-<li>隐式地返回<code>this</code></li>
-</ol>
-<p>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">    var this = &#123;&#125;;   //隐式加上</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">    return this;    //隐式返回</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>为了验证是否正确，我们可以自己实现一个构造函数，不过不是使用<code>this</code>，而是使用<code>that</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">	var that = &#123;&#125;;</span><br><span class="line">	that.name = name;</span><br><span class="line">	that.age = age;</span><br><span class="line">	return that;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = Foo(&apos;xiaoming&apos;, 15);</span><br><span class="line">console.log(foo.name);  //&apos;xiaoming&apos;</span><br></pre></td></tr></table></figure>
-<p>注意，这时我们不需要使用<code>new</code>操作符了，因为所有需要的步骤我们都已经添加了，这就是一个普通的函数，返回一个对象。</p>
-<h2 id="关于返回值"><a href="#关于返回值" class="headerlink" title="关于返回值"></a>关于返回值</h2><p>我们都知道，构造函数默认返回了<code>this</code>，那么假使我们自己不小心添加了<code>return</code>语句会怎么样呢。不妨试一下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">	this.age = age;</span><br><span class="line">	return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = new Foo(&apos;xiaoming&apos;, 15);</span><br><span class="line">console.log(foo);  //&#123;name: &quot;xiaoming&quot;, age: 15&#125;</span><br></pre></td></tr></table></figure>
-<p>显然，添加<code>return this</code>是不会有什么问题的。    </p>
-<p>现在我们返回一个普通值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return 123;</span><br></pre></td></tr></table></figure></p>
-<p>如果你试了，会发现也不会影响结果，如果你再顺便试了一下返回字符串和布尔值，发现依旧不会影响结果。现在你知道我想说啥了，没错，当你试着返回一个对象时，结果就是那个对象了，继续试着返回数组和函数，也会影响结果，使得构造函数失去应有的作用。</p>
-<p><strong>总结</strong></p>
-<ul>
-<li>构造函数默认返回了<code>this</code></li>
-<li>如果手动返回了值类型，对结果没影响</li>
-<li>如果手动返回了引用类型，该构造函数失效</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1945,7 +1941,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1956,7 +1952,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1967,7 +1963,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

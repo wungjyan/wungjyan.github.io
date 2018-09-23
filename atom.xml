@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-03T01:15:18.288Z</updated>
+  <updated>2018-09-23T14:24:02.599Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用redux-thunk实现ajax数据请求</title>
+    <link href="http://yoursite.com/2018/09/23/redux-thunk/"/>
+    <id>http://yoursite.com/2018/09/23/redux-thunk/</id>
+    <published>2018-09-23T14:21:27.000Z</published>
+    <updated>2018-09-23T14:24:02.599Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>redux-thunk 是一个流行的用来处理异步操作的redux中间件，作为一个新手，如果你并不知道具体哪些场景需要使用这个中间件，那么就不要用它，就像官方所说的这样：</p><blockquote><p>If you’re not sure whether you need it, you probably don’t.</p></blockquote><p>redux-thunk 常用来处理一些请求操作，这里以 axios 请求为例，来演示redux-thunk 的配置使用。</p><h2 id="安装-amp-amp-配置"><a href="#安装-amp-amp-配置" class="headerlink" title="安装&amp;&amp;配置"></a>安装&amp;&amp;配置</h2><p>使用npm安装即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save redux-thunk</span><br></pre></td></tr></table></figure></p><p>这里要讲下它的配置，按照官方文档很简单就能配置好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createStore, applyMiddleware &#125; from &apos;redux&apos;</span><br><span class="line"></span><br><span class="line">// 在同级目录引入reducer</span><br><span class="line">import reducer from &apos;./reducer&apos;</span><br><span class="line"></span><br><span class="line">// 引入redux-thunk</span><br><span class="line">import thunk from &apos;redux-thunk&apos;</span><br><span class="line"></span><br><span class="line">// 创建store</span><br><span class="line">const store = createStore(</span><br><span class="line">    reducer,</span><br><span class="line">    applyMiddleware(thunk)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p><p>上面的配置就是可以用的，参考文档：<a href="https://github.com/reduxjs/redux-thunk" target="_blank" rel="noopener">redux-thunk</a></p><p>在这里想补充一点的是多个中间件使用时怎么配置。由于我会用到 Redux DevTools 这个浏览器插件来调试 redux，这个也需要我们在代码端配置好的，现在的场景就是我要配置devtools的代码，也要配置redux-thunk 的代码，往后可能还要使用到其他中间件，所以需要了解一下它们结合的配置。好在也有文档给出示范，参考 <a href="https://github.com/zalmoxisus/redux-devtools-extension#usage" target="_blank" rel="noopener">redux-devtools-extension</a></p><p>我的具体配置为：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createStore, applyMiddleware, compose &#125; from &apos;redux&apos;</span><br><span class="line"></span><br><span class="line">const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(&#123;&#125;) : compose;</span><br><span class="line"></span><br><span class="line">const enhancer = composeEnhancers(</span><br><span class="line">  applyMiddleware(thunk),</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">const store = createStore(</span><br><span class="line">reducer,</span><br><span class="line">enhancer</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">export default store</span><br></pre></td></tr></table></figure><p>如果需要再使用其他中间件，加到 applyMiddleware 中 thunk 后面即可。</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在不使用 redux-thunk 的情况下，axios 请求一般是放在 componentDidMount 这个生命周期里的，现在用到了 redux-thunk ，我们可以将请求放到 action里，我们创建一个文件 actionCreator.js，专门用来创建action所用，现在我们就来创建一个用来请求的action：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import axios from &apos;axios&apos;</span><br><span class="line"></span><br><span class="line">export function getList()&#123;</span><br><span class="line">return ()=&gt;&#123;</span><br><span class="line">axios.get(&apos;https://www.easy-mock.com/mock/5ba7324d774ea0691ff86d5e/test/list&apos;)</span><br><span class="line">        .then(res=&gt;&#123;</span><br><span class="line">             console.log(res)</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>使用redux-thunk中间件后，创建的action可以返回一个函数，函数里执行请求操作，此时在页面组件里即可使用这个action，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// App.js文件，一个页面组件，代码不完整，仅供参考</span><br><span class="line"></span><br><span class="line">import store from &apos;./store&apos;</span><br><span class="line">import &#123; getList &#125; from &apos;./store/actionCreator.js&apos;</span><br><span class="line"></span><br><span class="line">class App extends Component &#123;</span><br><span class="line"> // ...</span><br><span class="line"> </span><br><span class="line"> componentDidMount()&#123;</span><br><span class="line">    const action = getList()</span><br><span class="line">    store.dispatch(action)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  // ...</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>当我们dispatch这个action时，action里的函数会自动执行，可在浏览器端调试查看。但是目前提交并不会影响store状态，因为我们虽然执行了action的函数，但没有执行提交真正action的操作，所以我们需要回到actionCreator.js文件里继续完善我们的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export function getList()&#123;</span><br><span class="line">return (dispatch)=&gt;&#123;</span><br><span class="line">axios.get(&apos;https://www.easy-mock.com/mock/5ba7324d774ea0691ff86d5e/test/list&apos;)</span><br><span class="line">        .then(res=&gt;&#123;</span><br><span class="line">             dispatch(&#123;</span><br><span class="line">             type:&apos;CHANGE_LIST&apos;,</span><br><span class="line">             data: res.data.data</span><br><span class="line">             &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>上面代码中，返回的函数里可以把dispatch作为参数传进去，最终通过dispatch提交真实的action。</p><p>以上就是通过redux-thunk实现axios请求的简单流程。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;redux-thunk 是一个流行的用来处理异步操作的redux中间件，作为一个新手，如果你并不知道具体哪些场景需要使用这个中间件，那么就不
+      
+    
+    </summary>
+    
+      <category term="react" scheme="http://yoursite.com/categories/react/"/>
+    
+    
+      <category term="redux-thunk" scheme="http://yoursite.com/tags/redux-thunk/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>服务器部署NeteaseCloudMusicApi</title>
@@ -511,33 +538,6 @@
       <category term="构造函数" scheme="http://yoursite.com/tags/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"/>
     
       <category term="继承" scheme="http://yoursite.com/tags/%E7%BB%A7%E6%89%BF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于构造函数</title>
-    <link href="http://yoursite.com/2018/01/06/constructedFn/"/>
-    <id>http://yoursite.com/2018/01/06/constructedFn/</id>
-    <published>2018-01-06T15:36:03.000Z</published>
-    <updated>2018-01-10T13:50:07.878Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>对于构造函数的使用很多人都很熟悉，但是对其原理很多也是比较模糊的，虽然这并不影响使用，但是熟悉了原理，才会少犯错。简单叙述下，算是给自己加深个印象。</p><h2 id="构造函数的使用"><a href="#构造函数的使用" class="headerlink" title="构造函数的使用"></a>构造函数的使用</h2><p>想必都很熟悉<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = new Foo(&apos;xiaoming&apos;, 15)</span><br><span class="line">// &#123;name: &quot;xiaoming&quot;, age: 15&#125;</span><br></pre></td></tr></table></figure></p><p>构造函数名的首字母是大写，但却并不是非得是大写，只是一种惯例，为了区别其他函数，构造函数始终都应该以一个大写字母开头，而非构造函数则应该以一个小写字母开头。所以即使你小写也不会有问题，但是肯定不建议这么做，提出来也只是为了让你注意不要小写首字母。        </p><p>构造函数也是函数，只不过它可以用来创建对象。不过必须使用<code>new</code>操作符，使用<code>new</code>创建实例会经历4个步骤：</p><ol><li>创建一个新对象</li><li>将构造函数的作用域赋给新对象（this指向新对象）</li><li>执行构造函数中的代码（this赋值）</li><li>返回新对象</li></ol><p><strong>总结</strong>：    </p><ul><li>函数名首字母大写</li><li>没有显示创建对象</li><li>直接将属性和方法赋给了this对象</li><li>没有return 语句（默认存在）</li></ul><h2 id="内部原理"><a href="#内部原理" class="headerlink" title="内部原理"></a>内部原理</h2><p>根据上面的4个步骤，不难知道构造函数的内部原理，每当声明一个构造函数时：</p><ol><li>在函数体最前面隐式的加上<code>this = {}</code></li><li>执行<code>this.xxx = xxx</code></li><li>隐式地返回<code>this</code></li></ol><p>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">    var this = &#123;&#125;;   //隐式加上</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">    return this;    //隐式返回</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>为了验证是否正确，我们可以自己实现一个构造函数，不过不是使用<code>this</code>，而是使用<code>that</code>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">var that = &#123;&#125;;</span><br><span class="line">that.name = name;</span><br><span class="line">that.age = age;</span><br><span class="line">return that;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = Foo(&apos;xiaoming&apos;, 15);</span><br><span class="line">console.log(foo.name);  //&apos;xiaoming&apos;</span><br></pre></td></tr></table></figure><p>注意，这时我们不需要使用<code>new</code>操作符了，因为所有需要的步骤我们都已经添加了，这就是一个普通的函数，返回一个对象。</p><h2 id="关于返回值"><a href="#关于返回值" class="headerlink" title="关于返回值"></a>关于返回值</h2><p>我们都知道，构造函数默认返回了<code>this</code>，那么假使我们自己不小心添加了<code>return</code>语句会怎么样呢。不妨试一下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">this.name = name;</span><br><span class="line">this.age = age;</span><br><span class="line">return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = new Foo(&apos;xiaoming&apos;, 15);</span><br><span class="line">console.log(foo);  //&#123;name: &quot;xiaoming&quot;, age: 15&#125;</span><br></pre></td></tr></table></figure><p>显然，添加<code>return this</code>是不会有什么问题的。    </p><p>现在我们返回一个普通值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return 123;</span><br></pre></td></tr></table></figure></p><p>如果你试了，会发现也不会影响结果，如果你再顺便试了一下返回字符串和布尔值，发现依旧不会影响结果。现在你知道我想说啥了，没错，当你试着返回一个对象时，结果就是那个对象了，继续试着返回数组和函数，也会影响结果，使得构造函数失去应有的作用。</p><p><strong>总结</strong></p><ul><li>构造函数默认返回了<code>this</code></li><li>如果手动返回了值类型，对结果没影响</li><li>如果手动返回了引用类型，该构造函数失效</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;对于构造函数的使用很多人都很熟悉，但是对其原理很多也是比较模糊的，虽然这并不影响使用，但是熟悉了原理，才会少犯错。简单叙述下，算是给自己加深
-      
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-      <category term="构造函数" scheme="http://yoursite.com/tags/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   

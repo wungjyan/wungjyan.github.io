@@ -311,6 +311,192 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/22/vue-directives/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/22/vue-directives/" itemprop="url">vue自定义指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T12:44:25+08:00">
+                2017-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是指令？"><a href="#什么是指令？" class="headerlink" title="什么是指令？"></a>什么是指令？</h2><p>指令 (Directives) 是带有 <code>v-</code> 前缀的特殊属性。<br>它可以写在DOM元素上，对html进行操作。常用的指令比如有：<code>v-if</code>，<code>v-else</code>，<code>v-show</code>，<code>v-for</code>等。这些都是官方直接给定的，另外Vue也允许注册自定义指令，有时这很有用。</p>
+<h2 id="自定义指令方法"><a href="#自定义指令方法" class="headerlink" title="自定义指令方法"></a>自定义指令方法</h2><p>自定义一个指令很简单,官网给出一个简单的例子，自定义一个聚焦指令<code>v-focus</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 注册一个全局自定义指令 `v-focus`</span><br><span class="line">Vue.directive(&apos;focus&apos;, &#123;</span><br><span class="line">  // 当被绑定的元素插入到 DOM 中时……</span><br><span class="line">  inserted: function (el) &#123;</span><br><span class="line">    // 聚焦元素</span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>上面几行代码就全局注册了一个指令并可以执行，当给一个输入框加上这个指令时，页面加载就会使该框获得焦点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-focus&gt;</span><br></pre></td></tr></table></figure></p>
+<p>说明：        </p>
+<p>focus：如你所见，是指令的名称，不带<code>v-</code>前缀；</p>
+<p>inserted：这是一个钩子函数，表示被绑定元素插入父节点时调用，指令定义函数提供了多个钩子函数，下面再介绍。</p>
+<p>另外，你也可以局部注册指令，组件中也接受一个 directives 的选项：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">  focus: &#123;</span><br><span class="line">    // 指令的定义</span><br><span class="line">    inserted: function (el) &#123;</span><br><span class="line">      el.focus()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="钩子函数介绍"><a href="#钩子函数介绍" class="headerlink" title="钩子函数介绍"></a>钩子函数介绍</h3><p>指令定义函数提供了几个钩子函数（可选）</p>
+<ul>
+<li><p><code>bind</code>：只调用一次，指令第一次绑定到元素时调用。</p>
+</li>
+<li><p><code>inserted</code>：被绑定元素插入父节点时调用。</p>
+</li>
+<li><p><code>update</code>：所在组件的VNode更新时调用，但是可能发生在其子 VNode 更新之前。</p>
+</li>
+<li><p><code>componentUpdated</code>：指令所在组件的 VNode 及其子 VNode 全部更新后调用。</p>
+</li>
+<li><p><code>unbind</code>：只调用一次，指令与元素解绑时调用。</p>
+</li>
+</ul>
+<p>他们中每一个都有相同的三个参数：el，binding和vnode，在update和componentUpdated中，还会有参数oldVnode，以区分传递的旧值和新值。</p>
+<ul>
+<li><p><code>el</code>：指令所绑定的元素，可以用来直接操作 DOM 。</p>
+</li>
+<li><p><code>binding</code>：一个对象，包含以下属性：name，value，oldValue，expression，arg和modifiers。</p>
+</li>
+<li><p><code>vnode</code>：Vue 编译生成的虚拟节点。</p>
+</li>
+<li><p><code>oldVnode</code>：上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。</p>
+</li>
+</ul>
+<p>注意：除了 el 之外，其它参数都应该是只读的。</p>
+<p>其中，你注意到binding参数中有多个属性，要搞清楚他们分别代表了什么，这很重要。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;p v-demo:foo.a.b=&quot;message&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&apos;demo&apos;,&#123;</span><br><span class="line">	bind(el, binding, vnode)&#123;</span><br><span class="line">	    //给绑定的元素添加内容</span><br><span class="line">		el.innerHTML = `</span><br><span class="line">		name:$&#123;binding.name&#125;;&lt;br&gt;</span><br><span class="line">		value:$&#123;binding.value&#125;;&lt;br&gt;</span><br><span class="line">		expression:$&#123;binding.expression&#125;;&lt;br&gt;</span><br><span class="line">		argument:$&#123;binding.arg&#125;;&lt;br&gt;</span><br><span class="line">		modifiers:$&#123;JSON.stringify(binding.modifiers)&#125;;</span><br><span class="line">		`</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">	el:&apos;#app&apos;,</span><br><span class="line">	data:&#123;</span><br><span class="line">		message:&quot;hello&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name:demo; //指令名，不包括 v- 前缀</span><br><span class="line">value:hello; //指令的绑定值</span><br><span class="line">expression:message; //字符串形式的指令表达式</span><br><span class="line">argument:foo; //传给指令的参数，可选。</span><br><span class="line">modifiers:&#123;&quot;a&quot;:true,&quot;b&quot;:true&#125;; //一个包含修饰符的对象。</span><br></pre></td></tr></table></figure></p>
+<p>还有一个oldValue是指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用。</p>
+<p>到这里，你可能有点糊涂了，东西看起来有点多，其实并不是，你只是不熟悉。这些官网介绍的很清楚，你需要的是一个更具体的例子。</p>
+<h2 id="写一个自己的指令"><a href="#写一个自己的指令" class="headerlink" title="写一个自己的指令"></a>写一个自己的指令</h2><p>现在来创建一个自定义指令，比如我想创建一个可以操作定位的指令，就叫他 <code>v-position</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&apos;position&apos;,&#123;</span><br><span class="line">	bind(el, binding, vnode)&#123;</span><br><span class="line">		el.style.position = &apos;fixed&apos;;</span><br><span class="line">		el.style.top = binding.value + &apos;px&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">	&lt;p v-position=&apos;100&apos;&gt;我距离顶部100px&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>现在v-position只能控制到顶部的距离，我们还可以自由控制方向：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-position:left=&apos;50&apos;&gt;我距离左侧50px&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&apos;position&apos;,&#123;</span><br><span class="line">	bind(el, binding, vnode)&#123;</span><br><span class="line">		el.style.position = &apos;fixed&apos;;</span><br><span class="line">		let d = (binding.arg == &apos;top&apos;?&apos;top&apos;:&apos;left&apos;);</span><br><span class="line">		el.style[d] = binding.value + &apos;px&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>另外，你还可以控制多个值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-position=&quot;&#123;top:&apos;100&apos;,left:&apos;50&apos;&#125;&quot;&gt;我距离左侧50px，距离顶部100px&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&apos;position&apos;,&#123;</span><br><span class="line">	bind(el, binding, vnode)&#123;</span><br><span class="line">		el.style.position = &apos;fixed&apos;;</span><br><span class="line">		el.style.top = binding.value.top + &apos;px&apos;;</span><br><span class="line">		el.style.left = binding.value.left + &apos;px&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这就是vue自定义指令的一些简单应用，你可以创建出更高级灵活的自定义指令。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/14/webpack-study/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1821,156 +2007,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/vue-grammar/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wungjyan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wj'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/06/vue-grammar/" itemprop="url">Vue组件之字面量语法与动态语法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T22:11:27+08:00">
-                2017-09-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>定义一个组件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp message=&quot;1&quot;&gt;&lt;/comp&gt;  //使用的是字面量语法传递数值</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;comp&apos;,&#123;</span><br><span class="line">           props:[&apos;message&apos;],</span><br><span class="line">           template:&apos;&lt;span v-on:click=&quot;alertType&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/span&gt;&apos;,</span><br><span class="line">           methods:&#123;</span><br><span class="line">               alertType:function()&#123;</span><br><span class="line">                   alert(typeof this.message);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
-<p>给组件定义一个函数用于检测传递的数据是什么类型，此处检测到 message 是 string 类型，然而我本意是想传递数值1，即 number 类型。可能会受到双引号影响，觉得去掉双引号就是数字了，其实不然，我不知道去掉双引号是否规范，但是去掉后结果依然是 string。这是字面量语法的结果。 </p>
-<p>vue规定，如果想传递一个实际的 number，需要使用 v-bind，从而让它的值被当作 JavaScript 表达式计算，然后计算结果赋值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :message=&quot;1&quot;&gt;&lt;/comp&gt;  //用v-bind绑定</span><br></pre></td></tr></table></figure>
-<p>此时检测结果为number。</p>
-<p>两个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp message=&quot;1+2&quot;&gt;&lt;/comp&gt;  //1+2</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :message=&quot;1+2&quot;&gt;&lt;/comp&gt;  //3</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2021,7 +2057,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2032,7 +2068,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2043,7 +2079,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
