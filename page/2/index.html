@@ -311,6 +311,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/30/react03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/30/react03/" itemprop="url">react事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T22:25:35+08:00">
+                2018-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p>React 元素的事件处理和 DOM元素很相似，主要有两点不同：</p>
+<ul>
+<li>React事件绑定属性的命名采用驼峰式写法，而不是小写</li>
+<li>如果采用 JSX 的语法你需要传入一个函数作为事件处理函数，而不是一个字符串(DOM元素的写法)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//DOM元素</span><br><span class="line">&lt;button onclick=&quot;test()&quot;&gt;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//react</span><br><span class="line">&lt;button onClick=&#123;test&#125;&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>写个小例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line"></span><br><span class="line">         show()&#123;</span><br><span class="line">             alert(&apos;hello&apos;)</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">          render()&#123;</span><br><span class="line">              return &lt;button onClick=&#123;this.show&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,app)</span><br></pre></td></tr></table></figure></p>
+<p>上例中，当点击按钮时，调用 show函数，注意要用this调用，this指向组件本身。关于this，来单独说下。</p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>我们来改变一下上面的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">       constructor()&#123;</span><br><span class="line">           super()</span><br><span class="line">           this.state = &#123;</span><br><span class="line">               val:0</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">        show()&#123;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                val:this.state.val+1</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">         render()&#123;</span><br><span class="line">             return &lt;div&gt;</span><br><span class="line">                      &lt;button onClick=&#123;this.show&#125;&gt;点击&lt;/button&gt;</span><br><span class="line">                      &lt;p&gt;&#123;this.state.val&#125;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">         &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>此例中，我们为组件添加状态，并显示在页面中，当点击按钮时，状态的数值加1。不过运行的结果可能不会如意，报一个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">...Cannot read property &apos;setState&apos; of undefined</span><br></pre></td></tr></table></figure></p>
+<p>提示setState未定义，为了验证，我们在show函数里打印一下this，结果显示时 undefined。到这里，其实我开始也是比较迷惑的，函数里的this指向undefined还是第一次见。</p>
+<p>在查看文档后才知道，原来在react里，类的方法默认是不会绑定 this 的，也就是说我们必须手动绑定this。绑定到哪？我们的一切操作都是基于这个组件的，所以应该绑定到当前类上。怎么绑定？直接在JSX 回调函数上绑定，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;this.show.bind(this)&#125;&gt;点击&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这里的this还是指向当前类的，只是类的方法不会默认绑定this而已。</p>
+<h2 id="默认行为和事件冒泡"><a href="#默认行为和事件冒泡" class="headerlink" title="默认行为和事件冒泡"></a>默认行为和事件冒泡</h2><p>说到事件，就不得不说默认行为和事件冒泡，因这两点在react里也有些不同。</p>
+<h3 id="取消默认行为"><a href="#取消默认行为" class="headerlink" title="取消默认行为"></a>取消默认行为</h3><p>在react里，必须明确的使用 preventDefault来取消默认行为，像<code>return false</code>是没用的。</p>
+<p>写个例子，阻止a标签的跳转：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleClick(e)&#123;</span><br><span class="line">        e.preventDefault()</span><br><span class="line">        console.log(&apos;hello&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">  return &lt;a href=&quot;https://www.baidu.com&quot; onClick=&#123;this.handleClick&#125;&gt;点击&lt;/a&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>在react里，使用e.stopPropagation()阻止事件冒泡可能会没效，因为这里的冒泡分为三种情况，情况不同方法也不同，在这里我找到一篇文章，说的很详细，我就不多啰嗦了，其实是偷懒，哈哈~<br><a href="https://zhuanlan.zhihu.com/p/26742034" target="_blank" rel="noopener">传送门</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/react02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1745,157 +1905,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/inherit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wungjyan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wj'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/10/inherit/" itemprop="url">构造函数的继承</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T21:34:30+08:00">
-                2018-01-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="什么是继承"><a href="#什么是继承" class="headerlink" title="什么是继承"></a>什么是继承</h2><p> 简单来说，就是一个对象使用另一个对象的属性和方法，并且不要影响原对象的功能。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/10/inherit/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1941,7 +1955,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2025,7 +2039,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

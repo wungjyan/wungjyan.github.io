@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/01/12/server-config/</loc>
+    
+    <lastmod>2019-01-12T05:22:28.589Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/12/10/vuex/</loc>
     
     <lastmod>2018-11-13T15:41:02.595Z</lastmod>
