@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-12T05:27:23.314Z</updated>
+  <updated>2019-02-02T07:44:01.875Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于手写call，apply和bind</title>
+    <link href="http://yoursite.com/2019/02/02/call-apply-bind/"/>
+    <id>http://yoursite.com/2019/02/02/call-apply-bind/</id>
+    <published>2019-02-02T07:08:41.000Z</published>
+    <updated>2019-02-02T07:44:01.875Z</updated>
+    
+    <content type="html"><![CDATA[<p>今年到处看到关于手写bind函数的话题，似乎面试题也趋于跟风形式。这让我有种感觉，那就是不面试的问题都不会，只要扯上面试的话，那么问题就不是问题了。不禁感叹，前端要学的越来越多了～</p><p>不扯太多，我也来试着实现一下<code>bind</code>，不过我觉得<code>call</code>和<code>apply</code>也可以实现下。</p><h2 id="实现-call"><a href="#实现-call" class="headerlink" title="实现 call"></a>实现 call</h2><p>关于<code>call</code>函数的作用，我觉得不需要太多赘述，只要关注两点：</p><ol><li>改变this指向</li><li>直接调用函数</li></ol><p>代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.myCall = function(context) &#123;</span><br><span class="line">    context = context || window // call函数第一个参数为this指向目标，若不传，指向window</span><br><span class="line">    context.fn = this // 将要执行的函数赋值于context对象的fn属性，这样调用函数时，内部this就指向了context</span><br><span class="line">    const args = [...arguments].slice(1) // 获取参数</span><br><span class="line">    const result = context.fn(...args) // call函数会调用原函数，所以我们也调用此函数，注意此时函数this指向了context</span><br><span class="line">    delete context.fn // 删除context对象的fn属性</span><br><span class="line">    return result // 调用结果返回</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><a id="more"></a><h2 id="实现-apply"><a href="#实现-apply" class="headerlink" title="实现 apply"></a>实现 apply</h2><p><code>apply</code>和<code>call</code>的区别只在于参数的传递方式，<code>apply</code>是以数组形式传入参数，代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.myApply = function(context) &#123;</span><br><span class="line">    context = context || window</span><br><span class="line">    context.fn = this</span><br><span class="line">    let result</span><br><span class="line">    // 与call 的区别只在于参数传递方式</span><br><span class="line">    if (arguments[1]) &#123;</span><br><span class="line">        result = context.fn(...arguments[1])</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        result = context.fn()</span><br><span class="line">    &#125;</span><br><span class="line">    delete context.fn</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="实现-bind"><a href="#实现-bind" class="headerlink" title="实现 bind"></a>实现 bind</h2><p>bind的实现稍微复杂点，它与前两个的主要区别在于：<strong>它不会调用函数，只改变了this指向，并且返回函数</strong>。因为返回了函数，那么就可以使用new方式来调用，我们先来看看原生bind的使用结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    a: 2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function test() &#123;</span><br><span class="line">    console.log(this)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test.prototype.hello = function() &#123;</span><br><span class="line">    console.log(&apos;hello&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">t = test.bind(obj)</span><br><span class="line">t() // &#123;a:2&#125;</span><br><span class="line">f = new t() </span><br><span class="line">f.hello  // 使用new调用，关键在于实例可以访问原函数原型上的hello方法</span><br></pre></td></tr></table></figure></p><p>那么，我们要做的有两步，第一是<strong>改变this指向</strong>，第二是<strong>new出来的实例继承原型</strong>，代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Function.prototype.myBind = function(context, ...args1) &#123;</span><br><span class="line">    context = context || window</span><br><span class="line">    const _this = this</span><br><span class="line">    </span><br><span class="line">    // 要返回的函数，内部直接借用apply改变this指向</span><br><span class="line">    function F(...args2) &#123;</span><br><span class="line">        _this.apply(context, [...args1, ...args2])</span><br><span class="line">    &#125;</span><br><span class="line">    F.prototype = Object.create(this.prototype) // 返回的函数的原型继承原函数的原型</span><br><span class="line">    // F.prototype.contructor = this // 此处可以不写，思考为什么？</span><br><span class="line">    return F</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>注意上述代码中的<code>args1</code>和<code>args2</code>，因为bind函数调用情况可能是这样<code>test.bind(obj,1)(2)</code>，所以为了好理解，我将两个参数列表都表示出来，最后参数是要合并的。</p><h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>以上就是三种函数的实现方式，只是基于原理的简单实现。面试只是一个小目的，最关键的还是学好JavaScript这门语言啊。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今年到处看到关于手写bind函数的话题，似乎面试题也趋于跟风形式。这让我有种感觉，那就是不面试的问题都不会，只要扯上面试的话，那么问题就不是问题了。不禁感叹，前端要学的越来越多了～&lt;/p&gt;
+&lt;p&gt;不扯太多，我也来试着实现一下&lt;code&gt;bind&lt;/code&gt;，不过我觉得&lt;code&gt;call&lt;/code&gt;和&lt;code&gt;apply&lt;/code&gt;也可以实现下。&lt;/p&gt;
+&lt;h2 id=&quot;实现-call&quot;&gt;&lt;a href=&quot;#实现-call&quot; class=&quot;headerlink&quot; title=&quot;实现 call&quot;&gt;&lt;/a&gt;实现 call&lt;/h2&gt;&lt;p&gt;关于&lt;code&gt;call&lt;/code&gt;函数的作用，我觉得不需要太多赘述，只要关注两点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;改变this指向&lt;/li&gt;
+&lt;li&gt;直接调用函数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;代码实现：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Function.prototype.myCall = function(context) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    context = context || window // call函数第一个参数为this指向目标，若不传，指向window&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    context.fn = this // 将要执行的函数赋值于context对象的fn属性，这样调用函数时，内部this就指向了context&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    const args = [...arguments].slice(1) // 获取参数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    const result = context.fn(...args) // call函数会调用原函数，所以我们也调用此函数，注意此时函数this指向了context&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    delete context.fn // 删除context对象的fn属性&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return result // 调用结果返回&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>服务器相关安装</title>
@@ -504,31 +533,6 @@
       
         &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;数组去重的方法不少，每个人都有自己喜欢用的方法，我只讲两种我喜欢用的方法。&lt;/p&gt;
 &lt;h2 id=&quot;方法一&quot;&gt;&lt;a href=&quot;#方法一&quot; 
-      
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>判断数组类型的方法</title>
-    <link href="http://yoursite.com/2018/01/11/isarray/"/>
-    <id>http://yoursite.com/2018/01/11/isarray/</id>
-    <published>2018-01-11T13:36:19.000Z</published>
-    <updated>2018-01-11T13:38:06.885Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>我们都知道js中可以使用<code>typeof</code>来判断数据类型，但是有时它并不很精确，就拿数组来说，判断的结果是<code>object</code>。所以我们需要用其他方法来准确判断到底是不是一个数组。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>有四个方法，很简单：</p><h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><blockquote><p>语法：object instanceof constructor<br>意思是说object的原型链上是否有constructor的prototype，object是检测的对象，constructor是一个构造函数，结果返回布尔值</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">arr instanceof Array;    //true</span><br></pre></td></tr></table></figure><h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><blockquote><p>语法：object.constructor  返回object的构造函数 </p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">arr.constructor == Array;  //true</span><br></pre></td></tr></table></figure><h3 id="Object-prototype-toString-call"><a href="#Object-prototype-toString-call" class="headerlink" title="Object.prototype.toString.call()"></a>Object.prototype.toString.call()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">Object.prototype.toString.call(arr);  //&quot;[object Array]&quot;</span><br></pre></td></tr></table></figure><h3 id="Array-isArray"><a href="#Array-isArray" class="headerlink" title="Array.isArray()"></a>Array.isArray()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [];</span><br><span class="line">Array.isArray(arr);   //true</span><br></pre></td></tr></table></figure><p>此方法可能有兼容问题</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>综合上面提到的方法，写一个比较完善的方法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function isArrayFn(v)&#123;</span><br><span class="line">    if(Array.isArray)&#123;</span><br><span class="line">        return Array.isArray(v)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return Object.prototype.toString.call(v) === &apos;[object Array]&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var arr=[];</span><br><span class="line">console.log(isArrayFn(arr));   //true</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;我们都知道js中可以使用&lt;code&gt;typeof&lt;/code&gt;来判断数据类型，但是有时它并不很精确，就拿数组来说，判断的结果是&lt;code&gt;o
       
     
     </summary>

@@ -311,6 +311,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/vue-dataflow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/08/vue-dataflow/" itemprop="url">Vue组件之单向数据流</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T23:45:35+08:00">
+                2017-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是单向数据流？"><a href="#什么是单向数据流？" class="headerlink" title="什么是单向数据流？"></a>什么是单向数据流？</h2><blockquote>
+<p>prop 是单向绑定的：当父组件的属性变化时，将传导给子组件，但是不会反过来。这是为了防止子组件无意修改了父组件的状态——这会让应用的数据流难以理解。</p>
+</blockquote>
+<blockquote>
+<p>另外，每次父组件更新时，子组件的所有 prop 都会更新为最新值。这意味着你不应该在子组件内部改变 prop。如果你这么做了，Vue 会在控制台给出警告。 </p>
+</blockquote>
+<p>这是官网给的说明，说白了就是父组件通过props传递给子组件的数据不能在子组件里修改，否则浏览器会报错。  </p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="先来看看如果不听话的结果："><a href="#先来看看如果不听话的结果：" class="headerlink" title="先来看看如果不听话的结果："></a>先来看看如果不听话的结果：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">       &lt;my-input :val=&quot;1&quot;&gt;&lt;/my-input&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    Vue.component(&apos;my-input&apos;,&#123;</span><br><span class="line">        props:[&apos;val&apos;],</span><br><span class="line">        template:&apos;&lt;input type=&quot;button&quot; :value=&quot;val&quot; @click=&quot;changeVal&quot;&gt;&apos;,</span><br><span class="line"></span><br><span class="line">        methods:&#123;</span><br><span class="line">            changeVal:function()&#123;</span><br><span class="line">                this.val++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:&apos;#app&apos;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，父组件传递给子组件一个val数值，绑定在value上，并给按钮添加一个点击事件，点击时val做加一运算。在浏览器中运行，发现效果可以实现，即val值增加了，咋一眼会觉得单向数据流扯淡( • ̀ω•́ )✧。  当然，这是天真的想法。打开控制台，你会发现一行大大的红字：</p>
+<blockquote>
+<p>[Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop’s value. Prop being mutated: “val”  </p>
+</blockquote>
+<p>显然，不听话是会吃亏的。浏览器报错了，并友情地提示了怎么解决，你看到了吗？    </p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><ol>
+<li><p>如果你想把它当作局部数据来用，那么就定义一个局部变量，并用 prop 的值初始化它；</p>
+</li>
+<li><p>如果你想将它处理成其它数据输出，那么就定义一个计算属性，处理 prop 的值并返回。</p>
+</li>
+</ol>
+<p>首先看第一种方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-input&apos;,&#123;</span><br><span class="line">           props:[&apos;val&apos;],</span><br><span class="line">           </span><br><span class="line">           template:&apos;&lt;input type=&quot;button&quot; :value=&quot;counter&quot; @click=&quot;changeVal&quot;&gt;&apos;,</span><br><span class="line">           </span><br><span class="line">           data:function()&#123;</span><br><span class="line">               return &#123;counter:this.val&#125;</span><br><span class="line">           &#125;,</span><br><span class="line">           </span><br><span class="line">           methods:&#123;</span><br><span class="line">               changeVal:function()&#123;</span><br><span class="line">                   this.counter++;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
+<p>上面代码中，将传入的<code>val</code>赋给<code>counter</code>，然后直接操作<code>this.counter</code>,这时浏览器就不会报错了，注意data的书写格式，必须是函数。    </p>
+<p>第二种方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-input&apos;,&#123;</span><br><span class="line">            props:[&apos;val&apos;],</span><br><span class="line">            template:&apos;&lt;input type=&quot;button&quot; :value=&quot;changeVal&quot;&gt;&apos;,</span><br><span class="line">            computed:&#123;</span><br><span class="line">                changeVal:function()&#123;</span><br><span class="line">                    return this.val+100;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>这时，我们希望将传过来的值加100，得到新的数值，通过计算属性轻松实现。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/vue-communication/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1692,154 +1859,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/create-page/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wungjyan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wj'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/23/create-page/" itemprop="url">一个github账户拥有多个page</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T10:32:10+08:00">
-                2017-08-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;在建好博客后，我发现了一个尴尬的事，就是我的一些demo无法展示了，因为我的github page放了我的博客，无法放其他展示页面了，可是我又想放自己的展示网页，怎么办呢？</p>
-<p>&emsp;&emsp;我首先想到的是将文件放在博客文件下面，然后引用，但是hexo主题可能会对内容样式修改，资源多了会很乱的感觉，反反复复修改了不少东西，效果不尽人意。今天我特意上网查了一下关于github page的资料，发现原来还可以建多个page，只不过命名不是<code>username.github.io</code>的形式了。 </p>
-<p>&emsp;&emsp;现在假设你拥有一个<code>username.github.io</code>的博客主页，然后你还想要添加页面去展示其他内容，你可以这么做：
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/23/create-page/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1890,7 +1909,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
