@@ -96,19 +96,19 @@
 
 
 
-<meta name="description" content="此文章同步发布掘金，掘金地址  方式一览 props &amp;amp;&amp;amp; emit v-model $children &amp;amp;&amp;amp; $parent $listeners &amp;amp;&amp;amp; $attrs .sync  prop &amp;amp;&amp;amp; emit 方式父组件通过 props 传递数据给子组件，子组件通过 emit 发送事件传递数据给父组件。这是最常用的父子组件通信方式，符">
+<meta name="description" content="此文章同步发布于掘金  我的掘金  方式一览 props &amp;amp;&amp;amp; emit v-model $children &amp;amp;&amp;amp; $parent $listeners &amp;amp;&amp;amp; $attrs .sync">
 <meta name="keywords" content="JavaScript,Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue 组件通信总结 (非vuex和Event Bus)">
 <meta property="og:url" content="http://yoursite.com/2019/02/14/vue-state/index.html">
 <meta property="og:site_name" content="wj&#39;blog">
-<meta property="og:description" content="此文章同步发布掘金，掘金地址  方式一览 props &amp;amp;&amp;amp; emit v-model $children &amp;amp;&amp;amp; $parent $listeners &amp;amp;&amp;amp; $attrs .sync  prop &amp;amp;&amp;amp; emit 方式父组件通过 props 传递数据给子组件，子组件通过 emit 发送事件传递数据给父组件。这是最常用的父子组件通信方式，符">
+<meta property="og:description" content="此文章同步发布于掘金  我的掘金  方式一览 props &amp;amp;&amp;amp; emit v-model $children &amp;amp;&amp;amp; $parent $listeners &amp;amp;&amp;amp; $attrs .sync">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/2/5/168bc72ddda0b169?w=788&h=566&f=png&s=20028">
-<meta property="og:updated_time" content="2019-02-14T02:27:23.998Z">
+<meta property="og:updated_time" content="2019-02-14T02:30:41.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue 组件通信总结 (非vuex和Event Bus)">
-<meta name="twitter:description" content="此文章同步发布掘金，掘金地址  方式一览 props &amp;amp;&amp;amp; emit v-model $children &amp;amp;&amp;amp; $parent $listeners &amp;amp;&amp;amp; $attrs .sync  prop &amp;amp;&amp;amp; emit 方式父组件通过 props 传递数据给子组件，子组件通过 emit 发送事件传递数据给父组件。这是最常用的父子组件通信方式，符">
+<meta name="twitter:description" content="此文章同步发布于掘金  我的掘金  方式一览 props &amp;amp;&amp;amp; emit v-model $children &amp;amp;&amp;amp; $parent $listeners &amp;amp;&amp;amp; $attrs .sync">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2019/2/5/168bc72ddda0b169?w=788&h=566&f=png&s=20028">
 
 
@@ -405,7 +405,7 @@
       
 
       
-        <font color="red" size="5">此文章同步发布掘金，<a href="https://juejin.im/post/5c5910faf265da2da15d9424" target="_blank" rel="noopener">掘金地址</a></font>
+        <font color="red" size="5">此文章同步发布于掘金  <a href="https://juejin.im/user/591b01b5a22b9d0058362647/posts" target="_blank" rel="noopener">我的掘金</a></font>
 
 <h2 id="方式一览"><a href="#方式一览" class="headerlink" title="方式一览"></a>方式一览</h2><ol>
 <li><code>props</code> &amp;&amp; <code>emit</code></li>
@@ -414,6 +414,7 @@
 <li><code>$listeners</code> &amp;&amp; <code>$attrs</code></li>
 <li><code>.sync</code></li>
 </ol>
+<a id="more"></a>
 <h2 id="prop-amp-amp-emit-方式"><a href="#prop-amp-amp-emit-方式" class="headerlink" title="prop &amp;&amp; emit 方式"></a>prop &amp;&amp; emit 方式</h2><p>父组件通过 <code>props</code> 传递数据给子组件，子组件通过 <code>emit</code> 发送事件传递数据给父组件。这是最常用的父子组件通信方式，符合单向数据流，即子组件不能直接修改 props， 而是必须通过发送事件的方式告知父组件修改数据。由于是常用的方式，在这也不多啰嗦了。</p>
 <h2 id="v-model-方式"><a href="#v-model-方式" class="headerlink" title="v-model 方式"></a>v-model 方式</h2><p><code>v-model</code>实现的通信其本质上还是上面的<code>props</code>和<code>emit</code>方式，使用<code>v-model</code>更像是一种语法糖。<a href="https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model" target="_blank" rel="noopener">文档介绍</a>  </p>
 <p>先举个栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 这是父组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;child v-model=&quot;msg&quot;&gt;&lt;/child&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import child from &quot;../components/Child&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      msg: &quot;hello&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123; child &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
