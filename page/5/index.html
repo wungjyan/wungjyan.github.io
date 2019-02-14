@@ -311,6 +311,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/vue-Slots/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/10/vue-Slots/" itemprop="url">Vue组件之Slots分发内容</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T15:08:11+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在使用组件时，父组件中的内容会被丢弃，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component&gt;</span><br><span class="line">    &lt;p&gt;这是一些内容&lt;/p&gt;</span><br><span class="line">&lt;/my-component&gt;</span><br></pre></td></tr></table></figure></p>
+<p>组件<code>my-component</code>中的<code>p</code>标签是不会被渲染的，但实际开发中，我们可能希望运用到父组件中的内容，因为在使用组件时，常常需要这样组合它们：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;app&gt;</span><br><span class="line">  &lt;app-header&gt;&lt;/app-header&gt;</span><br><span class="line">  &lt;app-footer&gt;&lt;/app-footer&gt;</span><br><span class="line">&lt;/app&gt;</span><br></pre></td></tr></table></figure></p>
+<p>为了让组件可以组合，我们需要一种方式来混合父组件的内容与子组件自己的模板。这个过程被称为 内容分发，vue提供了一个API，使用特殊的<code>&lt;slot&gt;</code>元素作为原始内容的插槽。</p>
+<h2 id="单个Slot"><a href="#单个Slot" class="headerlink" title="单个Slot"></a>单个Slot</h2><p>要想使用父组件的内容，需要在子组件中加入<code>&lt;slot&gt;</code>插口。 </p>
+<p>假设 <code>my-component</code> 组件有下面模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;h3&gt;我是子组件的标题&lt;/h3&gt;</span><br><span class="line">    &lt;p&gt;我是子组件的内容&lt;/p&gt;</span><br><span class="line">    &lt;slot&gt;</span><br><span class="line">        只有在没有要分发的内容时才会显示。</span><br><span class="line">    &lt;/slot&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>父组件模板：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;我是父组件的标题&lt;/h2&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;my-component&gt;</span><br><span class="line">    &lt;p&gt;我是父组件的内容&lt;/p&gt;</span><br><span class="line">&lt;/my-component&gt;</span><br></pre></td></tr></table></figure></p>
+<p>渲染结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;我是父组件的标题&lt;/h2&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;h3&gt;我是子组件的标题&lt;/h3&gt;</span><br><span class="line">    &lt;p&gt;我是子组件的内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我是父组件的内容&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>可知，父组件中的内容被渲染到子组件的slot插口所在的DOM位置，并替换掉slot标签本身。     </p>
+<p>说明：</p>
+<blockquote>
+<p>当子组件模板只有一个没有属性的 slot 时，父组件整个内容片段将插入到 slot 所在的 DOM 位置，并替换掉 slot 标签本身    </p>
+</blockquote>
+<p>最初在<code>&lt;slot&gt;</code>标签中的任何内容都被视为备用内容，在父组件中无内容时显示。   </p>
+<h2 id="具名Slot"><a href="#具名Slot" class="headerlink" title="具名Slot"></a>具名Slot</h2><blockquote>
+<p><slot> 元素可以用一个特殊的属性 name 来配置如何分发内容。多个 slot 可以有不同的名字。具名 slot 将匹配内容片段中有对应 slot 特性的元素。 </slot></p>
+</blockquote>
+<p>例子：    </p>
+<p>父组件模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component&gt;</span><br><span class="line"></span><br><span class="line">            &lt;p slot=&quot;one&quot;&gt;这是替换第一个内容&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">            &lt;template slot=&quot;two&quot;&gt;</span><br><span class="line">                &lt;p&gt;替换第二个内容&lt;/p&gt;</span><br><span class="line">                &lt;span&gt;一个span标签，替换第二个内容&lt;/span&gt;</span><br><span class="line">            &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">            &lt;p slot=&quot;three&quot;&gt;这是替换第三个内容&lt;/p&gt;</span><br><span class="line">            </span><br><span class="line">&lt;/my-component&gt;</span><br></pre></td></tr></table></figure>
+<p>子组件模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;slot name=&quot;one&quot;&gt;&lt;p&gt;这是子组件第1个内容&lt;/p&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;slot name=&quot;two&quot;&gt;&lt;p&gt;这是子组件第2个内容&lt;/p&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;slot name=&quot;three&quot;&gt;&lt;p&gt;这是子组件第3个内容&lt;/p&gt;&lt;/slot&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>渲染结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是替换第一个内容&lt;/p&gt;</span><br><span class="line">&lt;p&gt;替换第二个内容&lt;/p&gt;</span><br><span class="line">&lt;span&gt;一个span标签，替换第二个内容&lt;/span&gt;</span><br><span class="line">&lt;p&gt;这是替换第三个内容&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/vue-dataflow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1709,156 +1874,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/24/vue-learn1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wungjyan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wj'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/24/vue-learn1/" itemprop="url">Vue组件学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-24T09:40:50+08:00">
-                2017-08-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="什么是组件？"><a href="#什么是组件？" class="headerlink" title="什么是组件？"></a>什么是组件？</h2><p>引用官方话就是：   </p>
-<blockquote>
-<p>组件 (Component) 是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js 的编译器为它添加特殊功能。在有些情况下，组件也可以是原生 HTML 元素的形式，以 is 特性扩展。     </p>
-</blockquote>
-<p>其实打个比方就是，组件就好比电脑中的硬盘，显卡，CPU等等，这些零件组成电脑，而组件就组成我们的页面。其中，需要明白的是组件是自定义标签。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/24/vue-learn1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1909,7 +1924,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
