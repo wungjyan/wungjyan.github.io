@@ -311,6 +311,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/rn-test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/05/rn-test/" itemprop="url">RN踩坑记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-05T09:31:07+08:00">
+                2019-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RN/" itemprop="url" rel="index">
+                    <span itemprop="name">RN</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这几天试用了下flutter和react-native，最后决定还是先学习react-native。虽说flutter的优点有很多，再加上谷歌出品，必属精品，但是RN依旧更成熟点，而且react的语法也没有额外的学习成本。对于快速构建一个app，RN现在更合适点。</p>
+<p>开始使用RN，总免不了一些坑。由于我在安装RN配置前，捣鼓了flutter配置，所以相对而言安装部分没遇到坑了，但也遇到其他坑。本文准备长期更新，用以记录学习中的坑。</p>
+<p>目前遇到的两处坑：</p>
+<h2 id="报错：Entry-“-CFBundleIdentifier”-Does-Not-Exist"><a href="#报错：Entry-“-CFBundleIdentifier”-Does-Not-Exist" class="headerlink" title="报错：Entry, “:CFBundleIdentifier”, Does Not Exist"></a>报错：Entry, “:CFBundleIdentifier”, Does Not Exist</h2><p>把这个错误去百度或谷歌，能够找到最多的答案就是去“下载boost 等几个第三方库编译”，原因是因为：</p>
+<blockquote>
+<p>！！！注意！！！：init 命令默认会创建最新的版本，而目前最新的 0.45 及以上版本需要下载 boost 等几个第三方库编译。这些库在国内即便翻墙也很难下载成功，导致很多人无法运行iOS项目！！！中文网在论坛中提供了这些库的国内下载链接。如果你嫌麻烦，又没有对新版本的需求，那么可以暂时创建0.44.3的版本。</p>
+</blockquote>
+<p>这是官网的说明，然后很多人用这个方法解决了。然而我发现我的下载都是正常的，哪怕我单独去下载文件也不能解决问题。最后我是把ios文件运行在Xcode上才找到原因<br><img src="https://img2018.cnblogs.com/blog/1151805/201903/1151805-20190302133859210-683273051.png" alt="image"></p>
+<p>如图，由于我的电脑上安装了nginx，并且监听的是8081端口，而react-native运行时，也会默认监听一个8081端口，所以提示端口占用。知道原因就好办了，我把nginx的配置修改了下，释放端口，最后成功运行了项目。</p>
+<p>所以遇到此类问题，可以在Xcode去运行下查错，每个人的原因可能都不一样。</p>
+<h2 id="React-Navigation-v3版注意"><a href="#React-Navigation-v3版注意" class="headerlink" title="React Navigation v3版注意"></a>React Navigation v3版注意</h2><p>这是一个导航插件，因为我在网上看的教程是v2版的，而默认安装的是最新版，所以一些差异导致项目无法运行。</p>
+<p>目前主要一个大区别就是你需要在你的导航外面加上一层容器，在 v2 和更早版本中， React Navigation 中的容器由 create*Navigator 函数自动提供， 从 v3 开始, 需要直接使用容器，即<code>createAppContainer</code>。这个只是提一下，后面遇到的再记录。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/14/vue-state/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1813,162 +1966,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/react06/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wungjyan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wj'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/14/react06/" itemprop="url">react路由</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T22:27:52+08:00">
-                2018-06-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React/" itemprop="url" rel="index">
-                    <span itemprop="name">React</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>react与vue一样，做SPA就要用到路由功能。我们做WEB端路由，需要用到的是<code>react-router-dom</code>这个库，它帮助我们实现react路由功能。另外，为了方便起见，代码演示使用react脚手架<code>create-react-app</code>。关于脚手架的使用可自己搜索。废话不多说，直接撸~</p>
-<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>首先我修改下脚手架，将<code>/src/index.js</code>入口文件清空，用来写我们的演示代码，将<code>/public/index.html</code>模板文件删掉不必要的干扰代码，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;theme-color&quot; content=&quot;#000000&quot;&gt;</span><br><span class="line">    &lt;title&gt;React App&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>切换到index.js文件，首先引入我们需要的模块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;;</span><br><span class="line">import ReactDOM from &apos;react-dom&apos;;</span><br><span class="line">import &#123;BrowserRouter as Router, Route, Link&#125; from &apos;react-router-dom&apos;</span><br></pre></td></tr></table></figure></p>
-<p>前两个不必多说了，而第三个就是我们要用到的路由库，在引入前别忘记下载了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save react-router-dom</span><br></pre></td></tr></table></figure></p>
-<p>我们在<code>react-router-dom</code>中引入了三个东西，其中，Router是容器，它里面就包含了我们的路由内容，Route是定义真正路由组件的，而Link就是定义切换链接的，类似vue中的<code>router-link</code>，简单使用如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 首页组件</span><br><span class="line">const Home = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是首页&lt;/h1&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 用户页组件</span><br><span class="line">const User = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是用户页&lt;/h1&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Router&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line"></span><br><span class="line">          &lt;ul&gt;</span><br><span class="line">              &lt;li&gt;&lt;Link to=&quot;/home&quot;&gt;首页&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">              &lt;li&gt;&lt;Link to=&quot;/user&quot;&gt;用户页&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">          &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">          &lt;Route path=&quot;/home&quot; component=&#123;Home&#125;&gt;&lt;/Route&gt;</span><br><span class="line">          &lt;Route path=&quot;/user&quot; component=&#123;User&#125;&gt;&lt;/Route&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/Router&gt;, document.getElementById(&apos;root&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>代码中也可以看到，<code>Router</code>起到容器作用，其本身也是一个组件，需要注意的是，Router下只能有一个根元素，这里即<code>div</code>。先看<code>Link</code>，它有一<code>to</code>属性，很明显代表的是要链接的地址，再看<code>Route</code>，它的<code>path</code>属性表明路由的路径，与<code>Link</code>的<code>to</code>属性值要对应起来，而component属性指出当前路径所对应的界面（其本质就是对应到一个组件，当链接到当前路径后，展示组件内容）。</p>
-<p>怎么样，react路由是不是很简单？其实刚接触时，我有点不习惯这种写法，毕竟受vue影响大了，哈哈~不过当我再写一遍时，我觉得react的路由上手更简单点，至少很直观 ，也许当初我先学react的话，会对vue的路由更不习惯。</p>
-<h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><p>如果说当初刚学vue路由时，我可能不知道怎么定义嵌套路由，但是现在初学react路由时，我自己按着想法，却也把嵌套路由搞出来了，一切也是因为它很直观。因为react路由也是组件形式，那么我在父路由组件里，再写一个子路由不就行了嘛，形式都是一样的，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">// xiaoming</span><br><span class="line">const Xiaoming = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        我是小明</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// xiaohong</span><br><span class="line">const Xiaohong = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        我是小红</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 用户页组件</span><br><span class="line">const User = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是用户页&lt;/h1&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;Router&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                  &lt;li&gt;&lt;Link to=&quot;/user/xiaoming&quot;&gt;小明&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li&gt;&lt;Link to=&quot;/user/xiaohong&quot;&gt;小红&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">                &lt;Route path=&quot;/user/xiaoming&quot; component=&#123;Xiaoming&#125;&gt;&lt;/Route&gt;</span><br><span class="line">                &lt;Route path=&quot;/user/xiaohong&quot; component=&#123;Xiaohong&#125;&gt;&lt;/Route&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/Router&gt; </span><br><span class="line">          </span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>如上，我在<code>/user</code>路由组件里，再写了两个子路由，形式和父路由完全一样，这样就完成了嵌套路由的实现，同理也可继续嵌套下去。而嵌套路由在vue里的实现是配置children，很明显刚学时，我肯定是不知道是要配置children的。不过用这么久vue了，我还是很喜欢vue这个框架的，也习惯了它的设计思想，而react让我看到了不同的设计思想。我相信存在即合理，这两种模式我都喜欢，哈哈又扯多了。</p>
-<h2 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h2><p>react的动态路由匹配与vue的基本类似，也是以冒号开头加参数。我们将上述例子中的<code>user</code>子路由修改下，我们不明确指向是<code>xiaoming</code>还是<code>xiaohong</code>，而是使用动态路由来自动识别，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const Person = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        // ....</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&lt;Route path=&quot;/user/:name&quot; component=&#123;Person&#125; &gt;&lt;/Route&gt;</span><br></pre></td></tr></table></figure></p>
-<p>现在，我要求输入不同的name时，浏览器会显示不同的内容。其实关键就是<code>Person</code>组件该怎么写了，再进一步就是怎么拿到name的值了，这时候我们也会想到react应该会替我们做好这些的。其实，name参数值会被传入到Person组件里，存在props里，而函数定义的组件中，props是以参数形式传进去的。我们可以打印props就会知道name值存在<code>props.match.params</code>中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const Person = (props) =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &#123;props.match.params.name&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>知道了怎么获得动态参数，我们就把这个例子完善好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">const Person = (props) =&gt; &#123;</span><br><span class="line">    if(props.match.params.name === &apos;xiaoming&apos;)&#123;</span><br><span class="line">        var a = &apos;我是小明&apos;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        var a = &apos;我是小红&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;&#123;a&#125;&lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">// 用户页组件</span><br><span class="line">const User = () =&gt; (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;这是用户页&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Router&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;ul&gt;</span><br><span class="line">                  &lt;li&gt;&lt;Link to=&quot;/user/xiaoming&quot;&gt;小明&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                  &lt;li&gt;&lt;Link to=&quot;/user/xiaohong&quot;&gt;小红&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">                &lt;Route path=&quot;/user/:name&quot; component=&#123;Person&#125; &gt;&lt;/Route&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/Router&gt; </span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>上述代码的功能与之前写的一样，只是用动态路由来实现的。当然我这种写法是很 low的，实际开发中应该不会这么写，我只是把过程讲出来，方便理解。</p>
-<p>react路由就先讲这么多了，我也实在讲不出花来~</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2019,7 +2016,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2030,7 +2027,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
