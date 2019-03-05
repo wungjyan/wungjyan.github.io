@@ -302,8 +302,8 @@
         <category>服务器</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>mongodb</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -314,8 +314,8 @@
         <category>服务器</category>
       </categories>
       <tags>
-        <tag>Node.js</tag>
         <tag>Linux</tag>
+        <tag>Node.js</tag>
       </tags>
   </entry>
   <entry>
