@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[十年]]></title>
+    <url>%2F2019%2F03%2F09%2F19-3-9%2F</url>
+    <content type="text"><![CDATA[与10年前的同桌在这异乡相聚了下，见面就被吐槽变丑了，变胖了，哎。 总体上是开心的，聊了很多以前的事，两个人都不敢相信已经过了10年。曾经的爱哭鬼还是爱哭鬼，但更坚强，更乐观了，同时也感叹生活的无奈，深深体会到成年人的世界没有容易一说。 不敢期望下个10年还能相聚，但还是有点憧憬。希望到时我们都活出自己想要的样子。祝福你，也祝福我。]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[RN踩坑记录]]></title>
     <url>%2F2019%2F03%2F05%2Frn-test%2F</url>
     <content type="text"><![CDATA[这几天试用了下flutter和react-native，最后决定还是先学习react-native。虽说flutter的优点有很多，再加上谷歌出品，必属精品，但是RN依旧更成熟点，而且react的语法也没有额外的学习成本。对于快速构建一个app，RN现在更合适点。 开始使用RN，总免不了一些坑。由于我在安装RN配置前，捣鼓了flutter配置，所以相对而言安装部分没遇到坑了，但也遇到其他坑。本文准备长期更新，用以记录学习中的坑。 目前遇到的两处坑： 报错：Entry, “:CFBundleIdentifier”, Does Not Exist把这个错误去百度或谷歌，能够找到最多的答案就是去“下载boost 等几个第三方库编译”，原因是因为： ！！！注意！！！：init 命令默认会创建最新的版本，而目前最新的 0.45 及以上版本需要下载 boost 等几个第三方库编译。这些库在国内即便翻墙也很难下载成功，导致很多人无法运行iOS项目！！！中文网在论坛中提供了这些库的国内下载链接。如果你嫌麻烦，又没有对新版本的需求，那么可以暂时创建0.44.3的版本。 这是官网的说明，然后很多人用这个方法解决了。然而我发现我的下载都是正常的，哪怕我单独去下载文件也不能解决问题。最后我是把ios文件运行在Xcode上才找到原因 如图，由于我的电脑上安装了nginx，并且监听的是8081端口，而react-native运行时，也会默认监听一个8081端口，所以提示端口占用。知道原因就好办了，我把nginx的配置修改了下，释放端口，最后成功运行了项目。 所以遇到此类问题，可以在Xcode去运行下查错，每个人的原因可能都不一样。 React Navigation v3版注意这是一个导航插件，因为我在网上看的教程是v2版的，而默认安装的是最新版，所以一些差异导致项目无法运行。 目前主要一个大区别就是你需要在你的导航外面加上一层容器，在 v2 和更早版本中， React Navigation 中的容器由 create*Navigator 函数自动提供， 从 v3 开始, 需要直接使用容器，即createAppContainer。这个只是提一下，后面遇到的再记录。]]></content>
@@ -53,8 +64,8 @@
         <category>React</category>
       </categories>
       <tags>
-        <tag>redux-thunk</tag>
         <tag>react</tag>
+        <tag>redux-thunk</tag>
       </tags>
   </entry>
   <entry>
@@ -302,8 +313,8 @@
         <category>服务器</category>
       </categories>
       <tags>
-        <tag>mongodb</tag>
         <tag>Linux</tag>
+        <tag>mongodb</tag>
       </tags>
   </entry>
   <entry>
@@ -314,8 +325,8 @@
         <category>服务器</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Node.js</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
