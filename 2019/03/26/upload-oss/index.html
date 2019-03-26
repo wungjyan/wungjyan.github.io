@@ -106,7 +106,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/19/169936f212d937a8?w=1568&h=422&f=png&s=137966">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/3/19/1699519a30183456?w=3372&h=1748&f=jpeg&s=378911">
-<meta property="og:updated_time" content="2019-03-26T14:06:57.601Z">
+<meta property="og:updated_time" content="2019-03-26T14:10:03.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中图片上传到阿里云oss记录">
 <meta name="twitter:description" content="最近项目需求，做一个图片上传到阿里云oss的功能，由于之前没做过这样的功能，所以也是查阅了不少资料，边写demo边测试把基本功能完成了。现在来记录下，没做过的童鞋也可以简单参考下。我的使用场景是在vue项目中结合iview框架的上传组件来实现功能。 首先给大家一篇阿里云的文档 web端直传实践，它里面给出了三个上传的例子，如下图： 最开始我们后端让我自己看看这些例子，也没决定好用哪种方式，而我选择">
@@ -408,7 +408,7 @@
       
         <p>最近项目需求，做一个图片上传到阿里云oss的功能，由于之前没做过这样的功能，所以也是查阅了不少资料，边写demo边测试把基本功能完成了。现在来记录下，没做过的童鞋也可以简单参考下。我的使用场景是在vue项目中结合iview框架的上传组件来实现功能。</p>
 <p>首先给大家一篇阿里云的文档 <a href="https://help.aliyun.com/document_detail/31923.html?spm=a2c4g.11186623.2.22.73a815a6SwksDZ#concept-iyn-vfy-5db" target="_blank" rel="noopener">web端直传实践</a>，它里面给出了三个上传的例子，如下图：</p>
-<p><img src="https://user-gold-cdn.xitu.io/2019/3/19/169936f212d937a8?w=1568&amp;h=422&amp;f=png&amp;s=137966" alt=""><br>最开始我们后端让我自己看看这些例子，也没决定好用哪种方式，而我选择尝试的是第一种方式，因为不需要后端直接参与。那我就先从第一种方式开始说起，在这之前你需要开通好阿里云的对象存储功能，并新建了一个<code>Bucket</code>，这些我就直接略过了，给个文档：<a href="https://help.aliyun.com/document_detail/31883.html?spm=a2c4g.11186623.6.562.82ca79f8pgYLVY" target="_blank" rel="noopener">使用阿里云OSS</a></p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/3/19/169936f212d937a8?w=1568&amp;h=422&amp;f=png&amp;s=137966" alt=""><br>最开始我们后端让我自己看看这些例子，也没决定好用哪种方式，而我选择尝试的是第一种方式，因为不需要后端直接参与。那我就先从第一种方式开始说起，在这之前你需要开通好阿里云的对象存储功能，并新建了一个<code>Bucket</code>，这些我就直接略过了，给个文档：<a href="https://help.aliyun.com/document_detail/31883.html?spm=a2c4g.11186623.6.562.82ca79f8pgYLVY" target="_blank" rel="noopener">使用阿里云OSS</a><br><a id="more"></a></p>
 <h2 id="JavaScript客户端签名直传"><a href="#JavaScript客户端签名直传" class="headerlink" title="JavaScript客户端签名直传"></a>JavaScript客户端签名直传</h2><p>这种方式不需要后端直接参与，你只需要配置好阿里云oss的后台就好，非常方便。但是客户端通过JavaScript把AccesssKeyID和AccessKeySecret写在代码里面有泄露的风险。关于AccesssKeyID和AccessKeySecret，参考上面给的文档里的介绍。</p>
 <p>每种方式官方都给出了demo代码，你可以下载下来参考一下，不过我觉得例子代码有点多，就没用他那种方式。阿里云提供了一个sdk可以帮助我们来实现文件上传。<a href="https://help.aliyun.com/document_detail/64041.html?spm=a2c4g.11186623.6.1028.70652f08sBl5jq" target="_blank" rel="noopener">这里是SDK参考</a></p>
 <p>我是直接使用它的cdn引入的，在index.html中直接引入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://gosspublic.alicdn.com/aliyun-oss-sdk.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
