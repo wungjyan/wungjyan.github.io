@@ -311,6 +311,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/binarytree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wungjyan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wj'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/28/binarytree/" itemprop="url">js实现二叉树及遍历</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-28T19:30:24+08:00">
+                2017-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是二叉树"><a href="#什么是二叉树" class="headerlink" title="什么是二叉树"></a>什么是二叉树</h2><p>今天在做百度前端技术学院的任务时，遇到一题涉及二叉树算法的，然而我是一脸懵逼，因为没接触过二叉树算法，所以无存下手。后来上网找资料，渐渐明白了是个什么东西。     </p>
+<p><a href="https://segmentfault.com/a/1190000000740261#articleHeader0" target="_blank" rel="noopener">这是一篇关于二叉树的详细介绍文章</a></p>
+<p>搞清楚了二叉树是啥，然后怎么实现呢，显然，我需要用js实现，于是又各种找资料，实话说，资料还挺多的，不过也很杂，现在做个总结。  </p>
+<h2 id="js实现二叉树"><a href="#js实现二叉树" class="headerlink" title="js实现二叉树"></a>js实现二叉树</h2><p>说明：将一个数组的值按照二叉树规则遍历，形成二叉树结构。        </p>
+<p>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function BinaryTree()&#123;</span><br><span class="line"></span><br><span class="line">	//定义新节点的构造函数</span><br><span class="line">	function Node(text)&#123;</span><br><span class="line">		this.text = text;</span><br><span class="line">		this.left = null;</span><br><span class="line">		this.right = null;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//定义根节点</span><br><span class="line">	var root = null;  </span><br><span class="line"></span><br><span class="line">	//判断根节点</span><br><span class="line">	this.insert = function(text)&#123;</span><br><span class="line">		var newNode = new Node(text);</span><br><span class="line">		if (root === null) &#123;</span><br><span class="line">			root = newNode;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			insertNode(root,newNode);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	//中间节点的处理函数</span><br><span class="line">	function insertNode(node,newNode)&#123;</span><br><span class="line"></span><br><span class="line">		if (newNode.text &lt; node.text) &#123;</span><br><span class="line">			if (node.left === null) &#123;</span><br><span class="line">				node.left = newNode;</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				insertNode(node.left,newNode);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			if (node.right === null) &#123;</span><br><span class="line">				node.right = newNode;</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				insertNode(node.right,newNode);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//定义数组用来存储各节点的数值</span><br><span class="line">var nodes = [8,3,10,1,6,14,4,7,13];</span><br><span class="line"></span><br><span class="line">//创建二叉树实例</span><br><span class="line">var binaryTree = new BinaryTree();</span><br><span class="line"></span><br><span class="line">//遍历数组，将数组值按照二叉树规则插入</span><br><span class="line">for(var i=0;i&lt;nodes.length;i++)&#123;</span><br><span class="line">	binaryTree.insert(nodes[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码最终形成的二叉树结构如下图：<br><img src="http://oweyznv3o.bkt.clouddn.com/binarytree.png" alt="二叉树结构">       </p>
+<p>规则说明：       </p>
+<ul>
+<li><p>根据取到的数组值，先判断二叉树中根节点是否存在，如果不存在，就将第一个值作为根节点，即上述的8是根节点值。</p>
+</li>
+<li><p>有了根节点后，再判断后面的值与根节点值大小关系。如果小于根节点值，且左边无值，就放在左边，如果左边已经有值，就回调遍历。如果大于根节点值，且右边无值，就放在右边，如果右边已经有值，就回调遍历。参考上面代码中<code>insertNode</code>函数</p>
+</li>
+</ul>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>二叉树的遍历(traversing binary tree)是指从根结点出发，按照某种次序依次访问二叉树中所有结点，使得每个结点被访问一次且仅被访问一次。     </p>
+<p>二叉树的遍历有三种方式，如下： </p>
+<ol>
+<li><p>前序遍历（DLR），首先访问根结点，然后遍历左子树，最后遍历右子树。简记根-左-右。</p>
+</li>
+<li><p>中序遍历（LDR），首先遍历左子树，然后访问根结点，最后遍历右子树。简记左-根-右。</p>
+</li>
+<li><p>后序遍历（LRD），首先遍历左子树，然后遍历右子树，最后访问根结点。简记左-右-根。 </p>
+</li>
+</ol>
+<p>在上述代码中的<code>BinaryTree()</code>中添加遍历接口（ <em>… 表示省略的代码</em> ）:   </p>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function BinaryTree()&#123;</span><br><span class="line">    </span><br><span class="line">  //...</span><br><span class="line">    </span><br><span class="line">    //中序遍历</span><br><span class="line">	this.inOrderTraverse = function(callback)&#123;</span><br><span class="line">		inOrderTraverseNode(root,callback);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function inOrderTraverseNode(node,callback)&#123;</span><br><span class="line">		if(node !== null)&#123;</span><br><span class="line">			inOrderTraverseNode(node.left,callback);</span><br><span class="line">			callback(node.text);</span><br><span class="line">			inOrderTraverseNode(node.right,callback);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">  //...</span><br><span class="line">  </span><br><span class="line">  //定义回调函数，打印节点数值</span><br><span class="line">	var callback = function(text)&#123;</span><br><span class="line">		console.log(text);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line">binaryTree.inOrderTraverse(callback);</span><br><span class="line"></span><br><span class="line">//打印结果</span><br><span class="line">1 3 4 6 7 8 10 13 14</span><br></pre></td></tr></table></figure>
+<h3 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function BinaryTree()&#123;</span><br><span class="line">    </span><br><span class="line">  //...</span><br><span class="line">    </span><br><span class="line">    //前序遍历</span><br><span class="line">	this.preOrderTraverse = function(callback)&#123;</span><br><span class="line">		preOrderTraverseNode(root,callback);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function preOrderTraverseNode(node,callback)&#123;</span><br><span class="line">		if (node !== null) &#123;</span><br><span class="line">			callback(node.text);</span><br><span class="line">			preOrderTraverseNode(node.left,callback);</span><br><span class="line">			preOrderTraverseNode(node.right,callback);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">  //...</span><br><span class="line">  </span><br><span class="line">  //定义回调函数，打印节点数值</span><br><span class="line">	var callback = function(text)&#123;</span><br><span class="line">		console.log(text);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line">binaryTree.preOrderTraverse(callback);</span><br><span class="line"></span><br><span class="line">//打印结果</span><br><span class="line">8 3 1 6 4 7 10 14 13</span><br></pre></td></tr></table></figure>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function BinaryTree()&#123;</span><br><span class="line">    </span><br><span class="line">  //...</span><br><span class="line">    </span><br><span class="line">    //后序遍历</span><br><span class="line">	this.postOrderTraverse = function(callback)&#123;</span><br><span class="line">		postOrderTraverseNode(root,callback);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	function postOrderTraverseNode(node,callback)&#123;</span><br><span class="line">		if (node !== null) &#123;</span><br><span class="line">			postOrderTraverseNode(node.left,callback);</span><br><span class="line">			postOrderTraverseNode(node.right,callback);</span><br><span class="line">			callback(node.text);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">  //...</span><br><span class="line">  </span><br><span class="line">  //定义回调函数，打印节点数值</span><br><span class="line">	var callback = function(text)&#123;</span><br><span class="line">		console.log(text);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line">binaryTree.postOrderTraverse(callback);</span><br><span class="line"></span><br><span class="line">//打印结果</span><br><span class="line">1 4 7 6 3 13 14 10 8</span><br></pre></td></tr></table></figure>
+<p>注意：遍历代码是写在<code>BinaryTree()</code>中的，部分代码已省略</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/jsonp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1774,154 +1944,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/vue-learn4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wungjyan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wj'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/25/vue-learn4/" itemprop="url">Vue组件中的data</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T10:22:14+08:00">
-                2017-08-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="学习内容"><a href="#学习内容" class="headerlink" title="学习内容"></a>学习内容</h2><p>data必须是函数。通过 Vue 构造器传入的各种选项大多数都可以在组件里用。data 是一个例外，它必须是函数。</p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>如下一个组件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-component&apos;, &#123;</span><br><span class="line">       template: &apos;&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;&apos;,</span><br><span class="line">       data: &#123;</span><br><span class="line">           message: &apos;hello&apos;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
-<p>在浏览器运行会报错，提示<code>The &quot;data&quot; option should be a function that returns a per-instance value in component definitions.</code>即说明<code>data</code>必须是函数，所以改造一下变为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var data=&#123;</span><br><span class="line">       message: &apos;hello&apos;</span><br><span class="line">   &#125;;</span><br><span class="line">   </span><br><span class="line">   Vue.component(&apos;my-component&apos;, &#123;</span><br><span class="line">       template: &apos;&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;&apos;,</span><br><span class="line">       data: function()&#123;</span><br><span class="line">           return data;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
-<p>此时，就可以正常渲染了。但上面代码中还有一个问题，如果改变<code>message</code>，将影响所有组件，这不对，我们通过为每个组件返回全新的data对象来解决这个问题：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data: function()&#123;</span><br><span class="line">           return &#123;</span><br><span class="line">               message: &apos;hello&apos;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1972,7 +1994,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">56</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2056,7 +2078,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
