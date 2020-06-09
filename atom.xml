@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-04T01:28:00.975Z</updated>
+  <updated>2020-06-09T02:51:46.294Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>本博客不再更新了</title>
+    <title>本博客不再记录了</title>
     <link href="http://yoursite.com/2020/06/04/end/"/>
     <id>http://yoursite.com/2020/06/04/end/</id>
-    <published>2020-06-04T14:02:00.000Z</published>
-    <updated>2020-06-04T01:28:00.975Z</updated>
+    <published>2020-06-03T16:00:00.000Z</published>
+    <updated>2020-06-09T02:51:46.294Z</updated>
     
-    <content type="html"><![CDATA[<p>写了一大段话还是删了，说的太多显得矫情，而且本博客也基本只有我一个人，哈哈。</p><p>这里不再更新了，上一次更新也是去年3月份了。现在依旧会更新的博客有 <a href="https://www.cnblogs.com/wjaaron/" target="_blank" rel="noopener">博客园</a> 和 <a href="https://juejin.im/user/591b01b5a22b9d0058362647/posts" target="_blank" rel="noopener">掘金</a> 。放出这两个博客地址，也是想着或许有人不巧刚好来到这里呢，哈。</p><p>从当初的小白到现在的大白，这里是一段一个人的历程，就永远放在这里吧。</p>]]></content>
+    <content type="html"><![CDATA[<p>这里不再记录了，上一次更新也是去年3月份了。现在依旧会坚持写的博客有 <a href="https://www.cnblogs.com/wjaaron/" target="_blank" rel="noopener">博客园</a> 和 <a href="https://juejin.im/user/591b01b5a22b9d0058362647/posts" target="_blank" rel="noopener">掘金</a> 。放出这两个博客地址，也是想着或许有人不巧刚好来到这里呢，哈。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;写了一大段话还是删了，说的太多显得矫情，而且本博客也基本只有我一个人，哈哈。&lt;/p&gt;
-&lt;p&gt;这里不再更新了，上一次更新也是去年3月份了。现在依旧会更新的博客有 &lt;a href=&quot;https://www.cnblogs.com/wjaaron/&quot; target=&quot;_blank
+        &lt;p&gt;这里不再记录了，上一次更新也是去年3月份了。现在依旧会坚持写的博客有 &lt;a href=&quot;https://www.cnblogs.com/wjaaron/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt; 和 &lt;a href=&quot;https://j
       
     
     </summary>
@@ -198,9 +197,9 @@
       <category term="React" scheme="http://yoursite.com/categories/React/"/>
     
     
-      <category term="redux-thunk" scheme="http://yoursite.com/tags/redux-thunk/"/>
-    
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+      <category term="redux-thunk" scheme="http://yoursite.com/tags/redux-thunk/"/>
     
   </entry>
   

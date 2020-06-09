@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[本博客不再更新了]]></title>
+    <title><![CDATA[本博客不再记录了]]></title>
     <url>%2F2020%2F06%2F04%2Fend%2F</url>
-    <content type="text"><![CDATA[写了一大段话还是删了，说的太多显得矫情，而且本博客也基本只有我一个人，哈哈。 这里不再更新了，上一次更新也是去年3月份了。现在依旧会更新的博客有 博客园 和 掘金 。放出这两个博客地址，也是想着或许有人不巧刚好来到这里呢，哈。 从当初的小白到现在的大白，这里是一段一个人的历程，就永远放在这里吧。]]></content>
+    <content type="text"><![CDATA[这里不再记录了，上一次更新也是去年3月份了。现在依旧会坚持写的博客有 博客园 和 掘金 。放出这两个博客地址，也是想着或许有人不巧刚好来到这里呢，哈。]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -76,8 +76,8 @@
         <category>React</category>
       </categories>
       <tags>
-        <tag>redux-thunk</tag>
         <tag>react</tag>
+        <tag>redux-thunk</tag>
       </tags>
   </entry>
   <entry>
