@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-09T02:51:46.294Z</updated>
+  <updated>2019-03-26T14:10:03.635Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>本博客不再记录了</title>
-    <link href="http://yoursite.com/2020/06/04/end/"/>
-    <id>http://yoursite.com/2020/06/04/end/</id>
-    <published>2020-06-03T16:00:00.000Z</published>
-    <updated>2020-06-09T02:51:46.294Z</updated>
-    
-    <content type="html"><![CDATA[<p>这里不再记录了，上一次更新也是去年3月份了。现在依旧会坚持写的博客有 <a href="https://www.cnblogs.com/wjaaron/" target="_blank" rel="noopener">博客园</a> 和 <a href="https://juejin.im/user/591b01b5a22b9d0058362647/posts" target="_blank" rel="noopener">掘金</a> 。放出这两个博客地址，也是想着或许有人不巧刚好来到这里呢，哈。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这里不再记录了，上一次更新也是去年3月份了。现在依旧会坚持写的博客有 &lt;a href=&quot;https://www.cnblogs.com/wjaaron/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;博客园&lt;/a&gt; 和 &lt;a href=&quot;https://j
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-  </entry>
   
   <entry>
     <title>vue中图片上传到阿里云oss记录</title>
@@ -197,9 +172,9 @@
       <category term="React" scheme="http://yoursite.com/categories/React/"/>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
-    
       <category term="redux-thunk" scheme="http://yoursite.com/tags/redux-thunk/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
   </entry>
   
@@ -538,6 +513,31 @@
     
     
       <category term="express" scheme="http://yoursite.com/tags/express/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>target与currentTarget的区别</title>
+    <link href="http://yoursite.com/2018/03/10/target_currentTarget/"/>
+    <id>http://yoursite.com/2018/03/10/target_currentTarget/</id>
+    <published>2018-03-10T10:41:51.000Z</published>
+    <updated>2018-03-10T10:44:36.825Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在事件处理函数的<code>event</code>对象中，有一个<code>target</code>属性，我们都知道它是指事件目标。其实在<code>event</code>中还有一个<code>currentTarget</code>属性，不知道这个属性还好，知道的话可能会弄混与<code>target</code>的区别。    </p><p>先看下定义（参考JS高级程序设计）：</p><ul><li>target：事件的目标</li><li>currentTarget：其事件处理程序当前正在处理事件的那个元素</li></ul><p>看完这两个定义，或许还是似懂非懂的感觉，我一直觉得实践是最好的验证方法，所以来写个极其简单的例子吧。</p><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>html文件，写一个简单的列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;111&lt;/li&gt;</span><br><span class="line">&lt;li&gt;222&lt;/li&gt;</span><br><span class="line">&lt;li&gt;333&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p><p>js文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var aUl = document.getElementsByTagName(&apos;ul&apos;)[0];</span><br><span class="line"></span><br><span class="line">aUl.addEventListener(&apos;click&apos;,function(event)&#123;</span><br><span class="line">console.log(this);</span><br><span class="line">console.log(&apos;target: &apos;,event.target);</span><br><span class="line">console.log(&apos;currentTarget: &apos;,event.currentTarget);</span><br><span class="line">&#125;,false)</span><br></pre></td></tr></table></figure></p><p>当看到这个例子，你或许就明白我要说啥了。运行程序，会发现，<code>target</code>指向你所点击的那个<code>li</code>元素，而<code>currentTarget</code>始终指向<code>ul</code>元素。</p><p>所以，我可以用自己的话再来定义一下这两个属性了：</p><ul><li>target：指向触发事件的元素。上例中，是<code>li</code>触发的事件，冒泡到<code>ul</code>上执行的</li><li>currentTarget：指向添加事件的元素。很好懂啊，上例中，事件是绑定在<code>ul</code>上的</li></ul><p>另外需要注意的是，<code>this</code>始终等于<code>currentTarget</code>，在上例中，始终指向<code>ul</code>，不信的话也可以试下啊，我们将事件绑定到第二个<code>li</code>上试试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var aUl = document.getElementsByTagName(&apos;ul&apos;)[0];</span><br><span class="line">var aLi = aUl.getElementsByTagName(&apos;li&apos;)[1];</span><br><span class="line"></span><br><span class="line">aLi.addEventListener(&apos;click&apos;,function(event)&#123;</span><br><span class="line">console.log(this);</span><br><span class="line">console.log(&apos;target: &apos;,event.target);</span><br><span class="line">console.log(&apos;currentTarget: &apos;,event.currentTarget);</span><br><span class="line">&#125;,false)</span><br></pre></td></tr></table></figure></p><p>结果就不用多说了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;在事件处理函数的&lt;code&gt;event&lt;/code&gt;对象中，有一个&lt;code&gt;target&lt;/code&gt;属性，我们都知道它是指事件目标。其实
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   
